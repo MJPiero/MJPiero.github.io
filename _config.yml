@@ -69,15 +69,9 @@ theme: indigo_card
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ftpsync
-  host: 106.14.33.51
-  user: majing
-  pass: 19861019mj
-  remote: /www.mjpiero.cc
-  port: 21
-  ignore: 
-  connections: 1
-  verbose: false
+  type: git
+  repository: https://github.com/MJPiero/MJPiero.github.io.git
+  branch: master
 
 # hexo-generator-feed
 feed:

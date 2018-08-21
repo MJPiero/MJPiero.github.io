@@ -1,3 +1,3 @@
-# mjpiero-blog-hexo
+# MJPiero.github.io
 
-基于Hexo构建的博客平台（[mjpiero.cc](https://mjpiero.cc/)）。
+基于Hexo构建的博客平台（[www.mjpiero.cc](https://www.mjpiero.cc/)）。
