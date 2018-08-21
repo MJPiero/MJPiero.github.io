@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2017-01-18T10:47:04.341Z</updated>
+  <updated>2017-05-25T07:01:12.000Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初了解vue&amp;vuex</title>
+    <link href="http://www.mjpiero.cc/2017/05/22/%E5%88%9D%E4%BA%86%E8%A7%A3vue&amp;vuex%20%E8%BF%99%E5%BE%88%E6%8E%A5%E5%9C%B0%E6%B0%94/"/>
+    <id>http://www.mjpiero.cc/2017/05/22/初了解vue&amp;vuex 这很接地气/</id>
+    <published>2017-05-22T07:35:33.000Z</published>
+    <updated>2017-05-25T07:01:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。</p>
+<p>好了言归正传。</p>
+<p>网络上对于<a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">vuex</a>这套<strong>状态管理模式</strong>已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且我理论知识不稳固，肯定探讨不出什么高深的学术性的东西，此文只是大概介绍一下我在运用时候遇到的一些坑吧。</p>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a><a href="https://cn.vuejs.org/" target="_blank" rel="external">Vue</a></h1><p>这个运用的融会贯通的人大有人在，我一个才用了三天的人就不详细说了。在这之前我一直用的angular v1.x（之后都称呼ng v1.x），之前有小哥问我为什么不用vue，当时我说了感觉vue有些不伦不类，像是ng和react的结合体。嗯，我有时候很脑残，这些话都当我没说过。</p>
+<p>很多人觉得vue和ng有很相似的地方。是不是呢，当然我没去研究ng v2.x+的框架，从ng v1.x的角度上来看，两个框架差异还是相当大的。</p>
+<p>ng像是一个工厂，在ng-app内，按照不同的功能来划分体系，模块和模块之间也能通过ng的规则联系在一起。虽然也有组件化的体系，通过scope来独立区域，但是组件和组件之前有提供信息传递的方法，就像工厂里面的传送带一样，任何一个区域都可以相互传递信息（反正在我脑子里记不住那些概念，但是对于ng大概就是这么理解的）。vue则更像是一个公寓大楼。component是一间间的房间，相互独立，可以像积木一样，一层层堆积拼接。但是并没有和ng那样相对比较完善的信息传递机制。</p>
+<p>所以之前小易有问我ng v1.x有木有什么状态管理的架构。这之后我才知道的，ng v1.x应该是不需要额外的去搭建一个状态管理模式。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。&lt;/p&gt;
+&lt;p&gt;好了言归正传。&lt;/p&gt;
+&lt;p&gt;网络上对于&lt;a href=&quot;https://vuex.vuejs.o
+    
+    </summary>
+    
+      <category term="vue" scheme="http://www.mjpiero.cc/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="http://www.mjpiero.cc/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Web移动端】web移动端软键盘状态</title>
     <link href="http://www.mjpiero.cc/2017/01/18/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%BD%AF%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81/"/>
     <id>http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/</id>
     <published>2017-01-18T10:10:54.000Z</published>
-    <updated>2017-01-18T10:47:04.341Z</updated>
+    <updated>2017-01-18T10:47:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p>
 <h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</div><div class="line">	//键盘关闭事件 </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
@@ -47,7 +78,7 @@
     <link href="http://www.mjpiero.cc/2016/12/29/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95%E5%A4%A7%E6%B3%95/"/>
     <id>http://www.mjpiero.cc/2016/12/29/【Web移动端】web移动端调试大法/</id>
     <published>2016-12-29T07:02:38.000Z</published>
-    <updated>2017-01-18T10:25:15.479Z</updated>
+    <updated>2017-01-18T10:25:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。<br>在这里整理一些常见的移动端调试方法。</p>
 <p><strong>先从一般的页面调试方法开始。</strong></p>
@@ -94,7 +125,7 @@
     <link href="http://www.mjpiero.cc/2016/12/28/MongoDB%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD/"/>
     <id>http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/</id>
     <published>2016-12-28T06:04:52.000Z</published>
-    <updated>2016-12-28T06:24:18.439Z</updated>
+    <updated>2016-12-28T06:24:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。</p>
 <h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">use admin</div><div class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</div><div class="line">// 如果希望此账号只有读取的权限，则修改为</div><div class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</div></pre></td></tr></table></figure></p>
@@ -121,7 +152,7 @@
     <link href="http://www.mjpiero.cc/2016/12/28/MongoDB%E6%B7%BB%E5%8A%A0%E5%88%B0window%E6%9C%8D%E5%8A%A1%EF%BC%8C%E9%9A%8F%E6%9C%8D%E5%8A%A1%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
     <id>http://www.mjpiero.cc/2016/12/28/MongoDB添加到window服务，随服务自启动/</id>
     <published>2016-12-28T03:38:01.000Z</published>
-    <updated>2017-03-13T02:21:25.712Z</updated>
+    <updated>2017-03-13T02:21:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在window上安转MongoDB，记录一下遇到的一些的问题。</p>
 <h1 id="windows上安装MongoDB"><a href="#windows上安装MongoDB" class="headerlink" title="windows上安装MongoDB"></a>windows上安装MongoDB</h1><p>首先去官网下载Windows安装包：<a href="https://www.mongodb.org/downloads" target="_blank" rel="external">https://www.mongodb.org/downloads</a><br>安装路径这里假设是安装在 <code>D:/soft/mongodb/</code>。<br>安装好之后，我们可以随便在一个目录下，比如在 <code>D:/</code> 根目录下创建一个目录 <code>D:\mongodb\</code>，进入该目录，新建data和logs两个目录。<br>然后打开控制台命令窗口（CMD），输入<code>D:\soft\mongodb\bin</code> 进入到安装目录下。<br>再执行：<code>mongod --dbpath d:/mongodb/data</code>，开启MongoDB服务，并将运行目录指向之前创建好的 <code>D:\mongodb\data</code> 下。<br>打开浏览器，进入：<code>http://127.0.0.1:27017</code>（window服务默认端口27017），这时你会看到以下提示语：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">You are trying to access MongoDB on the native driver port. For http diagnostic access, add 1000 to the port number</div></pre></td></tr></table></figure></p>
@@ -158,7 +189,7 @@
     <link href="http://www.mjpiero.cc/2016/12/08/%E5%85%BC%E5%AE%B9%E5%A4%9A%E7%A7%8D%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83/"/>
     <id>http://www.mjpiero.cc/2016/12/08/兼容多种模块规范/</id>
     <published>2016-12-08T04:13:38.000Z</published>
-    <updated>2016-12-08T04:37:00.395Z</updated>
+    <updated>2018-02-04T10:57:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">;(function (name, definition) &#123;</div><div class="line"></div><div class="line">// 检测上下文环境是否为AMD或CMD</div><div class="line">if (typeof define === &quot;function&quot; &amp;&amp; ( define.amd || define.cmd ) ) &#123;</div><div class="line"></div><div class="line">	define(definition);</div><div class="line"></div><div class="line">// 检测上下文环境是否为Node</div><div class="line">&#125; else if ( typeof module !== &apos;undefined&apos; &amp;&amp; module.exports ) &#123;</div><div class="line"></div><div class="line">	module.exports = definition();</div><div class="line"></div><div class="line">&#125; else &#123;</div><div class="line">	// 将模块的执行结果在window变量中，在浏览器中this指向window对象</div><div class="line">	this[name] = definition();</div><div class="line">&#125;</div><div class="line">&#125;)(&apos;hello&apos;, function () &#123;</div><div class="line">	var hello = function () &#123;&#125;;</div><div class="line">	return hello;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 ]]></content>
@@ -181,7 +212,7 @@
     <link href="http://www.mjpiero.cc/2016/12/08/%E5%8C%85%E4%B8%8ENPM/"/>
     <id>http://www.mjpiero.cc/2016/12/08/包与NPM/</id>
     <published>2016-12-08T02:39:20.000Z</published>
-    <updated>2016-12-08T04:07:39.371Z</updated>
+    <updated>2016-12-08T04:07:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>在说到NPM之前，应该先提及CommonJS的包规范。</p>
 <p>CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。</p>
@@ -251,7 +282,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/Materialize-UI-%E9%A3%8E%E6%A0%BC-WIKI-%E6%A8%A1%E6%9D%BF%E9%A1%B5/"/>
     <id>http://www.mjpiero.cc/2016/10/21/Materialize-UI-风格-WIKI-模板页/</id>
     <published>2016-10-21T10:16:56.000Z</published>
-    <updated>2016-10-26T10:13:30.332Z</updated>
+    <updated>2016-10-26T10:13:32.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="http://materializecss.com/" target="_blank" rel="external">Materialize</a> 是基于Material Design的UI框架。</p>
 <p>使用Materialize框架制作了一个WIKI文档的模板页面。</p>
@@ -282,7 +313,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E3%80%90%E6%8E%A5%E7%B2%BD%E5%AD%90%E3%80%91%E5%B0%8F%E6%B8%B8%E6%88%8F-Made-With-CreateJs/"/>
     <id>http://www.mjpiero.cc/2016/10/21/【接粽子】小游戏-Made-With-CreateJs/</id>
     <published>2016-10-21T08:55:05.000Z</published>
-    <updated>2016-10-26T10:13:55.062Z</updated>
+    <updated>2016-10-26T10:13:56.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>制作的一款类似于接金币一类的小游戏。公司为了在端午节做宣传用的。</p>
 <p>一款好的游戏离不开好的设计，在此先给亲爱的设计妹纸点个赞~ (❁’▽’❁)</p>
@@ -318,7 +349,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/"/>
     <id>http://www.mjpiero.cc/2016/10/21/解决gem-install-SSL-证书错误/</id>
     <published>2016-10-21T08:40:10.000Z</published>
-    <updated>2016-12-08T02:40:26.437Z</updated>
+    <updated>2016-12-08T02:40:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>这个问题我是在替换gem镜像路径的时候遇到的。</p>
 <p>详情见：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" target="_blank" rel="external">解决国内Ruby Gem Install 失败问题</a></p>
@@ -361,7 +392,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/"/>
     <id>http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/</id>
     <published>2016-10-21T06:55:48.000Z</published>
-    <updated>2016-12-08T02:40:12.006Z</updated>
+    <updated>2016-12-08T02:40:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。</p>
 <p>淘宝团队提供了国内可以快速访问的镜像地址，官方地址：<a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a></p>
@@ -395,7 +426,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E5%BC%80%E5%90%AF%E6%96%B0%E4%B8%96%E7%95%8C%E7%9A%84%E5%A4%A7%E9%97%A8%EF%BC%81-%E7%81%AC%C2%BA%CF%89%C2%BA%E7%81%AC/"/>
     <id>http://www.mjpiero.cc/2016/10/21/开启新世界的大门！-灬ºωº灬/</id>
     <published>2016-10-21T06:38:33.000Z</published>
-    <updated>2016-10-21T06:42:54.342Z</updated>
+    <updated>2016-10-21T06:42:56.000Z</updated>
     
     <content type="html"><![CDATA[<p>首先，欢迎你手残点进了此地！！！ξ( ✿＞◡❛)</p>
 <p>博主前端开发人员一枚，于今涉足行业将近2年，在之前干过漫画编辑做过网页设计，可谓上得了厅堂下得了厨房。然而水平有限，寻求志同道合人士共同学习进步。 (´∩ω∩｀)</p>
