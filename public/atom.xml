@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MJPiero&#39;s Blog</title>
+  <icon>https://www.gravatar.com/avatar/4becd097c993840b6d520e5672c7ecbc</icon>
   <subtitle>一只有节操的前端喵╮(╯_╰)╭。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2017-05-25T07:01:12.000Z</updated>
+  <updated>2018-08-23T04:00:10.872Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -16,33 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>初了解vue&amp;vuex</title>
-    <link href="http://www.mjpiero.cc/2017/05/22/%E5%88%9D%E4%BA%86%E8%A7%A3vue&amp;vuex%20%E8%BF%99%E5%BE%88%E6%8E%A5%E5%9C%B0%E6%B0%94/"/>
-    <id>http://www.mjpiero.cc/2017/05/22/初了解vue&amp;vuex 这很接地气/</id>
-    <published>2017-05-22T07:35:33.000Z</published>
-    <updated>2017-05-25T07:01:12.000Z</updated>
+    <title>mac 使用tree命令</title>
+    <link href="http://www.mjpiero.cc/2018/08/23/mac-%E4%BD%BF%E7%94%A8tree%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/</id>
+    <published>2018-08-23T03:59:10.000Z</published>
+    <updated>2018-08-23T04:00:10.872Z</updated>
     
-    <content type="html"><![CDATA[<p>在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。</p>
-<p>好了言归正传。</p>
-<p>网络上对于<a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">vuex</a>这套<strong>状态管理模式</strong>已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且我理论知识不稳固，肯定探讨不出什么高深的学术性的东西，此文只是大概介绍一下我在运用时候遇到的一些坑吧。</p>
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a><a href="https://cn.vuejs.org/" target="_blank" rel="external">Vue</a></h1><p>这个运用的融会贯通的人大有人在，我一个才用了三天的人就不详细说了。在这之前我一直用的angular v1.x（之后都称呼ng v1.x），之前有小哥问我为什么不用vue，当时我说了感觉vue有些不伦不类，像是ng和react的结合体。嗯，我有时候很脑残，这些话都当我没说过。</p>
-<p>很多人觉得vue和ng有很相似的地方。是不是呢，当然我没去研究ng v2.x+的框架，从ng v1.x的角度上来看，两个框架差异还是相当大的。</p>
-<p>ng像是一个工厂，在ng-app内，按照不同的功能来划分体系，模块和模块之间也能通过ng的规则联系在一起。虽然也有组件化的体系，通过scope来独立区域，但是组件和组件之前有提供信息传递的方法，就像工厂里面的传送带一样，任何一个区域都可以相互传递信息（反正在我脑子里记不住那些概念，但是对于ng大概就是这么理解的）。vue则更像是一个公寓大楼。component是一间间的房间，相互独立，可以像积木一样，一层层堆积拼接。但是并没有和ng那样相对比较完善的信息传递机制。</p>
-<p>所以之前小易有问我ng v1.x有木有什么状态管理的架构。这之后我才知道的，ng v1.x应该是不需要额外的去搭建一个状态管理模式。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。<br>网上搜了一下，mark一下：</p><p>使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;</span><br></pre></td></tr></table></figure><p>还可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias tree=&quot;find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;&quot;</span><br><span class="line">```　　</span><br><span class="line"></span><br><span class="line">也可以使用 homebrew 安装 tree 命令行：</span><br></pre></td></tr></table></figure><p>$ brew install tree<br><code>`</code><br>这样就在你的mac上安装了 tree 命令行了。</p><p>tree命令行参数（只实用与安装了tree命令行工具）：</p><ul><li>-a 显示所有文件和目录。</li><li>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。</li><li>-C 在文件和目录清单加上色彩，便于区分各种类型。</li><li>-d 显示目录名称而非内容。</li><li>-D 列出文件或目录的更改时间。</li><li>-f 在每个文件或目录之前，显示完整的相对路径名称。</li><li>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。</li><li>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</li><li>-i 不以阶梯状列出文件或目录名称。</li><li>-I 不显示符合范本样式的文件或目录名称。</li><li>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</li><li>-n 不在文件和目录清单加上色彩。</li><li>-N 直接列出文件和目录名称，包括控制字符。</li><li>-p 列出权限标示。</li><li>-P 只显示符合范本样式的文件或目录名称。</li><li>-q 用”?”号取代控制字符，列出文件和目录名称。</li><li>-s 列出文件或目录大小。</li><li>-t 用文件和目录的更改时间排序。</li><li>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</li><li>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。&lt;/p&gt;
-&lt;p&gt;好了言归正传。&lt;/p&gt;
-&lt;p&gt;网络上对于&lt;a href=&quot;https://vuex.vuejs.o
+      
+      
+        &lt;p&gt;开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。&lt;br&gt;网上搜了一下，mark一下：&lt;/p&gt;
+&lt;p&gt;使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令：
+      
     
     </summary>
     
-      <category term="vue" scheme="http://www.mjpiero.cc/categories/vue/"/>
+      <category term="环境搭建" scheme="http://www.mjpiero.cc/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="vue" scheme="http://www.mjpiero.cc/tags/vue/"/>
+      <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="linux" scheme="http://www.mjpiero.cc/tags/linux/"/>
     
   </entry>
   
@@ -53,14 +51,14 @@
     <published>2017-01-18T10:10:54.000Z</published>
     <updated>2017-01-18T10:47:06.000Z</updated>
     
-    <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p>
-<h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</div><div class="line">	//键盘关闭事件 </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </div><div class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </div><div class="line">  var hh = window.innerHeight;//当前可视窗口高度  </div><div class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </div><div class="line">  if(wHeight &gt; hh)&#123;</div><div class="line">  	//可以作为虚拟键盘弹出事件  </div><div class="line">  &#125;else&#123;</div><div class="line">  	//可以作为虚拟键盘关闭事件  </div><div class="line">  &#125;  </div><div class="line">  wHeight = hh;  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var flag = false;</div><div class="line">var wHeight = window.innerHeight;</div><div class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</div><div class="line">    var hh = window.innerHeight; </div><div class="line">    var viewTop = $(window).scrollTop();</div><div class="line">    if(wHeight &gt; hh)&#123;</div><div class="line">        flag = false;</div><div class="line">    &#125;else&#123;</div><div class="line">        if(!flag)&#123;</div><div class="line">            alert($(&quot;.input-content input&quot;).val());</div><div class="line">            flag = true;</div><div class="line">        &#125;else&#123;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">    &#125;  </div><div class="line">    wHeight = hh;  </div><div class="line">&#125;);</div><div class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</div><div class="line">    if(!flag)&#123;</div><div class="line">        alert($(&quot;.input-content input&quot;).val());</div><div class="line">        flag = true;</div><div class="line">    &#125;else&#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">&#125;).on(&quot;focus&quot;, function()&#123;</div><div class="line">    flag = false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p><h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">//键盘关闭事件 </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  //可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  //可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。&lt;br&gt;对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实
+      
+      
+        &lt;p&gt;如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。&lt;br&gt;对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实
+      
     
     </summary>
     
@@ -80,34 +78,14 @@
     <published>2016-12-29T07:02:38.000Z</published>
     <updated>2017-01-18T10:25:16.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。<br>在这里整理一些常见的移动端调试方法。</p>
-<p><strong>先从一般的页面调试方法开始。</strong></p>
-<h1 id="console方式"><a href="#console方式" class="headerlink" title="console方式"></a>console方式</h1><p>这个是最常见的一种调试方法，通过console在浏览器控制台打印出每步所需的回调数据。<br>详细可以参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Console" target="_blank" rel="external">Web API接口</a></p>
-<h1 id="浏览器自带的移动端模拟器调试"><a href="#浏览器自带的移动端模拟器调试" class="headerlink" title="浏览器自带的移动端模拟器调试"></a>浏览器自带的移动端模拟器调试</h1><p>这个现在也比较常见了。最常用的是chrome的模拟器，当然现在流行的浏览器基本上都有开发者的模式，也都携有移动端的模拟器。比如火狐浏览器、360浏览器等。<br>基本上浏览器开启开发者模式的方法都统一了，在windows环境下按<code>F12</code>进入开发者攻击界面，mac环境则是下按<code>option+command+i</code>。<br><img src="/images/QQ截图20161229151926.png" alt=""></p>
-<h1 id="UC浏览器测试"><a href="#UC浏览器测试" class="headerlink" title="UC浏览器测试"></a>UC浏览器测试</h1><p>UC浏览器提供了开发版方便开发者们连接测试。详见：<a href="http://plus.uc.cn/document/webapp/doc5.html" target="_blank" rel="external">UC浏览器开发者版</a></p>
-<h1 id="第三方平台在线模拟器调试"><a href="#第三方平台在线模拟器调试" class="headerlink" title="第三方平台在线模拟器调试"></a>第三方平台在线模拟器调试</h1><p>第三方开发的平台比较方便，功能也相当强大，对于一些需要完善测试的，其实使用第三方的平台还是比较方便的。<br>这里我就推荐几个比较有名的第三方平台：</p>
-<ul>
-<li><a href="https://www.browserstack.com/" target="_blank" rel="external">BrowserStack</a></li>
-<li><a href="http://www.keynote.com/" target="_blank" rel="external">Keynote</a></li>
-<li><a href="http://browsershots.org/" target="_blank" rel="external">BrowserShots</a></li>
-<li><a href="http://www.browsera.com/" target="_blank" rel="external">Browsera</a></li>
-<li><a href="http://www.vanamco.com/ghostlab/" target="_blank" rel="external">Ghostlab</a><br>等等…</li>
-</ul>
-<p><strong>下面介绍一些我比较喜欢的一些远程调试工具。</strong></p>
-<h1 id="Weinre"><a href="#Weinre" class="headerlink" title="Weinre"></a>Weinre</h1><p>之前微信开发工具中的远程调试也是基于这个开发的。<br>安装方法很简单快捷。<br>安装 Weinre：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install -g weinre</div></pre></td></tr></table></figure></p>
-<p>安装完成之后，输入指令启动：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">weinre --httpPort 8081 --boundHost -all-</div></pre></td></tr></table></figure></p>
-<p>显示如下则启动成功。<br><img src="/images/QQ截图20161229154152.png" alt=""><br>此时我们访问地址：<code>http://localhost:8081/</code> 会显示下图：<br><img src="/images/QQ截图20161229154809.png" alt=""><br>在页面中也有提供几种方案，在你的项目中添加对应的js。例如：<code>&lt;script src=&quot;http://192.168.55.23:8081/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</code><br>随后便可以通过PC访问<code>http://192.168.55.23:8081/client/#anonymous</code>就可以看到手机上访问的项目页面了。<br><img src="/images/QQ截图20161229160034.png" alt=""></p>
-<h1 id="代理应用"><a href="#代理应用" class="headerlink" title="代理应用"></a>代理应用</h1><p>这类代理应用实际上是用于抓包的，但是比起Weinre是基于开发者自身开发测试的。如果我们想要去获取其他网站的一些资源，例如http请求，或则一些js源码等。这时候使用代理工具比较合适。<br>mac下常使用的是<a href="https://www.charlesproxy.com/" target="_blank" rel="external">Charles</a>,windows环境下可以用<a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a><br>默认开启的是8888端口。在手机上设置一个网络代理即可，这个不多详细介绍了。</p>
-<h1 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a><a href="https://browsersync.io/" target="_blank" rel="external">BrowserSync</a></h1><p>这是一个很强大的多终端测试工具，它可以跨设备同步操作行为，还可以监听你的文件，在文件修改时自动刷新所有设备中页面。<br><a href="https://browsersync.io/" target="_blank" rel="external">BrowserSync官方网站</a><br>也可以通过npm全局安装<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install -g browser-sync</div></pre></td></tr></table></figure></p>
-<p>随后进入项目根目录下<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">browser-sync start --files &quot;*.*&quot;</div><div class="line">// 意思为监听当前目录下所有改动</div></pre></td></tr></table></figure></p>
-<p>终端中若显示如下，则启动成功：<br><img src="http://7xoxxe.com1.z0.glb.clouddn.com/bs.png" alt=""><br>终端中显示默认访问地址：<code>http://localhost:3001</code> 则可直接进入到控制台界面。<br>之后和weinre类似，也是添加一段js在自己的项目底下。<br>BrowserSync还可以和gulp以及webpack搭配使用，详细的可以看官方文档。</p>
-<h1 id="真机测试"><a href="#真机测试" class="headerlink" title="真机测试"></a>真机测试</h1><p>真机测试是一概而论的说法。由于像ios系统本身就提供了一些对前端十分友好的开发者工具。<br>例如，Safari浏览器自带的开发者工具，或则xcode也有测试的方法，这里我局限性比较高，有这方面条件的是可以去搜罗一下相关的方法。<br>再者，PhoneGap也是有调试工具的，只不过需要安装它测试app。<br>这也是一种方法，不过个人还是偏爱Weinre或则BrowserSync的测试工具。</p>
-<p>以上。是我整理的一些移动端测试的方法。欢迎补充~</p>
-]]></content>
+    <content type="html"><![CDATA[<p>在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。<br>在这里整理一些常见的移动端调试方法。</p><p><strong>先从一般的页面调试方法开始。</strong></p><h1 id="console方式"><a href="#console方式" class="headerlink" title="console方式"></a>console方式</h1><p>这个是最常见的一种调试方法，通过console在浏览器控制台打印出每步所需的回调数据。<br>详细可以参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Console" target="_blank" rel="noopener">Web API接口</a></p><h1 id="浏览器自带的移动端模拟器调试"><a href="#浏览器自带的移动端模拟器调试" class="headerlink" title="浏览器自带的移动端模拟器调试"></a>浏览器自带的移动端模拟器调试</h1><p>这个现在也比较常见了。最常用的是chrome的模拟器，当然现在流行的浏览器基本上都有开发者的模式，也都携有移动端的模拟器。比如火狐浏览器、360浏览器等。<br>基本上浏览器开启开发者模式的方法都统一了，在windows环境下按<code>F12</code>进入开发者攻击界面，mac环境则是下按<code>option+command+i</code>。<br><img src="/images/QQ截图20161229151926.png" alt=""></p><h1 id="UC浏览器测试"><a href="#UC浏览器测试" class="headerlink" title="UC浏览器测试"></a>UC浏览器测试</h1><p>UC浏览器提供了开发版方便开发者们连接测试。详见：<a href="http://plus.uc.cn/document/webapp/doc5.html" target="_blank" rel="noopener">UC浏览器开发者版</a></p><h1 id="第三方平台在线模拟器调试"><a href="#第三方平台在线模拟器调试" class="headerlink" title="第三方平台在线模拟器调试"></a>第三方平台在线模拟器调试</h1><p>第三方开发的平台比较方便，功能也相当强大，对于一些需要完善测试的，其实使用第三方的平台还是比较方便的。<br>这里我就推荐几个比较有名的第三方平台：</p><ul><li><a href="https://www.browserstack.com/" target="_blank" rel="noopener">BrowserStack</a></li><li><a href="http://www.keynote.com/" target="_blank" rel="noopener">Keynote</a></li><li><a href="http://browsershots.org/" target="_blank" rel="noopener">BrowserShots</a></li><li><a href="http://www.browsera.com/" target="_blank" rel="noopener">Browsera</a></li><li><a href="http://www.vanamco.com/ghostlab/" target="_blank" rel="noopener">Ghostlab</a><br>等等…</li></ul><p><strong>下面介绍一些我比较喜欢的一些远程调试工具。</strong></p><h1 id="Weinre"><a href="#Weinre" class="headerlink" title="Weinre"></a>Weinre</h1><p>之前微信开发工具中的远程调试也是基于这个开发的。<br>安装方法很简单快捷。<br>安装 Weinre：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g weinre</span><br></pre></td></tr></table></figure></p><p>安装完成之后，输入指令启动：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">weinre --httpPort 8081 --boundHost -all-</span><br></pre></td></tr></table></figure></p><p>显示如下则启动成功。<br><img src="/images/QQ截图20161229154152.png" alt=""><br>此时我们访问地址：<code>http://localhost:8081/</code> 会显示下图：<br><img src="/images/QQ截图20161229154809.png" alt=""><br>在页面中也有提供几种方案，在你的项目中添加对应的js。例如：<code>&lt;script src=&quot;http://192.168.55.23:8081/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</code><br>随后便可以通过PC访问<code>http://192.168.55.23:8081/client/#anonymous</code>就可以看到手机上访问的项目页面了。<br><img src="/images/QQ截图20161229160034.png" alt=""></p><h1 id="代理应用"><a href="#代理应用" class="headerlink" title="代理应用"></a>代理应用</h1><p>这类代理应用实际上是用于抓包的，但是比起Weinre是基于开发者自身开发测试的。如果我们想要去获取其他网站的一些资源，例如http请求，或则一些js源码等。这时候使用代理工具比较合适。<br>mac下常使用的是<a href="https://www.charlesproxy.com/" target="_blank" rel="noopener">Charles</a>,windows环境下可以用<a href="http://www.telerik.com/fiddler" target="_blank" rel="noopener">Fiddler</a><br>默认开启的是8888端口。在手机上设置一个网络代理即可，这个不多详细介绍了。</p><h1 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a><a href="https://browsersync.io/" target="_blank" rel="noopener">BrowserSync</a></h1><p>这是一个很强大的多终端测试工具，它可以跨设备同步操作行为，还可以监听你的文件，在文件修改时自动刷新所有设备中页面。<br><a href="https://browsersync.io/" target="_blank" rel="noopener">BrowserSync官方网站</a><br>也可以通过npm全局安装<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g browser-sync</span><br></pre></td></tr></table></figure></p><p>随后进入项目根目录下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">browser-sync start --files &quot;*.*&quot;</span><br><span class="line">// 意思为监听当前目录下所有改动</span><br></pre></td></tr></table></figure></p><p>终端中若显示如下，则启动成功：<br><img src="http://7xoxxe.com1.z0.glb.clouddn.com/bs.png" alt=""><br>终端中显示默认访问地址：<code>http://localhost:3001</code> 则可直接进入到控制台界面。<br>之后和weinre类似，也是添加一段js在自己的项目底下。<br>BrowserSync还可以和gulp以及webpack搭配使用，详细的可以看官方文档。</p><h1 id="真机测试"><a href="#真机测试" class="headerlink" title="真机测试"></a>真机测试</h1><p>真机测试是一概而论的说法。由于像ios系统本身就提供了一些对前端十分友好的开发者工具。<br>例如，Safari浏览器自带的开发者工具，或则xcode也有测试的方法，这里我局限性比较高，有这方面条件的是可以去搜罗一下相关的方法。<br>再者，PhoneGap也是有调试工具的，只不过需要安装它测试app。<br>这也是一种方法，不过个人还是偏爱Weinre或则BrowserSync的测试工具。</p><p>以上。是我整理的一些移动端测试的方法。欢迎补充~</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。&lt;br&gt;在这里整理一些常见的移动端调试方法
+      
+      
+        &lt;p&gt;在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。&lt;br&gt;在这里整理一些常见的移动端调试方法
+      
     
     </summary>
     
@@ -127,16 +105,15 @@
     <published>2016-12-28T06:04:52.000Z</published>
     <updated>2016-12-28T06:24:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。</p>
-<h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">use admin</div><div class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</div><div class="line">// 如果希望此账号只有读取的权限，则修改为</div><div class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</div></pre></td></tr></table></figure></p>
-<p>执行完成之后，先停止MongoDB服务，在执行下面指令重新开启MongoDB服务：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">mongod --auth</div></pre></td></tr></table></figure></p>
-<h1 id="进入库"><a href="#进入库" class="headerlink" title="进入库"></a>进入库</h1><p>启动完成之后，在连接上MongoDB Shell，在其中执行以下命令才可进入到admin库中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">use admin </div><div class="line">db.auth(&quot;账户名称&quot;, &quot;密码&quot;)</div></pre></td></tr></table></figure></p>
-]]></content>
+    <content type="html"><![CDATA[<p>MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。</p><h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</span><br><span class="line">// 如果希望此账号只有读取的权限，则修改为</span><br><span class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</span><br></pre></td></tr></table></figure></p><p>执行完成之后，先停止MongoDB服务，在执行下面指令重新开启MongoDB服务：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongod --auth</span><br></pre></td></tr></table></figure></p><h1 id="进入库"><a href="#进入库" class="headerlink" title="进入库"></a>进入库</h1><p>启动完成之后，在连接上MongoDB Shell，在其中执行以下命令才可进入到admin库中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin </span><br><span class="line">db.auth(&quot;账户名称&quot;, &quot;密码&quot;)</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。&lt;/p&gt;
+      
+      
+        &lt;p&gt;MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。&lt;/p&gt;
 &lt;h1 id=&quot;创建新用户&quot;&gt;&lt;a href=&quot;#创建新用户&quot; class=&quot;headerl
+      
     
     </summary>
     
@@ -154,33 +131,24 @@
     <published>2016-12-28T03:38:01.000Z</published>
     <updated>2017-03-13T02:21:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在window上安转MongoDB，记录一下遇到的一些的问题。</p>
-<h1 id="windows上安装MongoDB"><a href="#windows上安装MongoDB" class="headerlink" title="windows上安装MongoDB"></a>windows上安装MongoDB</h1><p>首先去官网下载Windows安装包：<a href="https://www.mongodb.org/downloads" target="_blank" rel="external">https://www.mongodb.org/downloads</a><br>安装路径这里假设是安装在 <code>D:/soft/mongodb/</code>。<br>安装好之后，我们可以随便在一个目录下，比如在 <code>D:/</code> 根目录下创建一个目录 <code>D:\mongodb\</code>，进入该目录，新建data和logs两个目录。<br>然后打开控制台命令窗口（CMD），输入<code>D:\soft\mongodb\bin</code> 进入到安装目录下。<br>再执行：<code>mongod --dbpath d:/mongodb/data</code>，开启MongoDB服务，并将运行目录指向之前创建好的 <code>D:\mongodb\data</code> 下。<br>打开浏览器，进入：<code>http://127.0.0.1:27017</code>（window服务默认端口27017），这时你会看到以下提示语：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">You are trying to access MongoDB on the native driver port. For http diagnostic access, add 1000 to the port number</div></pre></td></tr></table></figure></p>
-<p>这说明MongoDB服务已经启动了。</p>
-<h1 id="添加MongoDB服务到windows本地服务中"><a href="#添加MongoDB服务到windows本地服务中" class="headerlink" title="添加MongoDB服务到windows本地服务中"></a>添加MongoDB服务到windows本地服务中</h1><p>上面的方法要保证MongoDB服务运行，必须每次都要重复输入命令才能开启。为了方便在windows上开启MongoDB服务，我们需要将MongoDB服务到windows本地服务中，并且设置随系统启动开启。<br>继续回到CMD中，在安装目录中（D:\soft\mongodb\bin）执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">mongod.exe --logpath d:/soft/mongodb/logs/mongodb.log --logappend --dbpath d:/soft/mongodb/data --directoryperdb --serviceName MongoDB -install --auth</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>此处注意 “–auth” 是将服务开启权限认证，这样别人需要账户和密码才能去访问你的数据库。<br>如果要开启认证，需要在前期运行时要在MongoDB服务中设置好账户密码。<br>详细方法可参考：<a href="http://www.mjpiero.cc/2016/12/28/MongoDB%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD/">MongoDB如何开启认证权限功能</a><br>如果不需要，或则选择后期再设置，可以不使用。</p>
-</blockquote>
-<p>上面执行完毕之后，会在windows服务下创建一个名为MongoDB的服务。<br>执行 <code>net start MongoDB</code> 便开启MongoDB服务了。<br>可以在windows的服务窗口中看见MongoDB的服务状态。<br><img src="/images/QQ截图20161228122836.png" alt=""></p>
-<h1 id="删除MongoDB服务"><a href="#删除MongoDB服务" class="headerlink" title="删除MongoDB服务"></a>删除MongoDB服务</h1><p>如果要删除MongoDB服务，首先先停止当前的MongoDB服务，这个可以去服务窗口停止。<br>然后在CMD中执行：<code>sc delete MongoDB</code><br>这样之前安装的服务就会被删除。</p>
-<h1 id="安装时遇到的一些问题"><a href="#安装时遇到的一些问题" class="headerlink" title="安装时遇到的一些问题"></a>安装时遇到的一些问题</h1><p>在安装时可能遇到的一些问题：</p>
-<h2 id="Windows不能在本地计算机启动MongoDB，错误代码-100"><a href="#Windows不能在本地计算机启动MongoDB，错误代码-100" class="headerlink" title="Windows不能在本地计算机启动MongoDB，错误代码 100"></a>Windows不能在本地计算机启动MongoDB，错误代码 100</h2><p><strong>解决办法：</strong> MongoDB安装目录\data\将此文件夹下的mongod.lock、storage.bson删除</p>
-<h2 id="连接数据库时发生错误-failed-to-execute-listdatabases-command"><a href="#连接数据库时发生错误-failed-to-execute-listdatabases-command" class="headerlink" title="连接数据库时发生错误 failed to execute listdatabases command"></a>连接数据库时发生错误 failed to execute listdatabases command</h2><p><strong>解决办法：</strong> 在安装服务的时候开启权限认证，确定一下账户密码是否有误。<br>如果是在添加服务的时候使用了”–auth”命令，则需要进入MongoDB服务中重新添加新的账户和密码。<br>详细方法可参考：<a href="http://www.mjpiero.cc/2016/12/28/MongoDB%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD/">MongoDB如何开启认证权限功能</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>最近在window上安转MongoDB，记录一下遇到的一些的问题。</p><h1 id="windows上安装MongoDB"><a href="#windows上安装MongoDB" class="headerlink" title="windows上安装MongoDB"></a>windows上安装MongoDB</h1><p>首先去官网下载Windows安装包：<a href="https://www.mongodb.org/downloads" target="_blank" rel="noopener">https://www.mongodb.org/downloads</a><br>安装路径这里假设是安装在 <code>D:/soft/mongodb/</code>。<br>安装好之后，我们可以随便在一个目录下，比如在 <code>D:/</code> 根目录下创建一个目录 <code>D:\mongodb\</code>，进入该目录，新建data和logs两个目录。<br>然后打开控制台命令窗口（CMD），输入<code>D:\soft\mongodb\bin</code> 进入到安装目录下。<br>再执行：<code>mongod --dbpath d:/mongodb/data</code>，开启MongoDB服务，并将运行目录指向之前创建好的 <code>D:\mongodb\data</code> 下。<br>打开浏览器，进入：<code>http://127.0.0.1:27017</code>（window服务默认端口27017），这时你会看到以下提示语：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">You are trying to access MongoDB on the native driver port. For http diagnostic access, add 1000 to the port number</span><br></pre></td></tr></table></figure></p><p>这说明MongoDB服务已经启动了。</p><h1 id="添加MongoDB服务到windows本地服务中"><a href="#添加MongoDB服务到windows本地服务中" class="headerlink" title="添加MongoDB服务到windows本地服务中"></a>添加MongoDB服务到windows本地服务中</h1><p>上面的方法要保证MongoDB服务运行，必须每次都要重复输入命令才能开启。为了方便在windows上开启MongoDB服务，我们需要将MongoDB服务到windows本地服务中，并且设置随系统启动开启。<br>继续回到CMD中，在安装目录中（D:\soft\mongodb\bin）执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongod.exe --logpath d:/soft/mongodb/logs/mongodb.log --logappend --dbpath d:/soft/mongodb/data --directoryperdb --serviceName MongoDB -install --auth</span><br></pre></td></tr></table></figure></p><blockquote><p>此处注意 “–auth” 是将服务开启权限认证，这样别人需要账户和密码才能去访问你的数据库。<br>如果要开启认证，需要在前期运行时要在MongoDB服务中设置好账户密码。<br>详细方法可参考：<a href="http://www.mjpiero.cc/2016/12/28/MongoDB%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD/">MongoDB如何开启认证权限功能</a><br>如果不需要，或则选择后期再设置，可以不使用。</p></blockquote><p>上面执行完毕之后，会在windows服务下创建一个名为MongoDB的服务。<br>执行 <code>net start MongoDB</code> 便开启MongoDB服务了。<br>可以在windows的服务窗口中看见MongoDB的服务状态。<br><img src="/images/QQ截图20161228122836.png" alt=""></p><h1 id="删除MongoDB服务"><a href="#删除MongoDB服务" class="headerlink" title="删除MongoDB服务"></a>删除MongoDB服务</h1><p>如果要删除MongoDB服务，首先先停止当前的MongoDB服务，这个可以去服务窗口停止。<br>然后在CMD中执行：<code>sc delete MongoDB</code><br>这样之前安装的服务就会被删除。</p><h1 id="安装时遇到的一些问题"><a href="#安装时遇到的一些问题" class="headerlink" title="安装时遇到的一些问题"></a>安装时遇到的一些问题</h1><p>在安装时可能遇到的一些问题：</p><h2 id="Windows不能在本地计算机启动MongoDB，错误代码-100"><a href="#Windows不能在本地计算机启动MongoDB，错误代码-100" class="headerlink" title="Windows不能在本地计算机启动MongoDB，错误代码 100"></a>Windows不能在本地计算机启动MongoDB，错误代码 100</h2><p><strong>解决办法：</strong> MongoDB安装目录\data\将此文件夹下的mongod.lock、storage.bson删除</p><h2 id="连接数据库时发生错误-failed-to-execute-listdatabases-command"><a href="#连接数据库时发生错误-failed-to-execute-listdatabases-command" class="headerlink" title="连接数据库时发生错误 failed to execute listdatabases command"></a>连接数据库时发生错误 failed to execute listdatabases command</h2><p><strong>解决办法：</strong> 在安装服务的时候开启权限认证，确定一下账户密码是否有误。<br>如果是在添加服务的时候使用了”–auth”命令，则需要进入MongoDB服务中重新添加新的账户和密码。<br>详细方法可参考：<a href="http://www.mjpiero.cc/2016/12/28/MongoDB%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD/">MongoDB如何开启认证权限功能</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;最近在window上安转MongoDB，记录一下遇到的一些的问题。&lt;/p&gt;
+      
+      
+        &lt;p&gt;最近在window上安转MongoDB，记录一下遇到的一些的问题。&lt;/p&gt;
 &lt;h1 id=&quot;windows上安装MongoDB&quot;&gt;&lt;a href=&quot;#windows上安装MongoDB&quot; class=&quot;headerlink&quot; title=&quot;windows上安装MongoDB
+      
     
     </summary>
     
       <category term="mongodb" scheme="http://www.mjpiero.cc/categories/mongodb/"/>
     
     
-      <category term="mongodb" scheme="http://www.mjpiero.cc/tags/mongodb/"/>
-    
       <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="mongodb" scheme="http://www.mjpiero.cc/tags/mongodb/"/>
     
   </entry>
   
@@ -191,12 +159,14 @@
     <published>2016-12-08T04:13:38.000Z</published>
     <updated>2018-02-04T10:57:42.000Z</updated>
     
-    <content type="html"><![CDATA[<p>我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">;(function (name, definition) &#123;</div><div class="line"></div><div class="line">// 检测上下文环境是否为AMD或CMD</div><div class="line">if (typeof define === &quot;function&quot; &amp;&amp; ( define.amd || define.cmd ) ) &#123;</div><div class="line"></div><div class="line">	define(definition);</div><div class="line"></div><div class="line">// 检测上下文环境是否为Node</div><div class="line">&#125; else if ( typeof module !== &apos;undefined&apos; &amp;&amp; module.exports ) &#123;</div><div class="line"></div><div class="line">	module.exports = definition();</div><div class="line"></div><div class="line">&#125; else &#123;</div><div class="line">	// 将模块的执行结果在window变量中，在浏览器中this指向window对象</div><div class="line">	this[name] = definition();</div><div class="line">&#125;</div><div class="line">&#125;)(&apos;hello&apos;, function () &#123;</div><div class="line">	var hello = function () &#123;&#125;;</div><div class="line">	return hello;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-]]></content>
+    <content type="html"><![CDATA[<p>我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;(function (name, definition) &#123;</span><br><span class="line"></span><br><span class="line">// 检测上下文环境是否为AMD或CMD</span><br><span class="line">if (typeof define === &quot;function&quot; &amp;&amp; ( define.amd || define.cmd ) ) &#123;</span><br><span class="line"></span><br><span class="line">define(definition);</span><br><span class="line"></span><br><span class="line">// 检测上下文环境是否为Node</span><br><span class="line">&#125; else if ( typeof module !== &apos;undefined&apos; &amp;&amp; module.exports ) &#123;</span><br><span class="line"></span><br><span class="line">module.exports = definition();</span><br><span class="line"></span><br><span class="line">&#125; else &#123;</span><br><span class="line">// 将模块的执行结果在window变量中，在浏览器中this指向window对象</span><br><span class="line">this[name] = definition();</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(&apos;hello&apos;, function () &#123;</span><br><span class="line">var hello = function () &#123;&#125;;</span><br><span class="line">return hello;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;d
+      
+      
+        &lt;p&gt;我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;s
+      
     
     </summary>
     
@@ -214,59 +184,16 @@
     <published>2016-12-08T02:39:20.000Z</published>
     <updated>2016-12-08T04:07:40.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在说到NPM之前，应该先提及CommonJS的包规范。</p>
-<p>CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。</p>
-<h1 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h1><p>包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。</p>
-<ul>
-<li>package.json ———— 包描述文件。</li>
-<li>bin ———— 用于存放可执行二进制文件的目录。</li>
-<li>lib ———— 用于存放js代码的目录。</li>
-<li>doc ———— 用于存放文档的目录。</li>
-<li>test ———— 用于存放单元测试用例的代码。</li>
-</ul>
-<h1 id="包描述文件"><a href="#包描述文件" class="headerlink" title="包描述文件"></a>包描述文件</h1><p>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件（package.json），位于根目录下。</p>
-<p>这里我们就只介绍 NPM 的 package.json 文件定义了哪些必需的字段：</p>
-<ul>
-<li>name ———— 项目名称。</li>
-<li>version ———— 版本。在 <a href="http://semver.org/" target="_blank" rel="external">http://semver.org/</a> 上有详细的定义，通常为 major.minor.revision 格式。</li>
-<li>author ———— 作者。</li>
-<li>description ———— 项目简介。</li>
-<li>keywords ———— 关键词数组。用于NPM中做分类搜索的。</li>
-<li>repository ———— 托管源代码的位置列表。示例：<code>{ &quot;type&quot;: &quot;git&quot;, &quot;url&quot;: &quot;https://package/path&quot; }</code></li>
-<li>license ———— 当前包所使用的许可证列表。示例：<code>[{ &quot;type&quot;: &quot;GPLv2&quot;, &quot;url&quot;: &quot;http://www.example.com/licenses/gpl.html&quot;, }]</code></li>
-<li>engines ———— 指明该项目所需要的nodejs版本。</li>
-<li>bugs ———— 返回bug的网页地址或则邮箱地址。</li>
-<li>contributors ———— 贡献者列表。</li>
-<li>scripts ———— 指定了运行脚本命令的npm命令行缩写。可以自行写好运行脚本。</li>
-<li>dependencies ———— 指定了项目运行所依赖的模块。<code>npm install XX --save</code></li>
-<li>devDependencies ———— 指定项目开发所需要的模块。<code>npm install XX --save-dev</code><blockquote>
-<ul>
-<li><strong>波浪号（tilde）+指定版本：</strong>比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。</li>
-<li><strong>插入号（caret）+指定版本：</strong>比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。</li>
-<li><strong>latest：</strong>安装最新版本。</li>
-</ul>
-</blockquote>
-</li>
-<li>peerDependencies ———— 用来供插件指定其所需要的主工具的版本（从npm 3.0版开始，peerDependencies不再会默认安装了）。</li>
-<li>bin ———— 用来指定各个内部命令对应的可执行文件的位置。</li>
-<li>main ———— 指定加载的入口文件。</li>
-<li>config ———— 用于向环境变量输出值。示例：<code>{ &quot;port&quot; : &quot;8080&quot; }</code>，则在<code>server.js</code>脚本就可以直接引用config里的值 <code>http.createServer(...).listen(process.env.npm_package_config_port)</code></li>
-</ul>
-<p>下面是express项目的package.json文件，可以参考下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;: &quot;express&quot;,</div><div class="line">	&quot;description&quot;: &quot;Sinatra inspired web development framework&quot;,</div><div class="line">	&quot;version&quot;: &quot;3.3.4&quot;,</div><div class="line">	&quot;author&quot;: &quot;TJ Holowaychuk &lt;tj@vision-media.ca&gt;&quot;,</div><div class="line">	&quot;contributors&quot;: [</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;TJ Holowaychuk&quot;,</div><div class="line">			&quot;email&quot;: &quot;tj@vision-media.ca&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Aaron Heckmann&quot;,</div><div class="line">			&quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Ciaran Jessup&quot;,</div><div class="line">			&quot;email&quot;: &quot;ciaranj@gmail.com&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Guillermo Rauch&quot;,</div><div class="line">			&quot;email&quot;: &quot;rauchg@gmail.com&quot;</div><div class="line">		&#125;</div><div class="line">	],</div><div class="line">	&quot;dependencies&quot;: &#123;</div><div class="line">		&quot;connect&quot;: &quot;2.8.4&quot;,</div><div class="line">		&quot;commander&quot;: &quot;1.2.0&quot;,</div><div class="line">		&quot;range-parser&quot;: &quot;0.0.4&quot;,</div><div class="line">		&quot;mkdirp&quot;: &quot;0.3.5&quot;,</div><div class="line">		&quot;cookie&quot;: &quot;0.1.0&quot;,</div><div class="line">		&quot;buffer-crc32&quot;: &quot;0.2.1&quot;,</div><div class="line">		&quot;fresh&quot;: &quot;0.1.0&quot;,</div><div class="line">		&quot;methods&quot;: &quot;0.0.1&quot;,</div><div class="line">		&quot;send&quot;: &quot;0.1.3&quot;,</div><div class="line">		&quot;cookie-signature&quot;: &quot;1.0.1&quot;,</div><div class="line">		&quot;debug&quot;: &quot;*&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;devDependencies&quot;: &#123;</div><div class="line">		&quot;ejs&quot;: &quot;*&quot;,</div><div class="line">		&quot;mocha&quot;: &quot;*&quot;,</div><div class="line">		&quot;jade&quot;: &quot;0.30.0&quot;,</div><div class="line">		&quot;hjs&quot;: &quot;*&quot;,</div><div class="line">		&quot;stylus&quot;: &quot;*&quot;,</div><div class="line">		&quot;should&quot;: &quot;*&quot;,</div><div class="line">		&quot;connect-redis&quot;: &quot;*&quot;,</div><div class="line">		&quot;marked&quot;: &quot;*&quot;,</div><div class="line">		&quot;supertest&quot;: &quot;0.6.0&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;keywords&quot;: [</div><div class="line">		&quot;express&quot;,</div><div class="line">		&quot;framework&quot;,</div><div class="line">		&quot;sinatra&quot;,</div><div class="line">		&quot;web&quot;,</div><div class="line">		&quot;rest&quot;,</div><div class="line">		&quot;restful&quot;,</div><div class="line">		&quot;router&quot;,</div><div class="line">		&quot;app&quot;,</div><div class="line">		&quot;api&quot;</div><div class="line">	],</div><div class="line">	&quot;repository&quot;: &quot;git://github.com/visionmedia/express&quot;,</div><div class="line">	&quot;main&quot;: &quot;index&quot;,</div><div class="line">	&quot;bin&quot;: &#123;</div><div class="line">		&quot;express&quot;: &quot;./bin/express&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;scripts&quot;: &#123;</div><div class="line">		&quot;prepublish&quot;: &quot;npm prune&quot;,</div><div class="line">		&quot;test&quot;: &quot;make test&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;engines&quot;: &#123;</div><div class="line">	&quot;node&quot;: &quot;*&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>参考文献：</strong></p>
-<ul>
-<li>《深入浅出Node.js》朴灵</li>
-<li><a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/packagejson.html</a></li>
-</ul>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<p>在说到NPM之前，应该先提及CommonJS的包规范。</p><p>CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。</p><h1 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h1><p>包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。</p><ul><li>package.json ———— 包描述文件。</li><li>bin ———— 用于存放可执行二进制文件的目录。</li><li>lib ———— 用于存放js代码的目录。</li><li>doc ———— 用于存放文档的目录。</li><li>test ———— 用于存放单元测试用例的代码。</li></ul><h1 id="包描述文件"><a href="#包描述文件" class="headerlink" title="包描述文件"></a>包描述文件</h1><p>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件（package.json），位于根目录下。</p><p>这里我们就只介绍 NPM 的 package.json 文件定义了哪些必需的字段：</p><ul><li>name ———— 项目名称。</li><li>version ———— 版本。在 <a href="http://semver.org/" target="_blank" rel="noopener">http://semver.org/</a> 上有详细的定义，通常为 major.minor.revision 格式。</li><li>author ———— 作者。</li><li>description ———— 项目简介。</li><li>keywords ———— 关键词数组。用于NPM中做分类搜索的。</li><li>repository ———— 托管源代码的位置列表。示例：<code>{ &quot;type&quot;: &quot;git&quot;, &quot;url&quot;: &quot;https://package/path&quot; }</code></li><li>license ———— 当前包所使用的许可证列表。示例：<code>[{ &quot;type&quot;: &quot;GPLv2&quot;, &quot;url&quot;: &quot;http://www.example.com/licenses/gpl.html&quot;, }]</code></li><li>engines ———— 指明该项目所需要的nodejs版本。</li><li>bugs ———— 返回bug的网页地址或则邮箱地址。</li><li>contributors ———— 贡献者列表。</li><li>scripts ———— 指定了运行脚本命令的npm命令行缩写。可以自行写好运行脚本。</li><li>dependencies ———— 指定了项目运行所依赖的模块。<code>npm install XX --save</code></li><li>devDependencies ———— 指定项目开发所需要的模块。<code>npm install XX --save-dev</code><blockquote><ul><li><strong>波浪号（tilde）+指定版本：</strong>比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。</li><li><strong>插入号（caret）+指定版本：</strong>比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。</li><li><strong>latest：</strong>安装最新版本。</li></ul></blockquote></li><li>peerDependencies ———— 用来供插件指定其所需要的主工具的版本（从npm 3.0版开始，peerDependencies不再会默认安装了）。</li><li>bin ———— 用来指定各个内部命令对应的可执行文件的位置。</li><li>main ———— 指定加载的入口文件。</li><li>config ———— 用于向环境变量输出值。示例：<code>{ &quot;port&quot; : &quot;8080&quot; }</code>，则在<code>server.js</code>脚本就可以直接引用config里的值 <code>http.createServer(...).listen(process.env.npm_package_config_port)</code></li></ul><p>下面是express项目的package.json文件，可以参考下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;express&quot;,</span><br><span class="line">&quot;description&quot;: &quot;Sinatra inspired web development framework&quot;,</span><br><span class="line">&quot;version&quot;: &quot;3.3.4&quot;,</span><br><span class="line">&quot;author&quot;: &quot;TJ Holowaychuk &lt;tj@vision-media.ca&gt;&quot;,</span><br><span class="line">&quot;contributors&quot;: [</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;TJ Holowaychuk&quot;,</span><br><span class="line">&quot;email&quot;: &quot;tj@vision-media.ca&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Aaron Heckmann&quot;,</span><br><span class="line">&quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Ciaran Jessup&quot;,</span><br><span class="line">&quot;email&quot;: &quot;ciaranj@gmail.com&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Guillermo Rauch&quot;,</span><br><span class="line">&quot;email&quot;: &quot;rauchg@gmail.com&quot;</span><br><span class="line">&#125;</span><br><span class="line">],</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">&quot;connect&quot;: &quot;2.8.4&quot;,</span><br><span class="line">&quot;commander&quot;: &quot;1.2.0&quot;,</span><br><span class="line">&quot;range-parser&quot;: &quot;0.0.4&quot;,</span><br><span class="line">&quot;mkdirp&quot;: &quot;0.3.5&quot;,</span><br><span class="line">&quot;cookie&quot;: &quot;0.1.0&quot;,</span><br><span class="line">&quot;buffer-crc32&quot;: &quot;0.2.1&quot;,</span><br><span class="line">&quot;fresh&quot;: &quot;0.1.0&quot;,</span><br><span class="line">&quot;methods&quot;: &quot;0.0.1&quot;,</span><br><span class="line">&quot;send&quot;: &quot;0.1.3&quot;,</span><br><span class="line">&quot;cookie-signature&quot;: &quot;1.0.1&quot;,</span><br><span class="line">&quot;debug&quot;: &quot;*&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">&quot;ejs&quot;: &quot;*&quot;,</span><br><span class="line">&quot;mocha&quot;: &quot;*&quot;,</span><br><span class="line">&quot;jade&quot;: &quot;0.30.0&quot;,</span><br><span class="line">&quot;hjs&quot;: &quot;*&quot;,</span><br><span class="line">&quot;stylus&quot;: &quot;*&quot;,</span><br><span class="line">&quot;should&quot;: &quot;*&quot;,</span><br><span class="line">&quot;connect-redis&quot;: &quot;*&quot;,</span><br><span class="line">&quot;marked&quot;: &quot;*&quot;,</span><br><span class="line">&quot;supertest&quot;: &quot;0.6.0&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;keywords&quot;: [</span><br><span class="line">&quot;express&quot;,</span><br><span class="line">&quot;framework&quot;,</span><br><span class="line">&quot;sinatra&quot;,</span><br><span class="line">&quot;web&quot;,</span><br><span class="line">&quot;rest&quot;,</span><br><span class="line">&quot;restful&quot;,</span><br><span class="line">&quot;router&quot;,</span><br><span class="line">&quot;app&quot;,</span><br><span class="line">&quot;api&quot;</span><br><span class="line">],</span><br><span class="line">&quot;repository&quot;: &quot;git://github.com/visionmedia/express&quot;,</span><br><span class="line">&quot;main&quot;: &quot;index&quot;,</span><br><span class="line">&quot;bin&quot;: &#123;</span><br><span class="line">&quot;express&quot;: &quot;./bin/express&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">&quot;prepublish&quot;: &quot;npm prune&quot;,</span><br><span class="line">&quot;test&quot;: &quot;make test&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;engines&quot;: &#123;</span><br><span class="line">&quot;node&quot;: &quot;*&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><blockquote><p><strong>参考文献：</strong></p><ul><li>《深入浅出Node.js》朴灵</li><li><a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/nodejs/packagejson.html</a></li></ul></blockquote>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在说到NPM之前，应该先提及CommonJS的包规范。&lt;/p&gt;
+      
+      
+        &lt;p&gt;在说到NPM之前，应该先提及CommonJS的包规范。&lt;/p&gt;
 &lt;p&gt;CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。&lt;/p&gt;
 &lt;h1 id=&quot;包结构&quot;&gt;&lt;a href=&quot;#包结构&quot; class=&quot;headerlink&quot; title=&quot;包结构&quot;&gt;&lt;/
+      
     
     </summary>
     
@@ -284,20 +211,14 @@
     <published>2016-10-21T10:16:56.000Z</published>
     <updated>2016-10-26T10:13:32.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="http://materializecss.com/" target="_blank" rel="external">Materialize</a> 是基于Material Design的UI框架。</p>
-<p>使用Materialize框架制作了一个WIKI文档的模板页面。</p>
-<p><img src="/images/QQ截图20160708183414.png" alt=""></p>
-<h1 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h1><ul>
-<li>动态生成左侧栏导航</li>
-<li>生成面包屑（这个一直没找到很好的控制方法，肯定是我蠢！）</li>
-<li>【伪】templates加载（其实是想仿照做一个路由加载指定模块的功能）</li>
-</ul>
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>github:  <a href="https://github.com/MJPiero/wiki-materialize" target="_blank" rel="external">https://github.com/MJPiero/wiki-materialize</a></p>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="http://materializecss.com/" target="_blank" rel="noopener">Materialize</a> 是基于Material Design的UI框架。</p><p>使用Materialize框架制作了一个WIKI文档的模板页面。</p><p><img src="/images/QQ截图20160708183414.png" alt=""></p><h1 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h1><ul><li>动态生成左侧栏导航</li><li>生成面包屑（这个一直没找到很好的控制方法，肯定是我蠢！）</li><li>【伪】templates加载（其实是想仿照做一个路由加载指定模块的功能）</li></ul><h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>github:  <a href="https://github.com/MJPiero/wiki-materialize" target="_blank" rel="noopener">https://github.com/MJPiero/wiki-materialize</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://materializecss.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ma
+      
+      
+        &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://materializecss.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ma
+      
     
     </summary>
     
@@ -315,21 +236,15 @@
     <published>2016-10-21T08:55:05.000Z</published>
     <updated>2016-10-26T10:13:56.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>制作的一款类似于接金币一类的小游戏。公司为了在端午节做宣传用的。</p>
-<p>一款好的游戏离不开好的设计，在此先给亲爱的设计妹纸点个赞~ (❁’▽’❁)</p>
-<p>游戏效果如下：</p>
-<p><img src="/images/808279392447213144-576x1024.jpg" alt=""></p>
-<p>第一次尝试用createJs框架去搭建H5游戏，确实比起以前自己用canvas写的要方面很多，也流畅了不少。</p>
-<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p>在微信上发布的游戏，请用微信扫码查看：</p>
-<p><img src="http://pan.baidu.com/share/qrcode?w=150&amp;h=150&amp;url=http://v.mob.com/wechat/catchzongzi/index.php" alt=""></p>
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>github：<a href="https://github.com/MJPiero/catchzongzi" target="_blank" rel="external">https://github.com/MJPiero/catchzongzi</a></p>
-<p>另外也在github上分享了源码。说实话本人对于我写的不算满意，因为…… 用了太多愚蠢的方法，不过当时时间有点赶，就没有花太多时间去优化。也希望大家能提出更好的优化方法来。大家一起学习一起奋进嘞嘿！！！！</p>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>制作的一款类似于接金币一类的小游戏。公司为了在端午节做宣传用的。</p><p>一款好的游戏离不开好的设计，在此先给亲爱的设计妹纸点个赞~ (❁’▽’❁)</p><p>游戏效果如下：</p><p><img src="/images/808279392447213144-576x1024.jpg" alt=""></p><p>第一次尝试用createJs框架去搭建H5游戏，确实比起以前自己用canvas写的要方面很多，也流畅了不少。</p><h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p>在微信上发布的游戏，请用微信扫码查看：</p><p><img src="http://pan.baidu.com/share/qrcode?w=150&amp;h=150&amp;url=http://v.mob.com/wechat/catchzongzi/index.php" alt=""></p><h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>github：<a href="https://github.com/MJPiero/catchzongzi" target="_blank" rel="noopener">https://github.com/MJPiero/catchzongzi</a></p><p>另外也在github上分享了源码。说实话本人对于我写的不算满意，因为…… 用了太多愚蠢的方法，不过当时时间有点赶，就没有花太多时间去优化。也希望大家能提出更好的优化方法来。大家一起学习一起奋进嘞嘿！！！！</p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;制作的一款类似于接金币一类的小游戏。公司为了在端午节做宣传用的。&lt;/p&gt;
+      
+      
+        &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;制作的一款类似于接金币一类的小游戏。公司为了在端午节做宣传用的。&lt;/p&gt;
 &lt;p&gt;一款好的游戏离不开好的设计，在此先给亲爱的设计妹纸点个赞~ 
+      
     
     </summary>
     
@@ -351,30 +266,15 @@
     <published>2016-10-21T08:40:10.000Z</published>
     <updated>2016-12-08T02:40:28.000Z</updated>
     
-    <content type="html"><![CDATA[<p>这个问题我是在替换gem镜像路径的时候遇到的。</p>
-<p>详情见：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" target="_blank" rel="external">解决国内Ruby Gem Install 失败问题</a></p>
-<p>这个其实也折腾了我一个多小时在网上找解决办法。</p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>相信有部分的人在按照上面方法安装的时候出现了和我一样的问题：</p>
-<p><img src="/images/QQ截图20160413163537.png" alt=""></p>
-<p>在网上搜索一圈之后，解释是：</p>
-<blockquote>
-<p>ruby 没有包含 SSL 证书，所以 https 的链接被服务器拒绝。</p>
-</blockquote>
-<p>本来这个情况下，只要改用http路径就好了，偏偏淘宝已经停止基于HTTP协议的镜像服务了。</p>
-<p>于是我继续在网上搜了一圈，找到了如下的解决办法（来源：<a href="https://gist.github.com/fnichol/867550" target="_blank" rel="external">https://gist.github.com/fnichol/867550</a> ）:</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>先下载证书 <a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="external">http://curl.haxx.se/ca/cacert.pem</a> ，然后再环境变量里设置 SSL_CERT_FILE 这个环境变量，并指向 cacert.pem 文件。</p>
-<p><img src="/images/QQ截图20160413165101.png" alt=""></p>
-<p>之后再在<code>cmd.exe</code>中输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">set SSL_CERT_FILE=C:\path\to\cacert.pem</div></pre></td></tr></table></figure>
-<p>之后再按照上面的方法来操作一遍~~~</p>
-<p><img src="/images/QQ截图20160413165633.png" alt=""></p>
-<p>Perfect！！</p>
-]]></content>
+    <content type="html"><![CDATA[<p>这个问题我是在替换gem镜像路径的时候遇到的。</p><p>详情见：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">解决国内Ruby Gem Install 失败问题</a></p><p>这个其实也折腾了我一个多小时在网上找解决办法。</p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>相信有部分的人在按照上面方法安装的时候出现了和我一样的问题：</p><p><img src="/images/QQ截图20160413163537.png" alt=""></p><p>在网上搜索一圈之后，解释是：</p><blockquote><p>ruby 没有包含 SSL 证书，所以 https 的链接被服务器拒绝。</p></blockquote><p>本来这个情况下，只要改用http路径就好了，偏偏淘宝已经停止基于HTTP协议的镜像服务了。</p><p>于是我继续在网上搜了一圈，找到了如下的解决办法（来源：<a href="https://gist.github.com/fnichol/867550" target="_blank" rel="noopener">https://gist.github.com/fnichol/867550</a> ）:</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>先下载证书 <a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="noopener">http://curl.haxx.se/ca/cacert.pem</a> ，然后再环境变量里设置 SSL_CERT_FILE 这个环境变量，并指向 cacert.pem 文件。</p><p><img src="/images/QQ截图20160413165101.png" alt=""></p><p>之后再在<code>cmd.exe</code>中输入命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set SSL_CERT_FILE=C:\path\to\cacert.pem</span><br></pre></td></tr></table></figure><p>之后再按照上面的方法来操作一遍~~~</p><p><img src="/images/QQ截图20160413165633.png" alt=""></p><p>Perfect！！</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这个问题我是在替换gem镜像路径的时候遇到的。&lt;/p&gt;
+      
+      
+        &lt;p&gt;这个问题我是在替换gem镜像路径的时候遇到的。&lt;/p&gt;
 &lt;p&gt;详情见：&lt;a href=&quot;http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-
+      
     
     </summary>
     
@@ -394,21 +294,15 @@
     <published>2016-10-21T06:55:48.000Z</published>
     <updated>2016-12-08T02:40:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。</p>
-<p>淘宝团队提供了国内可以快速访问的镜像地址，官方地址：<a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a></p>
-<p>官方有详细的替换的方法，这里我也按照我的流程过一遍。</p>
-<h1 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h1><p>首先，我的系统是win7。</p>
-<p>在window上安装Ruby，可以通过下载RubyInstaller工具（ <a href="http://rubyinstaller.org/" target="_blank" rel="external">http://rubyinstaller.org/</a> ）快速安装：</p>
-<p><img src="/images/QQ截图20160413155659.png" alt=""></p>
-<h1 id="替换成taobao镜像"><a href="#替换成taobao镜像" class="headerlink" title="替换成taobao镜像"></a>替换成taobao镜像</h1><p>之后 <code>win+R</code> 键打开运行窗口，输入cmd 快速打开命令行程序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/</div><div class="line">$ gem sources -l</div><div class="line">*** CURRENT SOURCES ***</div><div class="line"></div><div class="line">https://ruby.taobao.org</div><div class="line"># 请确保只有 ruby.taobao.org</div><div class="line">$ gem install rails</div></pre></td></tr></table></figure></p>
-<p>以上是淘宝官方的方法。很简单，然而现实总是没这么顺利…</p>
-<p>和我一样安装遇到SSL证书错误的请看这里：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/" target="_blank" rel="external">解决gem install SSL 证书错误</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。</p><p>淘宝团队提供了国内可以快速访问的镜像地址，官方地址：<a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a></p><p>官方有详细的替换的方法，这里我也按照我的流程过一遍。</p><h1 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h1><p>首先，我的系统是win7。</p><p>在window上安装Ruby，可以通过下载RubyInstaller工具（ <a href="http://rubyinstaller.org/" target="_blank" rel="noopener">http://rubyinstaller.org/</a> ）快速安装：</p><p><img src="/images/QQ截图20160413155659.png" alt=""></p><h1 id="替换成taobao镜像"><a href="#替换成taobao镜像" class="headerlink" title="替换成taobao镜像"></a>替换成taobao镜像</h1><p>之后 <code>win+R</code> 键打开运行窗口，输入cmd 快速打开命令行程序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line"></span><br><span class="line">https://ruby.taobao.org</span><br><span class="line"># 请确保只有 ruby.taobao.org</span><br><span class="line">$ gem install rails</span><br></pre></td></tr></table></figure></p><p>以上是淘宝官方的方法。很简单，然而现实总是没这么顺利…</p><p>和我一样安装遇到SSL证书错误的请看这里：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/" target="_blank" rel="noopener">解决gem install SSL 证书错误</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。&lt;/p&gt;
+      
+      
+        &lt;p&gt;做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。&lt;/p&gt;
 &lt;p&gt;淘宝团队提供了国内可以快速访问的镜像地址，官方地址：&lt;a href=&quot;https://ruby.taobao.org/&quot;
+      
     
     </summary>
     
@@ -428,17 +322,16 @@
     <published>2016-10-21T06:38:33.000Z</published>
     <updated>2016-10-21T06:42:56.000Z</updated>
     
-    <content type="html"><![CDATA[<p>首先，欢迎你手残点进了此地！！！ξ( ✿＞◡❛)</p>
-<p>博主前端开发人员一枚，于今涉足行业将近2年，在之前干过漫画编辑做过网页设计，可谓上得了厅堂下得了厨房。然而水平有限，寻求志同道合人士共同学习进步。 (´∩ω∩｀)</p>
-<p>此博客内容仅仅是自己学习上的一些心得总结，并不一定是正确可取的，还希望发现BUG的小伙伴们积极指出错误！</p>
-<p>知错能改，善莫大焉。(⁰▿⁰) 还望大家文明交流，博主其实是玻璃心。(´▽`ʃ♡ƪ)</p>
-]]></content>
+    <content type="html"><![CDATA[<p>首先，欢迎你手残点进了此地！！！ξ( ✿＞◡❛)</p><p>博主前端开发人员一枚，于今涉足行业将近2年，在之前干过漫画编辑做过网页设计，可谓上得了厅堂下得了厨房。然而水平有限，寻求志同道合人士共同学习进步。 (´∩ω∩｀)</p><p>此博客内容仅仅是自己学习上的一些心得总结，并不一定是正确可取的，还希望发现BUG的小伙伴们积极指出错误！</p><p>知错能改，善莫大焉。(⁰▿⁰) 还望大家文明交流，博主其实是玻璃心。(´▽`ʃ♡ƪ)</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;首先，欢迎你手残点进了此地！！！ξ( ✿＞◡❛)&lt;/p&gt;
+      
+      
+        &lt;p&gt;首先，欢迎你手残点进了此地！！！ξ( ✿＞◡❛)&lt;/p&gt;
 &lt;p&gt;博主前端开发人员一枚，于今涉足行业将近2年，在之前干过漫画编辑做过网页设计，可谓上得了厅堂下得了厨房。然而水平有限，寻求志同道合人士共同学习进步。 (´∩ω∩｀)&lt;/p&gt;
 &lt;p&gt;此博客内容仅仅是自己学习上的一些
+      
     
     </summary>
     

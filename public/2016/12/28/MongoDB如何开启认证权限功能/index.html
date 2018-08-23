@@ -10,19 +10,18 @@
   
   
   <meta name="keywords" content="mongodb">
-  <meta name="description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。
-创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+  <meta name="description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB如何开启认证权限功能">
 <meta property="og:url" content="http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/index.html">
-<meta property="og:site_name" content="MJPiero's Blog">
-<meta property="og:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。
-创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-12-28T06:24:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB如何开启认证权限功能">
-<meta name="twitter:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。
-创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta name="twitter:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
   
     <link rel="alternative" href="/atom.xml" title="MJPiero&#39;s Blog" type="application/atom+xml">
   
@@ -170,9 +169,9 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。</p>
-<h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">use admin</div><div class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</div><div class="line">// 如果希望此账号只有读取的权限，则修改为</div><div class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</div></pre></td></tr></table></figure></p>
-<p>执行完成之后，先停止MongoDB服务，在执行下面指令重新开启MongoDB服务：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">mongod --auth</div></pre></td></tr></table></figure></p>
-<h1 id="进入库"><a href="#进入库" class="headerlink" title="进入库"></a>进入库</h1><p>启动完成之后，在连接上MongoDB Shell，在其中执行以下命令才可进入到admin库中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">use admin </div><div class="line">db.auth(&quot;账户名称&quot;, &quot;密码&quot;)</div></pre></td></tr></table></figure></p>
+<h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</span><br><span class="line">// 如果希望此账号只有读取的权限，则修改为</span><br><span class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</span><br></pre></td></tr></table></figure></p>
+<p>执行完成之后，先停止MongoDB服务，在执行下面指令重新开启MongoDB服务：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongod --auth</span><br></pre></td></tr></table></figure></p>
+<h1 id="进入库"><a href="#进入库" class="headerlink" title="进入库"></a>进入库</h1><p>启动完成之后，在连接上MongoDB Shell，在其中执行以下命令才可进入到admin库中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin </span><br><span class="line">db.auth(&quot;账户名称&quot;, &quot;密码&quot;)</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
