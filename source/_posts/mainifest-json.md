@@ -19,7 +19,7 @@ mainifest.json 提供了将网站书签保存到设备主屏幕的功能。当�
 
 >注：尽管您可以在任何网站上使用该文件，它们却是 PWA 的必备要素。
 
-###创建清单
+## 创建清单
 下面是一个示例：
 ```
 {
@@ -51,13 +51,13 @@ mainifest.json 提供了将网站书签保存到设备主屏幕的功能。当�
 - 在用户主屏幕上用作文本的 short_name。
 - 在网络应用安装横幅中使用的 name。
 
-###将清单的相关信息告知浏览器
+## 将清单的相关信息告知浏览器
 在您创建清单且将清单添加到您的网站之后，将 link 标记添加到包含网络应用的所有页面上，如下所示：
 ```
 <link rel="manifest" href="/manifest.json">
 ```
 
-###测试您的清单
+## 测试您的清单
 如果您想要手动验证网络应用清单是否已正确设置，请使用 Chrome DevTools 的 Application 面板上的 Manifest 标签。
 
 ![](https://developers.google.com/web/fundamentals/web-app-manifest/images/devtools-manifest.png?hl=zh-cn)

@@ -5,7 +5,7 @@
 # Site
 title: MJPiero's Blog
 subtitle: 一只有节操的前端喵╮(╯_╰)╭。
-description:
+description: MJPiero 个人博客
 author: MJPiero
 email: merlu.majing@gmail.com
 language: zh-CN
@@ -64,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo_card
+theme: indigo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -18,7 +18,7 @@ $ find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 
 ```
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-```　　
+```
 
 也可以使用 homebrew 安装 tree 命令行：
 ```
