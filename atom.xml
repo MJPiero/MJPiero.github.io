@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-08-23T04:18:16.817Z</updated>
+  <updated>2018-08-23T04:29:51.401Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mainifest.json</title>
+    <link href="http://www.mjpiero.cc/2018/08/23/mainifest-json/"/>
+    <id>http://www.mjpiero.cc/2018/08/23/mainifest-json/</id>
+    <published>2018-08-23T04:24:55.000Z</published>
+    <updated>2018-08-23T04:29:51.401Z</updated>
+    
+    <content type="html"><![CDATA[<p>在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。</p><p>developers.google.com 上有个简介，中译过来被叫做“网络应用清单”，很多人也将他和web离线缓存联系在一起。<br>实际上，开发者可以利用 mainifest.json 控制在用户想要看到应用的区域（例如移动设备主屏幕）中如何向用户显示网络应用或网站，指示用户可以启动哪些功能，以及定义其在启动时的外观。</p><p>mainifest.json 提供了将网站书签保存到设备主屏幕的功能。当网站以这种方式启动时：</p><ul><li>它具有唯一的图标和名称，以便用户将其与其他网站区分开来。</li><li>它会在下载资源或从缓存恢复资源时向用户显示某些信息。</li><li>它会向浏览器提供默认显示特性，以避免网站资源可用时的过渡过于生硬。</li><li>它通过一个文本文件中的元数据这一简单机制完成所有这些工作。那就是网络应用清单。</li></ul><blockquote><p>注：尽管您可以在任何网站上使用该文件，它们却是 PWA 的必备要素。</p></blockquote><p>###创建清单<br>下面是一个示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;short_name&quot;: &quot;AirHorner&quot;,</span><br><span class="line">  &quot;name&quot;: &quot;Kinlan&apos;s AirHorner of Infamy&quot;,</span><br><span class="line">  &quot;icons&quot;: [                              // 自定义图标</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-1x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;48x48&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-2x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;96x96&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-4x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;192x192&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;start_url&quot;: &quot;index.html?launcher=true&quot;,  // 设置启动网址</span><br><span class="line">  &quot;background_color&quot;: &quot;#000000&quot;             // 设置背景颜色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>确保包括以下内容：</p><ul><li>在用户主屏幕上用作文本的 short_name。</li><li>在网络应用安装横幅中使用的 name。</li></ul><p>###将清单的相关信息告知浏览器<br>在您创建清单且将清单添加到您的网站之后，将 link 标记添加到包含网络应用的所有页面上，如下所示：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;</span><br></pre></td></tr></table></figure></p><p>###测试您的清单<br>如果您想要手动验证网络应用清单是否已正确设置，请使用 Chrome DevTools 的 Application 面板上的 Manifest 标签。</p><p><img src="https://developers.google.com/web/fundamentals/web-app-manifest/images/devtools-manifest.png?hl=zh-cn" alt=""></p><blockquote><p><a href="https://developers.google.com/web/fundamentals/web-app-manifest/?hl=zh-cn" target="_blank" rel="noopener">google开发者原文</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。&lt;/p&gt;
+&lt;p&gt;developers.google.com 上有个简介，中译过来被叫做“网络应用清单”，很多人也将他和web离线缓存联系在一起。&lt;br&gt;实际上，开发者可以利用 mainifest.
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+    
+    
+      <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="缓存" scheme="http://www.mjpiero.cc/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>threeJS 学习笔记 - 材质</title>
@@ -77,7 +107,7 @@
     <link href="http://www.mjpiero.cc/2017/01/18/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%BD%AF%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81/"/>
     <id>http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/</id>
     <published>2017-01-18T10:10:54.000Z</published>
-    <updated>2017-01-18T10:47:06.000Z</updated>
+    <updated>2018-08-23T04:27:34.676Z</updated>
     
     <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p><h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">//键盘关闭事件 </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  //可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  //可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -90,12 +120,12 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://www.mjpiero.cc/categories/Javascript/"/>
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
     
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
     
       <category term="Web移动端" scheme="http://www.mjpiero.cc/tags/Web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="Javascript" scheme="http://www.mjpiero.cc/tags/Javascript/"/>
     
   </entry>
   
