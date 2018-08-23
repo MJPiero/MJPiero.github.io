@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-08-23T04:00:10.872Z</updated>
+  <updated>2018-08-23T04:29:51.401Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mainifest.json</title>
+    <link href="http://www.mjpiero.cc/2018/08/23/mainifest-json/"/>
+    <id>http://www.mjpiero.cc/2018/08/23/mainifest-json/</id>
+    <published>2018-08-23T04:24:55.000Z</published>
+    <updated>2018-08-23T04:29:51.401Z</updated>
+    
+    <content type="html"><![CDATA[<p>在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。</p><p>developers.google.com 上有个简介，中译过来被叫做“网络应用清单”，很多人也将他和web离线缓存联系在一起。<br>实际上，开发者可以利用 mainifest.json 控制在用户想要看到应用的区域（例如移动设备主屏幕）中如何向用户显示网络应用或网站，指示用户可以启动哪些功能，以及定义其在启动时的外观。</p><p>mainifest.json 提供了将网站书签保存到设备主屏幕的功能。当网站以这种方式启动时：</p><ul><li>它具有唯一的图标和名称，以便用户将其与其他网站区分开来。</li><li>它会在下载资源或从缓存恢复资源时向用户显示某些信息。</li><li>它会向浏览器提供默认显示特性，以避免网站资源可用时的过渡过于生硬。</li><li>它通过一个文本文件中的元数据这一简单机制完成所有这些工作。那就是网络应用清单。</li></ul><blockquote><p>注：尽管您可以在任何网站上使用该文件，它们却是 PWA 的必备要素。</p></blockquote><p>###创建清单<br>下面是一个示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;short_name&quot;: &quot;AirHorner&quot;,</span><br><span class="line">  &quot;name&quot;: &quot;Kinlan&apos;s AirHorner of Infamy&quot;,</span><br><span class="line">  &quot;icons&quot;: [                              // 自定义图标</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-1x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;48x48&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-2x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;96x96&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-4x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;192x192&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;start_url&quot;: &quot;index.html?launcher=true&quot;,  // 设置启动网址</span><br><span class="line">  &quot;background_color&quot;: &quot;#000000&quot;             // 设置背景颜色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>确保包括以下内容：</p><ul><li>在用户主屏幕上用作文本的 short_name。</li><li>在网络应用安装横幅中使用的 name。</li></ul><p>###将清单的相关信息告知浏览器<br>在您创建清单且将清单添加到您的网站之后，将 link 标记添加到包含网络应用的所有页面上，如下所示：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;</span><br></pre></td></tr></table></figure></p><p>###测试您的清单<br>如果您想要手动验证网络应用清单是否已正确设置，请使用 Chrome DevTools 的 Application 面板上的 Manifest 标签。</p><p><img src="https://developers.google.com/web/fundamentals/web-app-manifest/images/devtools-manifest.png?hl=zh-cn" alt=""></p><blockquote><p><a href="https://developers.google.com/web/fundamentals/web-app-manifest/?hl=zh-cn" target="_blank" rel="noopener">google开发者原文</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。&lt;/p&gt;
+&lt;p&gt;developers.google.com 上有个简介，中译过来被叫做“网络应用清单”，很多人也将他和web离线缓存联系在一起。&lt;br&gt;实际上，开发者可以利用 mainifest.
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+    
+    
+      <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="缓存" scheme="http://www.mjpiero.cc/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>threeJS 学习笔记 - 材质</title>
+    <link href="http://www.mjpiero.cc/2018/08/23/threeJS-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%9D%90%E8%B4%A8/"/>
+    <id>http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/</id>
+    <published>2018-08-23T04:15:58.000Z</published>
+    <updated>2018-08-23T04:18:16.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。</p><p>##threeJS 提供的材质</p><ul><li>MeshBasicMaterial：<strong>网格基础材质</strong>。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。</li><li>MeshDepthMaterial：<strong>网格深度材质</strong>。这个材质使用从摄像机到网格的距离来决定如何给网格上色。</li><li>MeshNormalMaterial：<strong>网格法向材质</strong>。这是一种简单的材质，根据法向向量计算物体表面的颜色。</li><li>MeshFaceMaterial：<strong>网格面材质</strong>。这是一个容器，可以为几何体的各个表面指定不同的材质。</li><li>MeshLambertMaterial：<strong>网格Lambert材质</strong>。这是一种考虑光照影响的材质，用于创建暗淡的、不光亮的物体。</li><li>MeshPhongMaterial：<strong>网格Phong式材质</strong>。这是一种考虑光照影响的材质，用于创建光亮的物体。</li><li>ShaderMaterial：<strong>着色器材质</strong>。这种材质允许使用自定义的着色器程序，直接控制顶点的放置方式以及像素的着色方式。</li><li>LineBasicMaterial：<strong>直线基础材质</strong>。这种材质可以用于 THREE.Line（直线）几何体，用来创建着色的直线。</li><li>LineDashMaterial：<strong>直线基础材质</strong>。 这种材质与 LineBasicMaterial（直线基础材质）一样，但允许创建出一种虚线的效果。</li></ul><p>##3种常用材质<br>基础属性常用的了解下：</p><ul><li>ID：标识材质</li><li>name： 名称</li><li>opacity：透明度，结合transparent使用，范围为0~1</li><li>transparent：是否透明，如果为true则结合opacity设置透明度。如果为false则物体不透明</li><li>visible：是否可见，false则看不见，默认可以看见</li><li>side：侧面，觉得几何体的哪一面应用这个材质，默认为THREE.FrontSide(前外面)，还有THREE.BackSide(后内面)和THREE.DoubleSide(两面)</li><li>needUpdate：如果为true，则在几何体使用新的材质的时候更新材质缓存</li></ul><p>###THREE.MeshBasicMaterial 基础网格材质<br>使用这种材质的网格，通常被渲染成简单的多边形，而且可以选择想要线框。除了一些THREE.Material的属性以外，还有如下属性</p><ul><li>color：设置材质的颜色</li><li>wireframe：如果为true，则将材质渲染成线框，在调试的时候可以起到很好的作用</li><li>wireframeLinewidth：wireframe为true时，设置线框中线的宽度</li><li>wireframeLinecap：决定线框端点如何显示，可选的值 round，bevel(斜角)和miter(尖角)。</li><li>vertexColors：通过这属性，定义顶点的颜色，在canvasRender中不起作用。</li><li>fog：决定单个材质的是否受全局雾化的影响。 </li></ul><blockquote><p>对于fog属性，在全局中如果设定了雾化属性，那么本应该对所有场景的物体都添加雾化效果。<br>例如：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scene.fog=new THREE.Fog(0xffffff,0.015,100)</span><br></pre></td></tr></table></figure></p></blockquote><p>而如果在当前材质中设置的如<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeo= new THREE.CubeGeometry(30,30,30);</span><br><span class="line">var cubeMat= new THREE.MeshBasicMaterial(&#123;color:&quot;0x0c0c0c&quot;,fog:false&#125;)</span><br><span class="line">var cude= new THREE.Mesh(cubeGeo,cubeMat);</span><br><span class="line">scene.add(cube);</span><br></pre></td></tr></table></figure></p><p>则在当前这个cude方块中，并不能体现雾化效果。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">material.wireframe = true;</span><br></pre></td></tr></table></figure></p><p>wireframe是否为true  显示如下<br><img src="/images/WechatIMG42820.png" alt=""><br><img src="/images/WechatIMG42821.png" alt=""></p><p>###THREE.MeshLambertMaterial暗淡不发光<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来就只有2个</p><ul><li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li><li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeometry = new THREE.BoxGeometry(15, 15, 15);</span><br><span class="line">var meshMaterial = new THREE.MeshLamebertMaterial(&#123;color: 0x7777ff&#125;);</span><br><span class="line">var cube = new THREE.Mesh(cubeGeometry, meshMaterial);</span><br></pre></td></tr></table></figure></li></ul><p><img src="/images/WechatIMG42823.png" alt=""></p><p>###THREE.MeshPhongMaterial金属发亮的物体<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来有4个</p><ul><li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li><li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色</li><li>specular：指定该材质的光亮程度及其高光部分的颜色，如果设置成和color属性相同的颜色，则会得到另一个更加类似金属的材质，如果设置成grey灰色，则看起来像塑料</li><li>shininess：指定高光部分的亮度，默认值为30.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var meshMaterial = new THREE.MeshPhongMaterial(&#123;</span><br><span class="line">        color: 0x7777ff，</span><br><span class="line">        specular:0x7777ff,</span><br><span class="line">        shininess:30</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li></ul><p><img src="/images/QQ20180727-183707.gif" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。&lt;/p&gt;
+&lt;p&gt;##threeJS 提供的材质&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MeshBasicMateri
+      
+    
+    </summary>
+    
+      <category term="threejs" scheme="http://www.mjpiero.cc/categories/threejs/"/>
+    
+    
+      <category term="threejs" scheme="http://www.mjpiero.cc/tags/threejs/"/>
+    
+  </entry>
   
   <entry>
     <title>mac 使用tree命令</title>
@@ -49,7 +107,7 @@
     <link href="http://www.mjpiero.cc/2017/01/18/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%BD%AF%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81/"/>
     <id>http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/</id>
     <published>2017-01-18T10:10:54.000Z</published>
-    <updated>2017-01-18T10:47:06.000Z</updated>
+    <updated>2018-08-23T04:27:34.676Z</updated>
     
     <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p><h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">//键盘关闭事件 </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  //可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  //可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -62,12 +120,12 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://www.mjpiero.cc/categories/Javascript/"/>
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
     
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
     
       <category term="Web移动端" scheme="http://www.mjpiero.cc/tags/Web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="Javascript" scheme="http://www.mjpiero.cc/tags/Javascript/"/>
     
   </entry>
   
@@ -146,9 +204,9 @@
       <category term="mongodb" scheme="http://www.mjpiero.cc/categories/mongodb/"/>
     
     
-      <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
       <category term="mongodb" scheme="http://www.mjpiero.cc/tags/mongodb/"/>
+    
+      <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   

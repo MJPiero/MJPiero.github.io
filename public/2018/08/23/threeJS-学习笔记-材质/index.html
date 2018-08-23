@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>初了解vue&amp;vuex | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+  <title>threeJS 学习笔记 - 材质 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#DCEDC8">
   
   
-  <meta name="keywords" content="vue">
-  <meta name="description" content="在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。
-好了言归正传。
-网络上对于vuex这套状态管理模式已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且">
+  <meta name="keywords" content="threejs">
+  <meta name="description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+<meta name="keywords" content="threejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初了解vue&vuex">
-<meta property="og:url" content="http://www.mjpiero.cc/2017/05/22/初了解vue&vuex 这很接地气/index.html">
-<meta property="og:site_name" content="MJPiero's Blog">
-<meta property="og:description" content="在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。
-好了言归正传。
-网络上对于vuex这套状态管理模式已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且">
-<meta property="og:updated_time" content="2017-05-25T07:01:12.000Z">
+<meta property="og:title" content="threeJS 学习笔记 - 材质">
+<meta property="og:url" content="http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42820.png">
+<meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42821.png">
+<meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42823.png">
+<meta property="og:image" content="http://www.mjpiero.cc/images/QQ20180727-183707.gif">
+<meta property="og:updated_time" content="2018-08-23T04:18:16.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初了解vue&vuex">
-<meta name="twitter:description" content="在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。
-好了言归正传。
-网络上对于vuex这套状态管理模式已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且">
+<meta name="twitter:title" content="threeJS 学习笔记 - 材质">
+<meta name="twitter:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+<meta name="twitter:image" content="http://www.mjpiero.cc/images/WechatIMG42820.png">
   
     <link rel="alternative" href="/atom.xml" title="MJPiero&#39;s Blog" type="application/atom+xml">
   
@@ -122,7 +123,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">初了解vue&amp;vuex</div>
+        <div class="flex-col header-title ellipsis">threeJS 学习笔记 - 材质</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -144,7 +145,7 @@
 <header class="content-header post-header">
 
     <div class="container">
-        <h1 class="title">初了解vue&amp;vuex</h1>
+        <h1 class="title">threeJS 学习笔记 - 材质</h1>
         
         
 
@@ -155,36 +156,83 @@
 </header>
 
 <div class="container body-wrap">
-    <article id="post-初了解vue&amp;vuex 这很接地气" 
+    <article id="post-threeJS-学习笔记-材质" 
   class="post-article article-type-post" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">初了解vue&vuex</h1>
+        <h1 class="post-card-title">threeJS 学习笔记 - 材质</h1>
         <div class="post-meta">
-            <time datetime="2017-05-22T07:35:33.000Z" itemprop="datePublished" class="post-time">
-  2017-05-22
+            <time datetime="2018-08-23T04:15:58.000Z" itemprop="datePublished" class="post-time">
+  2018-08-23
 </time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/threejs/">threejs</a></li></ul>
 
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在某个深夜，我失眠到了凌晨3点，没想别的什么，而是被这类代码占据，恨不得立刻爬起来打开电脑，洒脱的码上上万条语句，这……肯定是老大在我睡梦中督促着我要好好工作。</p>
-<p>好了言归正传。</p>
-<p>网络上对于<a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">vuex</a>这套<strong>状态管理模式</strong>已经有不少介绍的文章了。包括小伙伴们也有写相关的分享文，对这套体系简单剖析过一遍。然而在一开始接触的时候我还是绕了不少弯子。至于为什么说接地气，因为我才接触vue和vuex三天的样子。而且我理论知识不稳固，肯定探讨不出什么高深的学术性的东西，此文只是大概介绍一下我在运用时候遇到的一些坑吧。</p>
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a><a href="https://cn.vuejs.org/" target="_blank" rel="external">Vue</a></h1><p>这个运用的融会贯通的人大有人在，我一个才用了三天的人就不详细说了。在这之前我一直用的angular v1.x（之后都称呼ng v1.x），之前有小哥问我为什么不用vue，当时我说了感觉vue有些不伦不类，像是ng和react的结合体。嗯，我有时候很脑残，这些话都当我没说过。</p>
-<p>很多人觉得vue和ng有很相似的地方。是不是呢，当然我没去研究ng v2.x+的框架，从ng v1.x的角度上来看，两个框架差异还是相当大的。</p>
-<p>ng像是一个工厂，在ng-app内，按照不同的功能来划分体系，模块和模块之间也能通过ng的规则联系在一起。虽然也有组件化的体系，通过scope来独立区域，但是组件和组件之前有提供信息传递的方法，就像工厂里面的传送带一样，任何一个区域都可以相互传递信息（反正在我脑子里记不住那些概念，但是对于ng大概就是这么理解的）。vue则更像是一个公寓大楼。component是一间间的房间，相互独立，可以像积木一样，一层层堆积拼接。但是并没有和ng那样相对比较完善的信息传递机制。</p>
-<p>所以之前小易有问我ng v1.x有木有什么状态管理的架构。这之后我才知道的，ng v1.x应该是不需要额外的去搭建一个状态管理模式。</p>
+            <p>一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。</p>
+<p>##threeJS 提供的材质</p>
+<ul>
+<li>MeshBasicMaterial：<strong>网格基础材质</strong>。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。</li>
+<li>MeshDepthMaterial：<strong>网格深度材质</strong>。这个材质使用从摄像机到网格的距离来决定如何给网格上色。</li>
+<li>MeshNormalMaterial：<strong>网格法向材质</strong>。这是一种简单的材质，根据法向向量计算物体表面的颜色。</li>
+<li>MeshFaceMaterial：<strong>网格面材质</strong>。这是一个容器，可以为几何体的各个表面指定不同的材质。</li>
+<li>MeshLambertMaterial：<strong>网格Lambert材质</strong>。这是一种考虑光照影响的材质，用于创建暗淡的、不光亮的物体。</li>
+<li>MeshPhongMaterial：<strong>网格Phong式材质</strong>。这是一种考虑光照影响的材质，用于创建光亮的物体。</li>
+<li>ShaderMaterial：<strong>着色器材质</strong>。这种材质允许使用自定义的着色器程序，直接控制顶点的放置方式以及像素的着色方式。</li>
+<li>LineBasicMaterial：<strong>直线基础材质</strong>。这种材质可以用于 THREE.Line（直线）几何体，用来创建着色的直线。</li>
+<li>LineDashMaterial：<strong>直线基础材质</strong>。 这种材质与 LineBasicMaterial（直线基础材质）一样，但允许创建出一种虚线的效果。</li>
+</ul>
+<p>##3种常用材质<br>基础属性常用的了解下：</p>
+<ul>
+<li>ID：标识材质</li>
+<li>name： 名称</li>
+<li>opacity：透明度，结合transparent使用，范围为0~1</li>
+<li>transparent：是否透明，如果为true则结合opacity设置透明度。如果为false则物体不透明</li>
+<li>visible：是否可见，false则看不见，默认可以看见</li>
+<li>side：侧面，觉得几何体的哪一面应用这个材质，默认为THREE.FrontSide(前外面)，还有THREE.BackSide(后内面)和THREE.DoubleSide(两面)</li>
+<li>needUpdate：如果为true，则在几何体使用新的材质的时候更新材质缓存</li>
+</ul>
+<p>###THREE.MeshBasicMaterial 基础网格材质<br>使用这种材质的网格，通常被渲染成简单的多边形，而且可以选择想要线框。除了一些THREE.Material的属性以外，还有如下属性</p>
+<ul>
+<li>color：设置材质的颜色</li>
+<li>wireframe：如果为true，则将材质渲染成线框，在调试的时候可以起到很好的作用</li>
+<li>wireframeLinewidth：wireframe为true时，设置线框中线的宽度</li>
+<li>wireframeLinecap：决定线框端点如何显示，可选的值 round，bevel(斜角)和miter(尖角)。</li>
+<li>vertexColors：通过这属性，定义顶点的颜色，在canvasRender中不起作用。</li>
+<li>fog：决定单个材质的是否受全局雾化的影响。 </li>
+</ul>
+<blockquote>
+<p>对于fog属性，在全局中如果设定了雾化属性，那么本应该对所有场景的物体都添加雾化效果。<br>例如：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scene.fog=new THREE.Fog(0xffffff,0.015,100)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>而如果在当前材质中设置的如<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeo= new THREE.CubeGeometry(30,30,30);</span><br><span class="line">var cubeMat= new THREE.MeshBasicMaterial(&#123;color:&quot;0x0c0c0c&quot;,fog:false&#125;)</span><br><span class="line">var cude= new THREE.Mesh(cubeGeo,cubeMat);</span><br><span class="line">scene.add(cube);</span><br></pre></td></tr></table></figure></p>
+<p>则在当前这个cude方块中，并不能体现雾化效果。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">material.wireframe = true;</span><br></pre></td></tr></table></figure></p>
+<p>wireframe是否为true  显示如下<br><img src="/images/WechatIMG42820.png" alt=""><br><img src="/images/WechatIMG42821.png" alt=""></p>
+<p>###THREE.MeshLambertMaterial暗淡不发光<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来就只有2个</p>
+<ul>
+<li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li>
+<li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeometry = new THREE.BoxGeometry(15, 15, 15);</span><br><span class="line">var meshMaterial = new THREE.MeshLamebertMaterial(&#123;color: 0x7777ff&#125;);</span><br><span class="line">var cube = new THREE.Mesh(cubeGeometry, meshMaterial);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/WechatIMG42823.png" alt=""></p>
+<p>###THREE.MeshPhongMaterial金属发亮的物体<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来有4个</p>
+<ul>
+<li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li>
+<li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色</li>
+<li>specular：指定该材质的光亮程度及其高光部分的颜色，如果设置成和color属性相同的颜色，则会得到另一个更加类似金属的材质，如果设置成grey灰色，则看起来像塑料</li>
+<li>shininess：指定高光部分的亮度，默认值为30.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var meshMaterial = new THREE.MeshPhongMaterial(&#123;</span><br><span class="line">        color: 0x7777ff，</span><br><span class="line">        specular:0x7777ff,</span><br><span class="line">        shininess:30</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/QQ20180727-183707.gif" alt=""></p>
 
         </div>
         
         <blockquote class="post-copyright">
             <div class="content">
-               这里写留言或版权声明：<a href="/2017/05/22/初了解vue&amp;vuex 这很接地气/" target="_blank" rel="external">http://www.mjpiero.cc/2017/05/22/初了解vue&amp;vuex 这很接地气/index.html</a>
+               这里写留言或版权声明：<a href="/2018/08/23/threeJS-学习笔记-材质/" target="_blank" rel="external">http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html</a>
             </div>
             <footer>
                 <a href="http://www.mjpiero.cc">
@@ -198,7 +246,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/threejs/">threejs</a></li></ul>
 
 
             
@@ -249,14 +297,21 @@
     </div>   
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/23/mainifest-json/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">mainifest.json</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/18/【Web移动端】web移动端软键盘状态/" id="post-next" class="post-nav-link">
+      <a href="/2018/08/23/mac-使用tree命令/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">【Web移动端】web移动端软键盘状态</h4>
+        <h4 class="title">mac 使用tree命令</h4>
       </a>
     </div>
   
@@ -267,7 +322,7 @@
     
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="初了解vue&amp;vuex 这很接地气" data-title="初了解vue&amp;vuex" data-url="http://www.mjpiero.cc/2017/05/22/初了解vue&amp;vuex 这很接地气/index.html"></div>
+	<div class="ds-thread" data-thread-key="threeJS-学习笔记-材质" data-title="threeJS 学习笔记 - 材质" data-url="http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -295,7 +350,7 @@
     
     <nav class="post-toc-wrap" id="post-toc">
         <h4>TOC</h4>
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vue"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vue</span></a></li></ol>
+        
     </nav>
     
 </aside>
@@ -307,10 +362,10 @@
 
 <script>
 var BLOG_SHARE = {
-    title: "初了解vue&vuex",
+    title: "threeJS 学习笔记 - 材质",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://www.mjpiero.cc/2017/05/22/初了解vue&amp;vuex 这很接地气/index.html"
+    url: "http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html"
 };
 </script>
 <div class="global-share" id="global-share">
