@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>threeJS 学习笔记 - 材质 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#DCEDC8">
-  
-  
-  <meta name="keywords" content="threejs">
-  <meta name="description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>threeJS 学习笔记 - 材质 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="threejs">
+    <meta name="description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 threeJS 提供的材质 MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的距离来">
 <meta name="keywords" content="threejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="threeJS 学习笔记 - 材质">
 <meta property="og:url" content="http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html">
 <meta property="og:site_name" content="MJPiero&#39;s Blog">
-<meta property="og:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+<meta property="og:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 threeJS 提供的材质 MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的距离来">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42820.png">
 <meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42821.png">
 <meta property="og:image" content="http://www.mjpiero.cc/images/WechatIMG42823.png">
 <meta property="og:image" content="http://www.mjpiero.cc/images/QQ20180727-183707.gif">
-<meta property="og:updated_time" content="2018-08-23T04:18:16.817Z">
+<meta property="og:updated_time" content="2018-08-23T07:49:57.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="threeJS 学习笔记 - 材质">
-<meta name="twitter:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 ##threeJS 提供的材质  MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的">
+<meta name="twitter:description" content="一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。 threeJS 提供的材质 MeshBasicMaterial：网格基础材质。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。 MeshDepthMaterial：网格深度材质。这个材质使用从摄像机到网格的距离来">
 <meta name="twitter:image" content="http://www.mjpiero.cc/images/WechatIMG42820.png">
-  
-    <link rel="alternative" href="/atom.xml" title="MJPiero&#39;s Blog" type="application/atom+xml">
-  
-  <meta name="summary" content="null">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
 
 <body>
-  <div id="loading" class="active"></div>
+    <div id="loading" class="active"></div>
 
-  <aside id="menu" class="hide" >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
-        <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
         <hgroup class="introduce">
           <h5 class="nickname">MJPiero</h5>
           <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
@@ -98,20 +115,12 @@
             </li>
         
       </ul>
-
-      <footer class="footer">
-  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
-  <p>MJPiero&#39;s Blog &copy; 2018</p>
-  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
-</footer>
-
     </div>
   </div>
 </aside>
-  <main id="main">
-    <header class="top-header" id="header">
+
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -129,7 +138,7 @@
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
             <i class="icon icon-lg icon-share-alt"></i>
         </a>
         
@@ -137,38 +146,56 @@
 </header>
 <header class="content-header post-header">
 
-    <div class="container">
+    <div class="container fade-scale">
         <h1 class="title">threeJS 学习笔记 - 材质</h1>
-        
-        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-23T04:15:58.000Z" itemprop="datePublished" class="page-time">
+  2018-08-23
+</time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/threejs/">threejs</a></li></ul>
+
+            
+        </h5>
     </div>
 
     
 
+
 </header>
 
+
 <div class="container body-wrap">
-    <article id="post-threeJS-学习笔记-材质" 
-  class="post-article article-type-post" itemprop="blogPost">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#threeJS-提供的材质"><span class="post-toc-number">1.</span> <span class="post-toc-text">threeJS 提供的材质</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3种常用材质"><span class="post-toc-number">2.</span> <span class="post-toc-text">3种常用材质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#①-THREE-MeshBasicMaterial-基础网格材质"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">① THREE.MeshBasicMaterial 基础网格材质</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#②-THREE-MeshLambertMaterial暗淡不发光"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">② THREE.MeshLambertMaterial暗淡不发光</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#③-THREE-MeshPhongMaterial金属发亮的物体"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">③ THREE.MeshPhongMaterial金属发亮的物体</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-threeJS-学习笔记-材质"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">threeJS 学习笔记 - 材质</h1>
         <div class="post-meta">
-            <time datetime="2018-08-23T04:15:58.000Z" itemprop="datePublished" class="post-time">
-  2018-08-23
-</time>
+            <time class="post-time" title="2018-08-23 12:15:58" datetime="2018-08-23T04:15:58.000Z"  itemprop="datePublished">2018-08-23</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/threejs/">threejs</a></li></ul>
 
 
 
+            
+
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>一个材质结合 THREE.Geometry 对象，可以构成 THREE.Mesh 对象。材质就相当于物体模型的皮肤，决定物体的外观光泽，看上去是不是像金属或者线框外表等。</p>
-<p>##threeJS 提供的材质</p>
-<ul>
+<h2 id="threeJS-提供的材质"><a href="#threeJS-提供的材质" class="headerlink" title="threeJS 提供的材质"></a>threeJS 提供的材质</h2><ul>
 <li>MeshBasicMaterial：<strong>网格基础材质</strong>。基础材质，用于给几何体赋予一种简单的颜色，或者显示几何体的线框。</li>
 <li>MeshDepthMaterial：<strong>网格深度材质</strong>。这个材质使用从摄像机到网格的距离来决定如何给网格上色。</li>
 <li>MeshNormalMaterial：<strong>网格法向材质</strong>。这是一种简单的材质，根据法向向量计算物体表面的颜色。</li>
@@ -179,7 +206,7 @@
 <li>LineBasicMaterial：<strong>直线基础材质</strong>。这种材质可以用于 THREE.Line（直线）几何体，用来创建着色的直线。</li>
 <li>LineDashMaterial：<strong>直线基础材质</strong>。 这种材质与 LineBasicMaterial（直线基础材质）一样，但允许创建出一种虚线的效果。</li>
 </ul>
-<p>##3种常用材质<br>基础属性常用的了解下：</p>
+<h2 id="3种常用材质"><a href="#3种常用材质" class="headerlink" title="3种常用材质"></a>3种常用材质</h2><p>基础属性常用的了解下：</p>
 <ul>
 <li>ID：标识材质</li>
 <li>name： 名称</li>
@@ -189,7 +216,7 @@
 <li>side：侧面，觉得几何体的哪一面应用这个材质，默认为THREE.FrontSide(前外面)，还有THREE.BackSide(后内面)和THREE.DoubleSide(两面)</li>
 <li>needUpdate：如果为true，则在几何体使用新的材质的时候更新材质缓存</li>
 </ul>
-<p>###THREE.MeshBasicMaterial 基础网格材质<br>使用这种材质的网格，通常被渲染成简单的多边形，而且可以选择想要线框。除了一些THREE.Material的属性以外，还有如下属性</p>
+<h3 id="①-THREE-MeshBasicMaterial-基础网格材质"><a href="#①-THREE-MeshBasicMaterial-基础网格材质" class="headerlink" title="① THREE.MeshBasicMaterial 基础网格材质"></a>① THREE.MeshBasicMaterial 基础网格材质</h3><p>使用这种材质的网格，通常被渲染成简单的多边形，而且可以选择想要线框。除了一些THREE.Material的属性以外，还有如下属性</p>
 <ul>
 <li>color：设置材质的颜色</li>
 <li>wireframe：如果为true，则将材质渲染成线框，在调试的时候可以起到很好的作用</li>
@@ -203,15 +230,33 @@
 </blockquote>
 <p>而如果在当前材质中设置的如<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeo= new THREE.CubeGeometry(30,30,30);</span><br><span class="line">var cubeMat= new THREE.MeshBasicMaterial(&#123;color:&quot;0x0c0c0c&quot;,fog:false&#125;)</span><br><span class="line">var cude= new THREE.Mesh(cubeGeo,cubeMat);</span><br><span class="line">scene.add(cube);</span><br></pre></td></tr></table></figure></p>
 <p>则在当前这个cude方块中，并不能体现雾化效果。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">material.wireframe = true;</span><br></pre></td></tr></table></figure></p>
-<p>wireframe是否为true  显示如下<br><img src="/images/WechatIMG42820.png" alt=""><br><img src="/images/WechatIMG42821.png" alt=""></p>
-<p>###THREE.MeshLambertMaterial暗淡不发光<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来就只有2个</p>
+<p>wireframe是否为true  显示如下<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/WechatIMG42820.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/WechatIMG42821.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="②-THREE-MeshLambertMaterial暗淡不发光"><a href="#②-THREE-MeshLambertMaterial暗淡不发光" class="headerlink" title="② THREE.MeshLambertMaterial暗淡不发光"></a>② THREE.MeshLambertMaterial暗淡不发光</h3><p>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来就只有2个</p>
 <ul>
 <li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li>
 <li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cubeGeometry = new THREE.BoxGeometry(15, 15, 15);</span><br><span class="line">var meshMaterial = new THREE.MeshLamebertMaterial(&#123;color: 0x7777ff&#125;);</span><br><span class="line">var cube = new THREE.Mesh(cubeGeometry, meshMaterial);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="/images/WechatIMG42823.png" alt=""></p>
-<p>###THREE.MeshPhongMaterial金属发亮的物体<br>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来有4个</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/WechatIMG42823.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="③-THREE-MeshPhongMaterial金属发亮的物体"><a href="#③-THREE-MeshPhongMaterial金属发亮的物体" class="headerlink" title="③ THREE.MeshPhongMaterial金属发亮的物体"></a>③ THREE.MeshPhongMaterial金属发亮的物体</h3><p>该材质对光源有反应，除了之前说过的color，transparent，opacity，fog等属性，还有一些特有的属性，总结起来有4个</p>
 <ul>
 <li>ambient：设置材质的环境色，和AmbientLight光源一起使用，这个颜色会与环境光的颜色相乘。即是对光源作出反应。</li>
 <li>emissive：设置材质发射的颜色，不是一种光源，而是一种不受光照影响的颜色。默认为黑色</li>
@@ -219,23 +264,40 @@
 <li>shininess：指定高光部分的亮度，默认值为30.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var meshMaterial = new THREE.MeshPhongMaterial(&#123;</span><br><span class="line">        color: 0x7777ff，</span><br><span class="line">        specular:0x7777ff,</span><br><span class="line">        shininess:30</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="/images/QQ20180727-183707.gif" alt=""></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/QQ20180727-183707.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
         </div>
-        
+
         <blockquote class="post-copyright">
-            <div class="content">
-               这里写留言或版权声明：<a href="/2018/08/23/threeJS-学习笔记-材质/" target="_blank" rel="external">http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html</a>
-            </div>
-            <footer>
-                <a href="http://www.mjpiero.cc">
-                    <img src="/img/logo.jpg" alt="MJPiero">
-                    MJPiero
-                </a>
-            </footer>
-        </blockquote>
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-23T07:49:57.998Z" itemprop="dateUpdated">2018-08-23 15:49:57</time>
+</span><br>
+
 
         
+        码字不易，转载请附链接：<a href="/2018/08/23/threeJS-学习笔记-材质/" target="_blank" rel="external">http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
 
         <div class="post-footer">
             
@@ -243,51 +305,55 @@
 
 
             
-            <div class="post-share-wrap">
-                <div class="post-share" id="post-share">
-    <div class="tit">分享到：</div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&title=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
       <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
           <i class="icon icon-weixin"></i>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&title=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
       </li>
     </ul>
  </div>
 
-                <a href="javascript:;" id="share-fab" class="post-share-fab waves-effect waves-circle">
-                    <i class="icon icon-share-alt icon-lg"></i>
-                </a>
-            </div>
-            
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
 
         </div>
-    </div>   
+    </div>
 
     
 <nav class="post-nav flex-row flex-justify-between">
@@ -311,26 +377,37 @@
 </nav>
 
 
-            
+
     
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="threeJS-学习笔记-材质" data-title="threeJS 学习笔记 - 材质" data-url="http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"mjpiero"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
 
 
 
@@ -338,80 +415,100 @@
 
 </article>
 
-<aside class="post-widget" id="post-widget">
 
-    
-    <nav class="post-toc-wrap" id="post-toc">
-        <h4>TOC</h4>
-        
-    </nav>
-    
-</aside>
 
 </div>
-  </main>
-  <div class="mask" id="mask"></div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "threeJS 学习笔记 - 材质",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
+
+
+<div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&title=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
       <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
           <i class="icon icon-weixin"></i>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&title=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《threeJS 学习笔记 - 材质》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
       </li>
     </ul>
  </div>
 
 
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2018/08/23/threeJS-学习笔记-材质/" alt="微信分享二维码">
+</div>
 
 
-  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -421,28 +518,33 @@ var BLOG_SHARE = {
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '别把我忘记了哟！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)欢迎回来~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-79523626-3', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

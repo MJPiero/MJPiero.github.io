@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>【Web移动端】web移动端软键盘状态 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#DCEDC8">
-  
-  
-  <meta name="keywords" content="JavaScript,Web移动端">
-  <meta name="description" content="如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>【Web移动端】web移动端软键盘状态 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="JavaScript,Web移动端">
+    <meta name="description" content="如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出">
 <meta name="keywords" content="JavaScript,Web移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Web移动端】web移动端软键盘状态">
@@ -22,25 +33,31 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Web移动端】web移动端软键盘状态">
 <meta name="twitter:description" content="如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出">
-  
-    <link rel="alternative" href="/atom.xml" title="MJPiero&#39;s Blog" type="application/atom+xml">
-  
-  <meta name="summary" content="null">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
 
 <body>
-  <div id="loading" class="active"></div>
+    <div id="loading" class="active"></div>
 
-  <aside id="menu" class="hide" >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
-        <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
         <hgroup class="introduce">
           <h5 class="nickname">MJPiero</h5>
           <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
@@ -93,20 +110,12 @@
             </li>
         
       </ul>
-
-      <footer class="footer">
-  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
-  <p>MJPiero&#39;s Blog &copy; 2018</p>
-  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
-</footer>
-
     </div>
   </div>
 </aside>
-  <main id="main">
-    <header class="top-header" id="header">
+
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -124,7 +133,7 @@
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
             <i class="icon icon-lg icon-share-alt"></i>
         </a>
         
@@ -132,32 +141,51 @@
 </header>
 <header class="content-header post-header">
 
-    <div class="container">
+    <div class="container fade-scale">
         <h1 class="title">【Web移动端】web移动端软键盘状态</h1>
-        
-        
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-18T10:10:54.000Z" itemprop="datePublished" class="page-time">
+  2017-01-18
+</time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+            
+        </h5>
     </div>
 
     
 
+
 </header>
 
+
 <div class="container body-wrap">
-    <article id="post-【Web移动端】web移动端软键盘状态" 
-  class="post-article article-type-post" itemprop="blogPost">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软键盘打开，整个页面向上滑动"><span class="post-toc-number">1.</span> <span class="post-toc-text">软键盘打开，整个页面向上滑动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软键盘覆盖元素"><span class="post-toc-number">2.</span> <span class="post-toc-text">软键盘覆盖元素</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#通用方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">通用方法</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-【Web移动端】web移动端软键盘状态"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">【Web移动端】web移动端软键盘状态</h1>
         <div class="post-meta">
-            <time datetime="2017-01-18T10:10:54.000Z" itemprop="datePublished" class="post-time">
-  2017-01-18
-</time>
+            <time class="post-time" title="2017-01-18 18:10:54" datetime="2017-01-18T10:10:54.000Z"  itemprop="datePublished">2017-01-18</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
 
 
+
+            
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
@@ -166,20 +194,31 @@
 <h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  	//可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  	//可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
         </div>
-        
+
         <blockquote class="post-copyright">
-            <div class="content">
-               这里写留言或版权声明：<a href="/2017/01/18/【Web移动端】web移动端软键盘状态/" target="_blank" rel="external">http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/index.html</a>
-            </div>
-            <footer>
-                <a href="http://www.mjpiero.cc">
-                    <img src="/img/logo.jpg" alt="MJPiero">
-                    MJPiero
-                </a>
-            </footer>
-        </blockquote>
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-23T04:27:34.676Z" itemprop="dateUpdated">2018-08-23 12:27:34</time>
+</span><br>
+
 
         
+        码字不易，转载请附链接：<a href="/2017/01/18/【Web移动端】web移动端软键盘状态/" target="_blank" rel="external">http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
 
         <div class="post-footer">
             
@@ -187,51 +226,55 @@
 
 
             
-            <div class="post-share-wrap">
-                <div class="post-share" id="post-share">
-    <div class="tit">分享到：</div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&title=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
       <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
           <i class="icon icon-weixin"></i>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&title=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
       </li>
     </ul>
  </div>
 
-                <a href="javascript:;" id="share-fab" class="post-share-fab waves-effect waves-circle">
-                    <i class="icon icon-share-alt icon-lg"></i>
-                </a>
-            </div>
-            
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
 
         </div>
-    </div>   
+    </div>
 
     
 <nav class="post-nav flex-row flex-justify-between">
@@ -255,26 +298,37 @@
 </nav>
 
 
-            
+
     
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="【Web移动端】web移动端软键盘状态" data-title="【Web移动端】web移动端软键盘状态" data-url="http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/index.html"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"mjpiero"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
 
 
 
@@ -282,80 +336,100 @@
 
 </article>
 
-<aside class="post-widget" id="post-widget">
 
-    
-    <nav class="post-toc-wrap" id="post-toc">
-        <h4>TOC</h4>
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软键盘打开，整个页面向上滑动"><span class="post-toc-number">1.</span> <span class="post-toc-text">软键盘打开，整个页面向上滑动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软键盘覆盖元素"><span class="post-toc-number">2.</span> <span class="post-toc-text">软键盘覆盖元素</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#通用方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">通用方法</span></a></li></ol>
-    </nav>
-    
-</aside>
 
 </div>
-  </main>
-  <div class="mask" id="mask"></div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "【Web移动端】web移动端软键盘状态",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
+
+
+<div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&title=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
       <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
           <i class="icon icon-weixin"></i>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&title=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《【Web移动端】web移动端软键盘状态》 — MJPiero's Blog&url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
       </li>
     </ul>
  </div>
 
 
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/" alt="微信分享二维码">
+</div>
 
 
-  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -365,28 +439,33 @@ var BLOG_SHARE = {
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '别把我忘记了哟！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)欢迎回来~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-79523626-3', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 
