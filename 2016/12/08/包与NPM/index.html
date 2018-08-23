@@ -10,37 +10,18 @@
   
   
   <meta name="keywords" content="nodeJs">
-  <meta name="description" content="在说到NPM之前，应该先提及CommonJS的包规范。
-CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。
-包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。
-
-package.json ———— 包描述文件。
-bin ———— 用于存放可执行二进制文件的目录。
-lib ———— 用于存放js代码的目录。
-doc ———— 用于存放文">
+  <meta name="description" content="在说到NPM之前，应该先提及CommonJS的包规范。 CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。 包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。  package.json ———— 包描述文件。 bin ———— 用于存放可执行二进制文件的目录。 lib ———— 用于存放js代码的目录。 doc ———— 用于存放文">
+<meta name="keywords" content="nodeJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="包与NPM">
 <meta property="og:url" content="http://www.mjpiero.cc/2016/12/08/包与NPM/index.html">
-<meta property="og:site_name" content="MJPiero's Blog">
-<meta property="og:description" content="在说到NPM之前，应该先提及CommonJS的包规范。
-CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。
-包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。
-
-package.json ———— 包描述文件。
-bin ———— 用于存放可执行二进制文件的目录。
-lib ———— 用于存放js代码的目录。
-doc ———— 用于存放文">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="在说到NPM之前，应该先提及CommonJS的包规范。 CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。 包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。  package.json ———— 包描述文件。 bin ———— 用于存放可执行二进制文件的目录。 lib ———— 用于存放js代码的目录。 doc ———— 用于存放文">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-12-08T04:07:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="包与NPM">
-<meta name="twitter:description" content="在说到NPM之前，应该先提及CommonJS的包规范。
-CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。
-包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。
-
-package.json ———— 包描述文件。
-bin ———— 用于存放可执行二进制文件的目录。
-lib ———— 用于存放js代码的目录。
-doc ———— 用于存放文">
+<meta name="twitter:description" content="在说到NPM之前，应该先提及CommonJS的包规范。 CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。 包结构包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。  package.json ———— 包描述文件。 bin ———— 用于存放可执行二进制文件的目录。 lib ———— 用于存放js代码的目录。 doc ———— 用于存放文">
   
     <link rel="alternative" href="/atom.xml" title="MJPiero&#39;s Blog" type="application/atom+xml">
   
@@ -201,7 +182,7 @@ doc ———— 用于存放文">
 <p>这里我们就只介绍 NPM 的 package.json 文件定义了哪些必需的字段：</p>
 <ul>
 <li>name ———— 项目名称。</li>
-<li>version ———— 版本。在 <a href="http://semver.org/" target="_blank" rel="external">http://semver.org/</a> 上有详细的定义，通常为 major.minor.revision 格式。</li>
+<li>version ———— 版本。在 <a href="http://semver.org/" target="_blank" rel="noopener">http://semver.org/</a> 上有详细的定义，通常为 major.minor.revision 格式。</li>
 <li>author ———— 作者。</li>
 <li>description ———— 项目简介。</li>
 <li>keywords ———— 关键词数组。用于NPM中做分类搜索的。</li>
@@ -225,12 +206,12 @@ doc ———— 用于存放文">
 <li>main ———— 指定加载的入口文件。</li>
 <li>config ———— 用于向环境变量输出值。示例：<code>{ &quot;port&quot; : &quot;8080&quot; }</code>，则在<code>server.js</code>脚本就可以直接引用config里的值 <code>http.createServer(...).listen(process.env.npm_package_config_port)</code></li>
 </ul>
-<p>下面是express项目的package.json文件，可以参考下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;: &quot;express&quot;,</div><div class="line">	&quot;description&quot;: &quot;Sinatra inspired web development framework&quot;,</div><div class="line">	&quot;version&quot;: &quot;3.3.4&quot;,</div><div class="line">	&quot;author&quot;: &quot;TJ Holowaychuk &lt;tj@vision-media.ca&gt;&quot;,</div><div class="line">	&quot;contributors&quot;: [</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;TJ Holowaychuk&quot;,</div><div class="line">			&quot;email&quot;: &quot;tj@vision-media.ca&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Aaron Heckmann&quot;,</div><div class="line">			&quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Ciaran Jessup&quot;,</div><div class="line">			&quot;email&quot;: &quot;ciaranj@gmail.com&quot;</div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			&quot;name&quot;: &quot;Guillermo Rauch&quot;,</div><div class="line">			&quot;email&quot;: &quot;rauchg@gmail.com&quot;</div><div class="line">		&#125;</div><div class="line">	],</div><div class="line">	&quot;dependencies&quot;: &#123;</div><div class="line">		&quot;connect&quot;: &quot;2.8.4&quot;,</div><div class="line">		&quot;commander&quot;: &quot;1.2.0&quot;,</div><div class="line">		&quot;range-parser&quot;: &quot;0.0.4&quot;,</div><div class="line">		&quot;mkdirp&quot;: &quot;0.3.5&quot;,</div><div class="line">		&quot;cookie&quot;: &quot;0.1.0&quot;,</div><div class="line">		&quot;buffer-crc32&quot;: &quot;0.2.1&quot;,</div><div class="line">		&quot;fresh&quot;: &quot;0.1.0&quot;,</div><div class="line">		&quot;methods&quot;: &quot;0.0.1&quot;,</div><div class="line">		&quot;send&quot;: &quot;0.1.3&quot;,</div><div class="line">		&quot;cookie-signature&quot;: &quot;1.0.1&quot;,</div><div class="line">		&quot;debug&quot;: &quot;*&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;devDependencies&quot;: &#123;</div><div class="line">		&quot;ejs&quot;: &quot;*&quot;,</div><div class="line">		&quot;mocha&quot;: &quot;*&quot;,</div><div class="line">		&quot;jade&quot;: &quot;0.30.0&quot;,</div><div class="line">		&quot;hjs&quot;: &quot;*&quot;,</div><div class="line">		&quot;stylus&quot;: &quot;*&quot;,</div><div class="line">		&quot;should&quot;: &quot;*&quot;,</div><div class="line">		&quot;connect-redis&quot;: &quot;*&quot;,</div><div class="line">		&quot;marked&quot;: &quot;*&quot;,</div><div class="line">		&quot;supertest&quot;: &quot;0.6.0&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;keywords&quot;: [</div><div class="line">		&quot;express&quot;,</div><div class="line">		&quot;framework&quot;,</div><div class="line">		&quot;sinatra&quot;,</div><div class="line">		&quot;web&quot;,</div><div class="line">		&quot;rest&quot;,</div><div class="line">		&quot;restful&quot;,</div><div class="line">		&quot;router&quot;,</div><div class="line">		&quot;app&quot;,</div><div class="line">		&quot;api&quot;</div><div class="line">	],</div><div class="line">	&quot;repository&quot;: &quot;git://github.com/visionmedia/express&quot;,</div><div class="line">	&quot;main&quot;: &quot;index&quot;,</div><div class="line">	&quot;bin&quot;: &#123;</div><div class="line">		&quot;express&quot;: &quot;./bin/express&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;scripts&quot;: &#123;</div><div class="line">		&quot;prepublish&quot;: &quot;npm prune&quot;,</div><div class="line">		&quot;test&quot;: &quot;make test&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;engines&quot;: &#123;</div><div class="line">	&quot;node&quot;: &quot;*&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面是express项目的package.json文件，可以参考下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;name&quot;: &quot;express&quot;,</span><br><span class="line">	&quot;description&quot;: &quot;Sinatra inspired web development framework&quot;,</span><br><span class="line">	&quot;version&quot;: &quot;3.3.4&quot;,</span><br><span class="line">	&quot;author&quot;: &quot;TJ Holowaychuk &lt;tj@vision-media.ca&gt;&quot;,</span><br><span class="line">	&quot;contributors&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;TJ Holowaychuk&quot;,</span><br><span class="line">			&quot;email&quot;: &quot;tj@vision-media.ca&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;Aaron Heckmann&quot;,</span><br><span class="line">			&quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;Ciaran Jessup&quot;,</span><br><span class="line">			&quot;email&quot;: &quot;ciaranj@gmail.com&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;Guillermo Rauch&quot;,</span><br><span class="line">			&quot;email&quot;: &quot;rauchg@gmail.com&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	&quot;dependencies&quot;: &#123;</span><br><span class="line">		&quot;connect&quot;: &quot;2.8.4&quot;,</span><br><span class="line">		&quot;commander&quot;: &quot;1.2.0&quot;,</span><br><span class="line">		&quot;range-parser&quot;: &quot;0.0.4&quot;,</span><br><span class="line">		&quot;mkdirp&quot;: &quot;0.3.5&quot;,</span><br><span class="line">		&quot;cookie&quot;: &quot;0.1.0&quot;,</span><br><span class="line">		&quot;buffer-crc32&quot;: &quot;0.2.1&quot;,</span><br><span class="line">		&quot;fresh&quot;: &quot;0.1.0&quot;,</span><br><span class="line">		&quot;methods&quot;: &quot;0.0.1&quot;,</span><br><span class="line">		&quot;send&quot;: &quot;0.1.3&quot;,</span><br><span class="line">		&quot;cookie-signature&quot;: &quot;1.0.1&quot;,</span><br><span class="line">		&quot;debug&quot;: &quot;*&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;devDependencies&quot;: &#123;</span><br><span class="line">		&quot;ejs&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;mocha&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;jade&quot;: &quot;0.30.0&quot;,</span><br><span class="line">		&quot;hjs&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;stylus&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;should&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;connect-redis&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;marked&quot;: &quot;*&quot;,</span><br><span class="line">		&quot;supertest&quot;: &quot;0.6.0&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;keywords&quot;: [</span><br><span class="line">		&quot;express&quot;,</span><br><span class="line">		&quot;framework&quot;,</span><br><span class="line">		&quot;sinatra&quot;,</span><br><span class="line">		&quot;web&quot;,</span><br><span class="line">		&quot;rest&quot;,</span><br><span class="line">		&quot;restful&quot;,</span><br><span class="line">		&quot;router&quot;,</span><br><span class="line">		&quot;app&quot;,</span><br><span class="line">		&quot;api&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;repository&quot;: &quot;git://github.com/visionmedia/express&quot;,</span><br><span class="line">	&quot;main&quot;: &quot;index&quot;,</span><br><span class="line">	&quot;bin&quot;: &#123;</span><br><span class="line">		&quot;express&quot;: &quot;./bin/express&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;scripts&quot;: &#123;</span><br><span class="line">		&quot;prepublish&quot;: &quot;npm prune&quot;,</span><br><span class="line">		&quot;test&quot;: &quot;make test&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;engines&quot;: &#123;</span><br><span class="line">	&quot;node&quot;: &quot;*&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p><strong>参考文献：</strong></p>
 <ul>
 <li>《深入浅出Node.js》朴灵</li>
-<li><a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/packagejson.html</a></li>
+<li><a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/nodejs/packagejson.html</a></li>
 </ul>
 </blockquote>
 
