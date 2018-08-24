@@ -1,7 +1,7 @@
 ---
 title: 【Web移动端】web移动端软键盘状态
 date: 2017-01-18 18:10:54
-tags: [Web移动端,JavaScript]
+tags: [web移动端,JavaScript]
 categories: [JavaScript]
 ---
 如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。

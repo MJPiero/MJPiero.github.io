@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>CSS相对单位 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="现在一提到响应式布局，css相对单位，相信众多前端行业的小可爱们都知道em|rem，再者是现在大家都比较熟知的视口单位 vh|vw。emm…在说这些之前，让我们回顾一下CSS单位的历史。 早期 Pixel (px)在web环境下，用户可以将浏览器窗口设置成任意大小，CSS需要去适应它，而且用户在打开一个页面之后，还会再去调整它的大小，CSS也需要去适应这些条件。由此我们可以知道，在创建页面的时候，">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS相对单位">
+<meta property="og:url" content="http://www.mjpiero.cc/2018/08/24/CSS相对单位/index.html">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="现在一提到响应式布局，css相对单位，相信众多前端行业的小可爱们都知道em|rem，再者是现在大家都比较熟知的视口单位 vh|vw。emm…在说这些之前，让我们回顾一下CSS单位的历史。 早期 Pixel (px)在web环境下，用户可以将浏览器窗口设置成任意大小，CSS需要去适应它，而且用户在打开一个页面之后，还会再去调整它的大小，CSS也需要去适应这些条件。由此我们可以知道，在创建页面的时候，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-24T07:14:30.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS相对单位">
+<meta name="twitter:description" content="现在一提到响应式布局，css相对单位，相信众多前端行业的小可爱们都知道em|rem，再者是现在大家都比较熟知的视口单位 vh|vw。emm…在说这些之前，让我们回顾一下CSS单位的历史。 早期 Pixel (px)在web环境下，用户可以将浏览器窗口设置成任意大小，CSS需要去适应它，而且用户在打开一个页面之后，还会再去调整它的大小，CSS也需要去适应这些条件。由此我们可以知道，在创建页面的时候，">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">MJPiero</h5>
+          <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/mywork"  >
+                <i class="icon icon-lg icon-folder"></i>
+                MyWork
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MJPiero" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS相对单位</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CSS相对单位</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-24T07:14:30.000Z" itemprop="datePublished" class="page-time">
+  2018-08-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/css/">css</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#早期-Pixel-px"><span class="post-toc-number">1.</span> <span class="post-toc-text">早期 Pixel (px)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#em-的用法"><span class="post-toc-number">2.</span> <span class="post-toc-text">em 的用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#em-通常用法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">em 通常用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用于font-size"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">用于font-size</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rem-的用法"><span class="post-toc-number">3.</span> <span class="post-toc-text">rem 的用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视口单位-vh-vm"><span class="post-toc-number">4.</span> <span class="post-toc-text">视口单位 vh | vm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vw用于font-size"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">vw用于font-size</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#calc"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">calc()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CSS相对单位"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS相对单位</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-24 15:14:30" datetime="2018-08-24T07:14:30.000Z"  itemprop="datePublished">2018-08-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/css/">css</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>现在一提到响应式布局，css相对单位，相信众多前端行业的小可爱们都知道<code>em|rem</code>，再者是现在大家都比较熟知的<code>视口单位 vh|vw</code>。<br>emm…在说这些之前，让我们回顾一下CSS单位的历史。</p>
+<h2 id="早期-Pixel-px"><a href="#早期-Pixel-px" class="headerlink" title="早期 Pixel (px)"></a>早期 Pixel (px)</h2><p>在web环境下，用户可以将浏览器窗口设置成任意大小，CSS需要去适应它，而且用户在打开一个页面之后，还会再去调整它的大小，CSS也需要去适应这些条件。由此我们可以知道，在创建页面的时候，样式并没有被调用，而是当页面开始渲染时，浏览器才会去计算样式的规则。</p>
+<p>那么早些时候是如何解决设备窗口自适应的问题呢。</p>
+<p>早些时候，我们的设计大大们就想出了<code>完美像素设计</code>，解放了前端工程师们的双手，设计师们会创建一个有效宽度的容器，例如800px-950px宽的居中纵向列，也这个为基准再进行设计，这跟他们在原生应用程序或印刷出版物中做的设计或多或少有点类似。</p>
+<p>然后后来，有多年经验的前端应该能感受到，显示屏的分辨率越来越大，之前的950px的有效宽度开始延伸到1024px，但是兼容小分辨率屏幕使得这个问题变得不可解。而使得开发者不得不放弃“完美像素”设计的起因，是因为智能手机的普及。</p>
+<p>于是，<code>响应式设计</code>应运而生！！</p>
+<blockquote>
+<p>响应式 —— 在CSS中，这指的针对不同大小的浏览器窗口，用不同的方式响应更新页面的样式。我们要对不同尺寸的手机、平板电脑或桌面显示器多花心思了。我们将在第8章中详细介绍响应式设计，但在本章中，我会先给大家介绍一些重要的基础概念。</p>
+</blockquote>
+<p>开发人员曾经的宠儿（px）就要下线了。这里要提一下，CSS里1像素并不严格等同于显示器的1像素，在高分辨率显示器上更加明显。尽管根据浏览器、操作系统和硬件的不同，CSS的测量值可能会有细微的差别，但96px总是会大致等于屏幕上的物理1英寸。</p>
+<h2 id="em-的用法"><a href="#em-的用法" class="headerlink" title="em 的用法"></a>em 的用法</h2><p>先来看看em，em是最为常见的相对长度单位，基准是当前元素的<code>字号大小（font-size）</code>，例如：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">  padding: 1em; // padding: 16px;          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把padding赋值为1em，乘以字号，得到一个值为16px的padding渲染值，因为该元素的字号是16px，以此类推要2em = 16px * 2 = 32px; 使用相对单位声明的值会由浏览器转化为一个绝对值，我们称之为<code>计算值</code>。</p>
+<h3 id="em-通常用法"><a href="#em-通常用法" class="headerlink" title="em 通常用法"></a>em 通常用法</h3><p>在设置padding、height、width或border-radius等属性时，使用em可能会很方便，因为如果它们继承了不同的字号大小，或者用户更改了字体设置，这些属性会均匀地缩放。<br>可以测试看看效果，熟悉一下不同盒子下em的用法。<br>HTML:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;box box-small&quot;&gt;Small&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;box box-large&quot;&gt;Large&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  padding: 1em;</span><br><span class="line">  border-radius: 1em;</span><br><span class="line">  background-color: lightgray;</span><br><span class="line">&#125;</span><br><span class="line">.box-small &#123;</span><br><span class="line">  font-size: 14px;              </span><br><span class="line">&#125;</span><br><span class="line">.box-large &#123;</span><br><span class="line">  font-size: 16px;              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="用于font-size"><a href="#用于font-size" class="headerlink" title="用于font-size"></a>用于font-size</h3><p>em是基于font-size去计算的，那么如果用在font-size上呢？<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p class=&quot;box&quot;&gt;猜猜我的字号是多少？&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">// css</span><br><span class="line">.box&#123;</span><br><span class="line">    font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面这种情况，em会以<code>父元素</code>的字号为基准，例如box的父元素是body，则会以body的font-size大小为基准。一般情况下我们会声明body的字号大小，如果没有声明，则以浏览器的默认样式为主<br>通常情况下浏览器有默认的css样式，每个默认的样式都是不同的，看看下面例子：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">&#125;</span><br><span class="line">.box &#123;</span><br><span class="line">  font-size: 1.2em;     // 19.2px          </span><br><span class="line">  padding: 1.2em;       // 23.04px        </span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>box的font-size是基于body的字号大小计算的，而padding则是基于box的font-size计算的，所以是19.2 * 1.2 = 23.04px。</p>
+<blockquote>
+<p>可以尝试用em去做多层的嵌套列表，可以做出字号层层收缩的效果，例如ul，li列表。</p>
+</blockquote>
+<h2 id="rem-的用法"><a href="#rem-的用法" class="headerlink" title="rem 的用法"></a>rem 的用法</h2><p>rem 顾名思义是 root em 的缩写，和em不同的是，em是依赖当前元素，而rem是和根元素关联的。<br>说到根元素，大家可以先认识一下一个特别的伪类选择器 - <code>:root</code><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;                    /* 等同于 html 选择器 */</span><br><span class="line">  font-size: 1em;      // 16px,浏览器的默认字号大小</span><br><span class="line">&#125;</span><br><span class="line">ul &#123;</span><br><span class="line">  font-size: .8rem;     // 16 * 0.8 = 12.8px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这里 0.8rem 无论放在什么地方，都等同于0.8倍的根元素的字号大小。</p>
+<p>很简单吧~ 当然rem也好em也好都只是一种方式，如果去搭配使用还是要看个人对页面布局的理解。比如说，对font-size使用rem，因为现在很多浏览器可以通过ctrl- 和 Ctrl+ 对页面进行缩放，rem只依赖根元素，这样不会产生字号收缩的问题，字号大小变得可预测。而对padding、margin、border-radius等使用em则会更好，因为这些度量方式只是针对当前的元素来看的。在然后border的宽度则用px比较好，因为边框这个一般不会根据页面放缩去做计算的。</p>
+<h2 id="视口单位-vh-vm"><a href="#视口单位-vh-vm" class="headerlink" title="视口单位 vh | vm"></a>视口单位 vh | vm</h2><p>我们知道em和rem都是以font-size为基准的，而视口单位是依靠浏览器的视口大小来定义长度的。</p>
+<blockquote>
+<p>视口（viewport） —— 在浏览器窗口中用来渲染页面的可视区域，这不包括浏览器的地址栏、工具栏、状态栏等（如果有的话）。<br><strong>常见的视口单位：</strong></p>
+<ul>
+<li>vh —— 视口高度的1/100</li>
+<li>vw —— 视口宽度的1/100</li>
+<li>vmin —— 视区宽度或高度较小值的1/100（IE9支持的是vm）</li>
+<li>vmax —— 视区宽度或高度较大值的1/100（在写本书时，IE或者Edge都不支持）</li>
+</ul>
+</blockquote>
+<p>举个例子，50vw等于视口宽度的一半，而50vh等于视口高度的50%。vmin依赖两者（宽或高）的较小值，如果我们需要确保一个元素不管在横屏还是竖屏下适应屏幕展示的话，这个属性会很有帮助：如果是横屏，vmin的基准值是屏幕的高度，如果是竖屏，它的基准值是屏幕的宽度。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  width: 90vmin;</span><br><span class="line">  height: 90vmin;</span><br><span class="line">  background-color: #369;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里笔者就不截图了，大家试试看就知道了（笑）。</p>
+<h3 id="vw用于font-size"><a href="#vw用于font-size" class="headerlink" title="vw用于font-size"></a>vw用于font-size</h3><p>同样我们来看看视口单位用在字号上会发生什么。<br>加入我们设置一个元素的font-size: 2vm；会怎么样呢。假设PC屏幕宽 1400px，那么2vm等于28px，pad的屏幕768px宽，2vm等于15px。可以看出问题了吧~ 28px的字体对于PC来说太大了，而这个你放到手机屏幕上，经过计算字号会小于10px，这个效果就不太好了。</p>
+<p>这样我们就有个新的方法！！！</p>
+<h3 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h3><p>calc()函数支持对2个或者更多个数值进行基础的运算。</p>
+<blockquote>
+<p>注意：使用加减运算的时候左右必须要有空格，例如calc(3em + 16px)。<br>好了为了解决vw在font-size使用造成的漏洞，我们可以尝试：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">  font-size: calc(0.5em + 1vw);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>0.5em这里表示字号的最小值，1vw代表根据设备宽度响应式的网上叠加，这样你就会发现字体收缩就正常多了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>当然要实现响应式的设计，不仅仅是灵活的运用好这些相对单位，而细节上的细微的调整可能还是需要依赖媒体查询的代码，但是现在的前端开发者们要慢慢停止使用px思维去思考布局，CSS的东西看上去简单，实际上深入学习有很多意想不到的优势，需要大家多多探究，辣么，笔者就先写到这里了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-24T07:14:30.842Z" itemprop="dateUpdated">2018-08-24 15:14:30</time>
+</span><br>
+
+
+        
+        码字不易，转载请附链接：<a href="/2018/08/24/CSS相对单位/" target="_blank" rel="external">http://www.mjpiero.cc/2018/08/24/CSS相对单位/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&title=《CSS相对单位》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&title=《CSS相对单位》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/24/CSS相对单位/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS相对单位》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/24/你还在用第三方组件做Base64的编码和解码么？/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">你还在用第三方组件做Base64的编码和解码么？</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/23/mainifest-json/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mainifest.json</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&title=《CSS相对单位》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&title=《CSS相对单位》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/24/CSS相对单位/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS相对单位》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/24/CSS相对单位/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2018/08/24/CSS相对单位/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

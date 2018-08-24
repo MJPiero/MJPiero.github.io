@@ -1,6 +1,5 @@
 ---
 title: 初了解vue&vuex 这很接地气
-date: 2017-05-22 15:35:33
 tags: [vue]
 categories: [vue]
 ---
