@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-08-24T07:14:30.842Z</updated>
+  <updated>2018-08-24T09:18:32.158Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你还在用第三方组件做Base64的编码和解码么？</title>
+    <link href="http://www.mjpiero.cc/2018/08/24/%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E5%81%9ABase64%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E8%A7%A3%E7%A0%81%E4%B9%88%EF%BC%9F/"/>
+    <id>http://www.mjpiero.cc/2018/08/24/你还在用第三方组件做Base64的编码和解码么？/</id>
+    <published>2018-08-24T08:16:43.000Z</published>
+    <updated>2018-08-24T09:18:32.158Z</updated>
+    
+    <content type="html"><![CDATA[<p>清早看到一篇<a href="https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/" target="_blank" rel="noopener">张老师</a>的文章，才发现自己傻傻的用了很多年的第三方组件。<br>早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！<br>嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;MJPiero&apos;);     //编码结果：&quot;TUpQaWVybw==&quot;</span><br><span class="line"></span><br><span class="line">window.atob(&quot;TUpQaWVybw==&quot;);    //解码结果 &quot;MJPiero&quot;</span><br></pre></td></tr></table></figure></p><p>是不是很简单！还有一个要注意的地方。如果你如下输入：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;博客&apos;);</span><br></pre></td></tr></table></figure></p><p>你会发现页面会报错：<br><code>Uncaught DOMException: Failed to execute &#39;btoa&#39; on &#39;Window&#39;: The string to be encoded contains characters outside of the Latin1 range.</code></p><p>这是因为不支持中文汉字的缘故，但是我们加一层转码就可以了。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(window.encodeURIComponent(&apos;博客&apos;));   //编码结果：&quot;JUU1JThEJTlBJUU1JUFFJUEy&quot;</span><br><span class="line"></span><br><span class="line">window.decodeURIComponent(window.atob(&apos;JUU1JThEJTlBJUU1JUFFJUEy&apos;));     //解码结果 &quot;博客&quot;</span><br></pre></td></tr></table></figure></p><p>此外这个还有很多可以拓展的地方，这里还是让大家去<a href="https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/" target="_blank" rel="noopener">张鑫旭</a>老师的文章里面去看看：</p><ul><li>IE8/IE9的polyfill。由于这个方法支持IE10+的浏览器，所以有向下兼容的方法。</li><li>任意文件Base64编码。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;清早看到一篇&lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;张老师&lt;/a&gt;的文章
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS相对单位</title>
@@ -66,9 +91,9 @@
     
       <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
-      <category term="缓存" scheme="http://www.mjpiero.cc/tags/%E7%BC%93%E5%AD%98/"/>
-    
       <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+    
+      <category term="缓存" scheme="http://www.mjpiero.cc/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
@@ -131,7 +156,7 @@
     <link href="http://www.mjpiero.cc/2017/01/18/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%BD%AF%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81/"/>
     <id>http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/</id>
     <published>2017-01-18T10:10:54.000Z</published>
-    <updated>2018-08-23T04:27:34.676Z</updated>
+    <updated>2018-08-24T08:18:26.500Z</updated>
     
     <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p><h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">//键盘关闭事件 </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  //可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  //可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -147,7 +172,7 @@
       <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
     
     
-      <category term="Web移动端" scheme="http://www.mjpiero.cc/tags/Web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+      <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
       <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
     
@@ -158,7 +183,7 @@
     <link href="http://www.mjpiero.cc/2016/12/29/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95%E5%A4%A7%E6%B3%95/"/>
     <id>http://www.mjpiero.cc/2016/12/29/【Web移动端】web移动端调试大法/</id>
     <published>2016-12-29T07:02:38.000Z</published>
-    <updated>2017-01-18T10:25:16.000Z</updated>
+    <updated>2018-08-24T08:18:46.257Z</updated>
     
     <content type="html"><![CDATA[<p>在做移动端web开发的时候，头痛遇到移动端调试的问题，虽然现在很多PC浏览器的开发工具都自带移动端调试功能，但是显然和真机测试还是有一定差距，因为移动端不同的设备会出现不同的问题，在PC模拟器上显示正常的换到真机上测试就是会出问题。<br>在这里整理一些常见的移动端调试方法。</p><p><strong>先从一般的页面调试方法开始。</strong></p><h1 id="console方式"><a href="#console方式" class="headerlink" title="console方式"></a>console方式</h1><p>这个是最常见的一种调试方法，通过console在浏览器控制台打印出每步所需的回调数据。<br>详细可以参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Console" target="_blank" rel="noopener">Web API接口</a></p><h1 id="浏览器自带的移动端模拟器调试"><a href="#浏览器自带的移动端模拟器调试" class="headerlink" title="浏览器自带的移动端模拟器调试"></a>浏览器自带的移动端模拟器调试</h1><p>这个现在也比较常见了。最常用的是chrome的模拟器，当然现在流行的浏览器基本上都有开发者的模式，也都携有移动端的模拟器。比如火狐浏览器、360浏览器等。<br>基本上浏览器开启开发者模式的方法都统一了，在windows环境下按<code>F12</code>进入开发者攻击界面，mac环境则是下按<code>option+command+i</code>。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20161229151926.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><h1 id="UC浏览器测试"><a href="#UC浏览器测试" class="headerlink" title="UC浏览器测试"></a>UC浏览器测试</h1><p>UC浏览器提供了开发版方便开发者们连接测试。详见：<a href="http://plus.uc.cn/document/webapp/doc5.html" target="_blank" rel="noopener">UC浏览器开发者版</a></p><h1 id="第三方平台在线模拟器调试"><a href="#第三方平台在线模拟器调试" class="headerlink" title="第三方平台在线模拟器调试"></a>第三方平台在线模拟器调试</h1><p>第三方开发的平台比较方便，功能也相当强大，对于一些需要完善测试的，其实使用第三方的平台还是比较方便的。<br>这里我就推荐几个比较有名的第三方平台：</p><ul><li><a href="https://www.browserstack.com/" target="_blank" rel="noopener">BrowserStack</a></li><li><a href="http://www.keynote.com/" target="_blank" rel="noopener">Keynote</a></li><li><a href="http://browsershots.org/" target="_blank" rel="noopener">BrowserShots</a></li><li><a href="http://www.browsera.com/" target="_blank" rel="noopener">Browsera</a></li><li><a href="http://www.vanamco.com/ghostlab/" target="_blank" rel="noopener">Ghostlab</a><br>等等…</li></ul><p><strong>下面介绍一些我比较喜欢的一些远程调试工具。</strong></p><h1 id="Weinre"><a href="#Weinre" class="headerlink" title="Weinre"></a>Weinre</h1><p>之前微信开发工具中的远程调试也是基于这个开发的。<br>安装方法很简单快捷。<br>安装 Weinre：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g weinre</span><br></pre></td></tr></table></figure></p><p>安装完成之后，输入指令启动：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">weinre --httpPort 8081 --boundHost -all-</span><br></pre></td></tr></table></figure></p><p>显示如下则启动成功。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20161229154152.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>此时我们访问地址：<code>http://localhost:8081/</code> 会显示下图：<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20161229154809.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>在页面中也有提供几种方案，在你的项目中添加对应的js。例如：<code>&lt;script src=&quot;http://192.168.55.23:8081/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</code><br>随后便可以通过PC访问<code>http://192.168.55.23:8081/client/#anonymous</code>就可以看到手机上访问的项目页面了。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20161229160034.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><h1 id="代理应用"><a href="#代理应用" class="headerlink" title="代理应用"></a>代理应用</h1><p>这类代理应用实际上是用于抓包的，但是比起Weinre是基于开发者自身开发测试的。如果我们想要去获取其他网站的一些资源，例如http请求，或则一些js源码等。这时候使用代理工具比较合适。<br>mac下常使用的是<a href="https://www.charlesproxy.com/" target="_blank" rel="noopener">Charles</a>,windows环境下可以用<a href="http://www.telerik.com/fiddler" target="_blank" rel="noopener">Fiddler</a><br>默认开启的是8888端口。在手机上设置一个网络代理即可，这个不多详细介绍了。</p><h1 id="BrowserSync"><a href="#BrowserSync" class="headerlink" title="BrowserSync"></a><a href="https://browsersync.io/" target="_blank" rel="noopener">BrowserSync</a></h1><p>这是一个很强大的多终端测试工具，它可以跨设备同步操作行为，还可以监听你的文件，在文件修改时自动刷新所有设备中页面。<br><a href="https://browsersync.io/" target="_blank" rel="noopener">BrowserSync官方网站</a><br>也可以通过npm全局安装<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g browser-sync</span><br></pre></td></tr></table></figure></p><p>随后进入项目根目录下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">browser-sync start --files &quot;*.*&quot;</span><br><span class="line">// 意思为监听当前目录下所有改动</span><br></pre></td></tr></table></figure></p><p>终端中若显示如下，则启动成功：<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://7xoxxe.com1.z0.glb.clouddn.com/bs.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>终端中显示默认访问地址：<code>http://localhost:3001</code> 则可直接进入到控制台界面。<br>之后和weinre类似，也是添加一段js在自己的项目底下。<br>BrowserSync还可以和gulp以及webpack搭配使用，详细的可以看官方文档。</p><h1 id="真机测试"><a href="#真机测试" class="headerlink" title="真机测试"></a>真机测试</h1><p>真机测试是一概而论的说法。由于像ios系统本身就提供了一些对前端十分友好的开发者工具。<br>例如，Safari浏览器自带的开发者工具，或则xcode也有测试的方法，这里我局限性比较高，有这方面条件的是可以去搜罗一下相关的方法。<br>再者，PhoneGap也是有调试工具的，只不过需要安装它测试app。<br>这也是一种方法，不过个人还是偏爱Weinre或则BrowserSync的测试工具。</p><p>以上。是我整理的一些移动端测试的方法。欢迎补充~</p>]]></content>
     
@@ -176,7 +201,7 @@
     
       <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="Web移动端" scheme="http://www.mjpiero.cc/tags/Web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+      <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
   </entry>
   
