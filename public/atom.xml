@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-08-24T09:19:47.393Z</updated>
+  <updated>2018-08-24T09:59:08.737Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.mjpiero.cc/2018/08/24/%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E5%81%9ABase64%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E8%A7%A3%E7%A0%81%E4%B9%88%EF%BC%9F/"/>
     <id>http://www.mjpiero.cc/2018/08/24/你还在用第三方组件做Base64的编码和解码么？/</id>
     <published>2018-08-24T08:16:43.000Z</published>
-    <updated>2018-08-24T09:19:47.393Z</updated>
+    <updated>2018-08-24T09:59:08.737Z</updated>
     
     <content type="html"><![CDATA[<p>清早看到一篇张老师的文章，才发现自己傻傻的用了很多年的第三方组件。<br>早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！<br>嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;MJPiero&apos;);     //编码结果：&quot;TUpQaWVybw==&quot;</span><br><span class="line"></span><br><span class="line">window.atob(&quot;TUpQaWVybw==&quot;);    //解码结果 &quot;MJPiero&quot;</span><br></pre></td></tr></table></figure></p><p>是不是很简单！还有一个要注意的地方。如果你如下输入：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;博客&apos;);</span><br></pre></td></tr></table></figure></p><p>你会发现页面会报错：<br><code>Uncaught DOMException: Failed to execute &#39;btoa&#39; on &#39;Window&#39;: The string to be encoded contains characters outside of the Latin1 range.</code></p><p>这是因为不支持中文汉字的缘故，但是我们加一层转码就可以了。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(window.encodeURIComponent(&apos;博客&apos;));   //编码结果：&quot;JUU1JThEJTlBJUU1JUFFJUEy&quot;</span><br><span class="line"></span><br><span class="line">window.decodeURIComponent(window.atob(&apos;JUU1JThEJTlBJUU1JUFFJUEy&apos;));     //解码结果 &quot;博客&quot;</span><br></pre></td></tr></table></figure></p><p>此外这个还有很多可以拓展的地方，这里还是让大家去<a href="https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/" target="_blank" rel="noopener">张鑫旭</a>老师的文章里面去看看：</p><ul><li>IE8/IE9的polyfill。由于这个方法支持IE10+的浏览器，所以有向下兼容的方法。</li><li>任意文件Base64编码。</li></ul>]]></content>
     
@@ -34,10 +34,10 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/categories/javascript/"/>
     
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/tags/javascript/"/>
     
   </entry>
   
@@ -72,7 +72,7 @@
     <link href="http://www.mjpiero.cc/2018/08/23/mainifest-json/"/>
     <id>http://www.mjpiero.cc/2018/08/23/mainifest-json/</id>
     <published>2018-08-23T04:24:55.000Z</published>
-    <updated>2018-08-23T07:48:49.879Z</updated>
+    <updated>2018-08-24T09:58:52.830Z</updated>
     
     <content type="html"><![CDATA[<p>在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。</p><p>developers.google.com 上有个简介，中译过来被叫做“网络应用清单”，很多人也将他和web离线缓存联系在一起。<br>实际上，开发者可以利用 mainifest.json 控制在用户想要看到应用的区域（例如移动设备主屏幕）中如何向用户显示网络应用或网站，指示用户可以启动哪些功能，以及定义其在启动时的外观。</p><p>mainifest.json 提供了将网站书签保存到设备主屏幕的功能。当网站以这种方式启动时：</p><ul><li>它具有唯一的图标和名称，以便用户将其与其他网站区分开来。</li><li>它会在下载资源或从缓存恢复资源时向用户显示某些信息。</li><li>它会向浏览器提供默认显示特性，以避免网站资源可用时的过渡过于生硬。</li><li>它通过一个文本文件中的元数据这一简单机制完成所有这些工作。那就是网络应用清单。</li></ul><blockquote><p>注：尽管您可以在任何网站上使用该文件，它们却是 PWA 的必备要素。</p></blockquote><h2 id="创建清单"><a href="#创建清单" class="headerlink" title="创建清单"></a>创建清单</h2><p>下面是一个示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;short_name&quot;: &quot;AirHorner&quot;,</span><br><span class="line">  &quot;name&quot;: &quot;Kinlan&apos;s AirHorner of Infamy&quot;,</span><br><span class="line">  &quot;icons&quot;: [                              // 自定义图标</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-1x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;48x48&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-2x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;96x96&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;src&quot;: &quot;launcher-icon-4x.png&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;image/png&quot;,</span><br><span class="line">      &quot;sizes&quot;: &quot;192x192&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;start_url&quot;: &quot;index.html?launcher=true&quot;,  // 设置启动网址</span><br><span class="line">  &quot;background_color&quot;: &quot;#000000&quot;             // 设置背景颜色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>确保包括以下内容：</p><ul><li>在用户主屏幕上用作文本的 short_name。</li><li>在网络应用安装横幅中使用的 name。</li></ul><h2 id="将清单的相关信息告知浏览器"><a href="#将清单的相关信息告知浏览器" class="headerlink" title="将清单的相关信息告知浏览器"></a>将清单的相关信息告知浏览器</h2><p>在您创建清单且将清单添加到您的网站之后，将 link 标记添加到包含网络应用的所有页面上，如下所示：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;</span><br></pre></td></tr></table></figure></p><h2 id="测试您的清单"><a href="#测试您的清单" class="headerlink" title="测试您的清单"></a>测试您的清单</h2><p>如果您想要手动验证网络应用清单是否已正确设置，请使用 Chrome DevTools 的 Application 面板上的 Manifest 标签。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://developers.google.com/web/fundamentals/web-app-manifest/images/devtools-manifest.png?hl=zh-cn" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><blockquote><p><a href="https://developers.google.com/web/fundamentals/web-app-manifest/?hl=zh-cn" target="_blank" rel="noopener">google开发者原文</a></p></blockquote>]]></content>
     
@@ -86,14 +86,14 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/categories/javascript/"/>
     
     
       <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
-    
       <category term="缓存" scheme="http://www.mjpiero.cc/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="javascript" scheme="http://www.mjpiero.cc/tags/javascript/"/>
     
   </entry>
   
@@ -156,7 +156,7 @@
     <link href="http://www.mjpiero.cc/2017/01/18/%E3%80%90Web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E3%80%91web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%BD%AF%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81/"/>
     <id>http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/</id>
     <published>2017-01-18T10:10:54.000Z</published>
-    <updated>2018-08-24T08:18:26.500Z</updated>
+    <updated>2018-08-24T09:58:27.851Z</updated>
     
     <content type="html"><![CDATA[<p>如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。<br>对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。<br>比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出，并且将那个触发的控件推到键盘的上方。如果那个控件在页面底部，如果推出的键盘会覆盖该控件，系统会将整个页面向上推，直到将那个控件推到键盘上方为止。而android的实现的不同，有部分的android的实现和ios一样，有些android的机型的实现却不同，如果发现触发的input控件比键盘的高度底的时候，会自动将整个document的高度增加，增加到这个控件的高度超过键盘的高度为止。<br>随后，在判断软键盘是否打开关闭的状态时，因为这两种展现方法的不同，我大概搜罗出可能的解决办法（没有测试全部机型）：</p><h1 id="软键盘打开，整个页面向上滑动"><a href="#软键盘打开，整个页面向上滑动" class="headerlink" title="软键盘打开，整个页面向上滑动"></a>软键盘打开，整个页面向上滑动</h1><p>这种在ios系统里面比较常见，这类的基本上可以通过js的blur的方式来获取事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">//键盘关闭事件 </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h1 id="软键盘覆盖元素"><a href="#软键盘覆盖元素" class="headerlink" title="软键盘覆盖元素"></a>软键盘覆盖元素</h1><p>这种情况在ios和android中都有出现，这类的设备，可以通过检测窗口变化来识别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var wHeight = window.innerHeight;//获取初始可视窗口高度  </span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;//监测窗口大小的变化事件  </span><br><span class="line">  var hh = window.innerHeight;//当前可视窗口高度  </span><br><span class="line">  var viewTop = $(window).scrollTop();//可视窗口高度顶部距离网页顶部的距离  </span><br><span class="line">  if(wHeight &gt; hh)&#123;</span><br><span class="line">  //可以作为虚拟键盘弹出事件  </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">  //可以作为虚拟键盘关闭事件  </span><br><span class="line">  &#125;  </span><br><span class="line">  wHeight = hh;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h1 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">var wHeight = window.innerHeight;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line">    var hh = window.innerHeight; </span><br><span class="line">    var viewTop = $(window).scrollTop();</span><br><span class="line">    if(wHeight &gt; hh)&#123;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        if(!flag)&#123;</span><br><span class="line">            alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">            flag = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    wHeight = hh;  </span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.input-content input&quot;).on(&quot;blur&quot;,function()&#123;</span><br><span class="line">    if(!flag)&#123;</span><br><span class="line">        alert($(&quot;.input-content input&quot;).val());</span><br><span class="line">        flag = true;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).on(&quot;focus&quot;, function()&#123;</span><br><span class="line">    flag = false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -169,12 +169,12 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/categories/javascript/"/>
     
     
       <category term="web移动端" scheme="http://www.mjpiero.cc/tags/web%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/tags/javascript/"/>
     
   </entry>
   
@@ -264,7 +264,7 @@
     <link href="http://www.mjpiero.cc/2016/12/08/%E5%85%BC%E5%AE%B9%E5%A4%9A%E7%A7%8D%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83/"/>
     <id>http://www.mjpiero.cc/2016/12/08/兼容多种模块规范/</id>
     <published>2016-12-08T04:13:38.000Z</published>
-    <updated>2018-02-04T10:57:42.000Z</updated>
+    <updated>2018-08-24T09:59:14.765Z</updated>
     
     <content type="html"><![CDATA[<p>我们通常需要将类库代码包装在一个闭包内，为了能兼容Node、AMD、CMD以及一些常见的浏览器环境中，我们可以使用如下的方法去包装。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;(function (name, definition) &#123;</span><br><span class="line"></span><br><span class="line">// 检测上下文环境是否为AMD或CMD</span><br><span class="line">if (typeof define === &quot;function&quot; &amp;&amp; ( define.amd || define.cmd ) ) &#123;</span><br><span class="line"></span><br><span class="line">define(definition);</span><br><span class="line"></span><br><span class="line">// 检测上下文环境是否为Node</span><br><span class="line">&#125; else if ( typeof module !== &apos;undefined&apos; &amp;&amp; module.exports ) &#123;</span><br><span class="line"></span><br><span class="line">module.exports = definition();</span><br><span class="line"></span><br><span class="line">&#125; else &#123;</span><br><span class="line">// 将模块的执行结果在window变量中，在浏览器中this指向window对象</span><br><span class="line">this[name] = definition();</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(&apos;hello&apos;, function () &#123;</span><br><span class="line">var hello = function () &#123;&#125;;</span><br><span class="line">return hello;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -277,10 +277,10 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/categories/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/categories/javascript/"/>
     
     
-      <category term="JavaScript" scheme="http://www.mjpiero.cc/tags/JavaScript/"/>
+      <category term="javascript" scheme="http://www.mjpiero.cc/tags/javascript/"/>
     
   </entry>
   
@@ -289,7 +289,7 @@
     <link href="http://www.mjpiero.cc/2016/12/08/%E5%8C%85%E4%B8%8ENPM/"/>
     <id>http://www.mjpiero.cc/2016/12/08/包与NPM/</id>
     <published>2016-12-08T02:39:20.000Z</published>
-    <updated>2016-12-08T04:07:40.000Z</updated>
+    <updated>2018-08-24T09:59:23.868Z</updated>
     
     <content type="html"><![CDATA[<p>在说到NPM之前，应该先提及CommonJS的包规范。</p><p>CommonJS包规范定义很简单，它是由包结构和包描述文件两个部分组成。</p><h1 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h1><p>包结构是用于组织包中的各种文件。完全符合CommonJS规范的包目录应该包含如下文件。</p><ul><li>package.json ———— 包描述文件。</li><li>bin ———— 用于存放可执行二进制文件的目录。</li><li>lib ———— 用于存放js代码的目录。</li><li>doc ———— 用于存放文档的目录。</li><li>test ———— 用于存放单元测试用例的代码。</li></ul><h1 id="包描述文件"><a href="#包描述文件" class="headerlink" title="包描述文件"></a>包描述文件</h1><p>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件（package.json），位于根目录下。</p><p>这里我们就只介绍 NPM 的 package.json 文件定义了哪些必需的字段：</p><ul><li>name ———— 项目名称。</li><li>version ———— 版本。在 <a href="http://semver.org/" target="_blank" rel="noopener">http://semver.org/</a> 上有详细的定义，通常为 major.minor.revision 格式。</li><li>author ———— 作者。</li><li>description ———— 项目简介。</li><li>keywords ———— 关键词数组。用于NPM中做分类搜索的。</li><li>repository ———— 托管源代码的位置列表。示例：<code>{ &quot;type&quot;: &quot;git&quot;, &quot;url&quot;: &quot;https://package/path&quot; }</code></li><li>license ———— 当前包所使用的许可证列表。示例：<code>[{ &quot;type&quot;: &quot;GPLv2&quot;, &quot;url&quot;: &quot;http://www.example.com/licenses/gpl.html&quot;, }]</code></li><li>engines ———— 指明该项目所需要的nodejs版本。</li><li>bugs ———— 返回bug的网页地址或则邮箱地址。</li><li>contributors ———— 贡献者列表。</li><li>scripts ———— 指定了运行脚本命令的npm命令行缩写。可以自行写好运行脚本。</li><li>dependencies ———— 指定了项目运行所依赖的模块。<code>npm install XX --save</code></li><li>devDependencies ———— 指定项目开发所需要的模块。<code>npm install XX --save-dev</code><blockquote><ul><li><strong>波浪号（tilde）+指定版本：</strong>比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。</li><li><strong>插入号（caret）+指定版本：</strong>比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。</li><li><strong>latest：</strong>安装最新版本。</li></ul></blockquote></li><li>peerDependencies ———— 用来供插件指定其所需要的主工具的版本（从npm 3.0版开始，peerDependencies不再会默认安装了）。</li><li>bin ———— 用来指定各个内部命令对应的可执行文件的位置。</li><li>main ———— 指定加载的入口文件。</li><li>config ———— 用于向环境变量输出值。示例：<code>{ &quot;port&quot; : &quot;8080&quot; }</code>，则在<code>server.js</code>脚本就可以直接引用config里的值 <code>http.createServer(...).listen(process.env.npm_package_config_port)</code></li></ul><p>下面是express项目的package.json文件，可以参考下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;express&quot;,</span><br><span class="line">&quot;description&quot;: &quot;Sinatra inspired web development framework&quot;,</span><br><span class="line">&quot;version&quot;: &quot;3.3.4&quot;,</span><br><span class="line">&quot;author&quot;: &quot;TJ Holowaychuk &lt;tj@vision-media.ca&gt;&quot;,</span><br><span class="line">&quot;contributors&quot;: [</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;TJ Holowaychuk&quot;,</span><br><span class="line">&quot;email&quot;: &quot;tj@vision-media.ca&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Aaron Heckmann&quot;,</span><br><span class="line">&quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Ciaran Jessup&quot;,</span><br><span class="line">&quot;email&quot;: &quot;ciaranj@gmail.com&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Guillermo Rauch&quot;,</span><br><span class="line">&quot;email&quot;: &quot;rauchg@gmail.com&quot;</span><br><span class="line">&#125;</span><br><span class="line">],</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">&quot;connect&quot;: &quot;2.8.4&quot;,</span><br><span class="line">&quot;commander&quot;: &quot;1.2.0&quot;,</span><br><span class="line">&quot;range-parser&quot;: &quot;0.0.4&quot;,</span><br><span class="line">&quot;mkdirp&quot;: &quot;0.3.5&quot;,</span><br><span class="line">&quot;cookie&quot;: &quot;0.1.0&quot;,</span><br><span class="line">&quot;buffer-crc32&quot;: &quot;0.2.1&quot;,</span><br><span class="line">&quot;fresh&quot;: &quot;0.1.0&quot;,</span><br><span class="line">&quot;methods&quot;: &quot;0.0.1&quot;,</span><br><span class="line">&quot;send&quot;: &quot;0.1.3&quot;,</span><br><span class="line">&quot;cookie-signature&quot;: &quot;1.0.1&quot;,</span><br><span class="line">&quot;debug&quot;: &quot;*&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">&quot;ejs&quot;: &quot;*&quot;,</span><br><span class="line">&quot;mocha&quot;: &quot;*&quot;,</span><br><span class="line">&quot;jade&quot;: &quot;0.30.0&quot;,</span><br><span class="line">&quot;hjs&quot;: &quot;*&quot;,</span><br><span class="line">&quot;stylus&quot;: &quot;*&quot;,</span><br><span class="line">&quot;should&quot;: &quot;*&quot;,</span><br><span class="line">&quot;connect-redis&quot;: &quot;*&quot;,</span><br><span class="line">&quot;marked&quot;: &quot;*&quot;,</span><br><span class="line">&quot;supertest&quot;: &quot;0.6.0&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;keywords&quot;: [</span><br><span class="line">&quot;express&quot;,</span><br><span class="line">&quot;framework&quot;,</span><br><span class="line">&quot;sinatra&quot;,</span><br><span class="line">&quot;web&quot;,</span><br><span class="line">&quot;rest&quot;,</span><br><span class="line">&quot;restful&quot;,</span><br><span class="line">&quot;router&quot;,</span><br><span class="line">&quot;app&quot;,</span><br><span class="line">&quot;api&quot;</span><br><span class="line">],</span><br><span class="line">&quot;repository&quot;: &quot;git://github.com/visionmedia/express&quot;,</span><br><span class="line">&quot;main&quot;: &quot;index&quot;,</span><br><span class="line">&quot;bin&quot;: &#123;</span><br><span class="line">&quot;express&quot;: &quot;./bin/express&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">&quot;prepublish&quot;: &quot;npm prune&quot;,</span><br><span class="line">&quot;test&quot;: &quot;make test&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;engines&quot;: &#123;</span><br><span class="line">&quot;node&quot;: &quot;*&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><blockquote><p><strong>参考文献：</strong></p><ul><li>《深入浅出Node.js》朴灵</li><li><a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/nodejs/packagejson.html</a></li></ul></blockquote>]]></content>
     
@@ -304,10 +304,10 @@
     
     </summary>
     
-      <category term="nodeJs" scheme="http://www.mjpiero.cc/categories/nodeJs/"/>
+      <category term="nodejs" scheme="http://www.mjpiero.cc/categories/nodejs/"/>
     
     
-      <category term="nodeJs" scheme="http://www.mjpiero.cc/tags/nodeJs/"/>
+      <category term="nodejs" scheme="http://www.mjpiero.cc/tags/nodejs/"/>
     
   </entry>
   
@@ -371,7 +371,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/"/>
     <id>http://www.mjpiero.cc/2016/10/21/解决gem-install-SSL-证书错误/</id>
     <published>2016-10-21T08:40:10.000Z</published>
-    <updated>2016-12-08T02:40:28.000Z</updated>
+    <updated>2018-08-24T09:59:30.616Z</updated>
     
     <content type="html"><![CDATA[<p>这个问题我是在替换gem镜像路径的时候遇到的。</p><p>详情见：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">解决国内Ruby Gem Install 失败问题</a></p><p>这个其实也折腾了我一个多小时在网上找解决办法。</p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>相信有部分的人在按照上面方法安装的时候出现了和我一样的问题：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20160413163537.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>在网上搜索一圈之后，解释是：</p><blockquote><p>ruby 没有包含 SSL 证书，所以 https 的链接被服务器拒绝。</p></blockquote><p>本来这个情况下，只要改用http路径就好了，偏偏淘宝已经停止基于HTTP协议的镜像服务了。</p><p>于是我继续在网上搜了一圈，找到了如下的解决办法（来源：<a href="https://gist.github.com/fnichol/867550" target="_blank" rel="noopener">https://gist.github.com/fnichol/867550</a> ）:</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>先下载证书 <a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="noopener">http://curl.haxx.se/ca/cacert.pem</a> ，然后再环境变量里设置 SSL_CERT_FILE 这个环境变量，并指向 cacert.pem 文件。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20160413165101.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>之后再在<code>cmd.exe</code>中输入命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set SSL_CERT_FILE=C:\path\to\cacert.pem</span><br></pre></td></tr></table></figure><p>之后再按照上面的方法来操作一遍~~~</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20160413165633.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>Perfect！！</p>]]></content>
     
@@ -390,7 +390,7 @@
     
       <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="Ruby" scheme="http://www.mjpiero.cc/tags/Ruby/"/>
+      <category term="ruby" scheme="http://www.mjpiero.cc/tags/ruby/"/>
     
   </entry>
   
@@ -399,7 +399,7 @@
     <link href="http://www.mjpiero.cc/2016/10/21/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85Ruby-Gem-Install-%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/"/>
     <id>http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/</id>
     <published>2016-10-21T06:55:48.000Z</published>
-    <updated>2016-12-08T02:40:14.000Z</updated>
+    <updated>2018-08-24T09:59:36.474Z</updated>
     
     <content type="html"><![CDATA[<p>做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。</p><p>淘宝团队提供了国内可以快速访问的镜像地址，官方地址：<a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a></p><p>官方有详细的替换的方法，这里我也按照我的流程过一遍。</p><h1 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h1><p>首先，我的系统是win7。</p><p>在window上安装Ruby，可以通过下载RubyInstaller工具（ <a href="http://rubyinstaller.org/" target="_blank" rel="noopener">http://rubyinstaller.org/</a> ）快速安装：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/QQ截图20160413155659.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="替换成taobao镜像"><a href="#替换成taobao镜像" class="headerlink" title="替换成taobao镜像"></a>替换成taobao镜像</h1><p>之后 <code>win+R</code> 键打开运行窗口，输入cmd 快速打开命令行程序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line"></span><br><span class="line">https://ruby.taobao.org</span><br><span class="line"># 请确保只有 ruby.taobao.org</span><br><span class="line">$ gem install rails</span><br></pre></td></tr></table></figure></p><p>以上是淘宝官方的方法。很简单，然而现实总是没这么顺利…</p><p>和我一样安装遇到SSL证书错误的请看这里：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/" target="_blank" rel="noopener">解决gem install SSL 证书错误</a></p>]]></content>
     
@@ -418,7 +418,7 @@
     
       <category term="环境搭建" scheme="http://www.mjpiero.cc/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="Ruby" scheme="http://www.mjpiero.cc/tags/Ruby/"/>
+      <category term="ruby" scheme="http://www.mjpiero.cc/tags/ruby/"/>
     
   </entry>
   

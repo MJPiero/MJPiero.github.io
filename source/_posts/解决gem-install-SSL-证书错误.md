@@ -1,6 +1,6 @@
 ---
 title: 解决gem install SSL 证书错误
-tags: [环境搭建, Ruby]
+tags: [环境搭建, ruby]
 categories: [环境搭建]
 date: 2016-10-21 16:40:10
 ---

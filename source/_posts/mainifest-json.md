@@ -1,8 +1,8 @@
 ---
 title: mainifest.json
 date: 2018-08-23 12:24:55
-tags: [web移动端, 缓存, JavaScript]
-categories: [JavaScript]
+tags: [web移动端, 缓存, javascript]
+categories: [javascript]
 ---
 
 在看别人开发的架子的时候，看到了这个文件，网上大概搜了一下，在此mark一下。

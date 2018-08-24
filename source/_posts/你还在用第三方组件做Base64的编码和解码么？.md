@@ -1,8 +1,8 @@
 ---
 title: 你还在用第三方组件做Base64的编码和解码么？
 date: 2018-08-24 16:16:43
-tags: [JavaScript]
-categories: [JavaScript]
+tags: [javascript]
+categories: [javascript]
 ---
 
 清早看到一篇张老师的文章，才发现自己傻傻的用了很多年的第三方组件。

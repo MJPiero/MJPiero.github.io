@@ -1,7 +1,7 @@
 ---
 title: 包与NPM
-tags: [nodeJs]
-categories: [nodeJs]
+tags: [nodejs]
+categories: [nodejs]
 date: 2016-12-08 10:39:20
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 解决国内Ruby Gem Install 失败问题
-tags: [Ruby, 环境搭建]
+tags: [ruby, 环境搭建]
 categories: [环境搭建]
 date: 2016-10-21 14:55:48
 ---
