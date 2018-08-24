@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="MJPiero&#39;s Blog">
 <meta property="og:description" content="清早看到一篇张老师的文章，才发现自己傻傻的用了很多年的第三方组件。早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。window.btoa(&amp;a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-24T09:18:32.158Z">
+<meta property="og:updated_time" content="2018-08-24T09:19:47.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你还在用第三方组件做Base64的编码和解码么？">
 <meta name="twitter:description" content="清早看到一篇张老师的文章，才发现自己傻傻的用了很多年的第三方组件。早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。window.btoa(&amp;a">
@@ -182,7 +182,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>清早看到一篇<a href="https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/" target="_blank" rel="noopener">张老师</a>的文章，才发现自己傻傻的用了很多年的第三方组件。<br>早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！<br>嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;MJPiero&apos;);     //编码结果：&quot;TUpQaWVybw==&quot;</span><br><span class="line"></span><br><span class="line">window.atob(&quot;TUpQaWVybw==&quot;);    //解码结果 &quot;MJPiero&quot;</span><br></pre></td></tr></table></figure></p>
+            <p>清早看到一篇张老师的文章，才发现自己傻傻的用了很多年的第三方组件。<br>早期web端要做base64编码和解码的时候最常用的就是去找个开源的组件base64.js。嗯，现在都还是这样的，觉得还满完美的，看了才发现实际浏览器原生提供了Base64编码解码的方法，啊，孤陋寡闻！！！<br>嗯，我按照自己的理解简单介绍一下，btoa和atob的方法。来，跟我学着在浏览器的控制器上测试一下。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;MJPiero&apos;);     //编码结果：&quot;TUpQaWVybw==&quot;</span><br><span class="line"></span><br><span class="line">window.atob(&quot;TUpQaWVybw==&quot;);    //解码结果 &quot;MJPiero&quot;</span><br></pre></td></tr></table></figure></p>
 <p>是不是很简单！还有一个要注意的地方。如果你如下输入：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(&apos;博客&apos;);</span><br></pre></td></tr></table></figure></p>
 <p>你会发现页面会报错：<br><code>Uncaught DOMException: Failed to execute &#39;btoa&#39; on &#39;Window&#39;: The string to be encoded contains characters outside of the Latin1 range.</code></p>
 <p>这是因为不支持中文汉字的缘故，但是我们加一层转码就可以了。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.btoa(window.encodeURIComponent(&apos;博客&apos;));   //编码结果：&quot;JUU1JThEJTlBJUU1JUFFJUEy&quot;</span><br><span class="line"></span><br><span class="line">window.decodeURIComponent(window.atob(&apos;JUU1JThEJTlBJUU1JUFFJUEy&apos;));     //解码结果 &quot;博客&quot;</span><br></pre></td></tr></table></figure></p>
@@ -199,7 +199,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-24T09:18:32.158Z" itemprop="dateUpdated">2018-08-24 17:18:32</time>
+    最后更新时间：<time datetime="2018-08-24T09:19:47.393Z" itemprop="dateUpdated">2018-08-24 17:19:47</time>
 </span><br>
 
 
