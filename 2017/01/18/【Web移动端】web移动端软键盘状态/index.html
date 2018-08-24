@@ -20,9 +20,9 @@
     <meta name="theme-color" content="#DCEDC8">
     
     
-    <meta name="keywords" content="JavaScript,Web移动端">
+    <meta name="keywords" content="Web移动端,JavaScript">
     <meta name="description" content="如今各种移动端设备盛行，虽然现在移动端开发已经非常通用和成熟，但是在开发过程中，还是经常遇到各种神奇的问题，在这里对于移动端web开发遇到的一些问题进行一一整理。对于移动端设备上的软键盘，在某些时候，会成为页面的一部分，并且不同型号的设备的软键盘对于Html布局的实现也有些不同。比如ios设备对于从下方推出键盘的时候，如果输入控件在页面推出之后，在键盘的高度的上方的话，则键盘是以一个浮层的方式弹出">
-<meta name="keywords" content="JavaScript,Web移动端">
+<meta name="keywords" content="Web移动端,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Web移动端】web移动端软键盘状态">
 <meta property="og:url" content="http://www.mjpiero.cc/2017/01/18/【Web移动端】web移动端软键盘状态/index.html">
@@ -449,23 +449,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '别把我忘记了哟！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)欢迎回来~';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 
