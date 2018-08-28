@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>解决国内Ruby Gem Install 失败问题 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="环境搭建,ruby">
+    <meta name="description" content="做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。 淘宝团队提供了国内可以快速访问的镜像地址，官方地址：https://ruby.taobao.org/ 官方有详细的替换的方法，这里我也按照我的流程过一遍。 安装Ruby首先，我的系统是win7。 在window上安装Ruby，可以通过下载RubyInstall">
+<meta name="keywords" content="环境搭建,ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决国内Ruby Gem Install 失败问题">
+<meta property="og:url" content="http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/index.html">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。 淘宝团队提供了国内可以快速访问的镜像地址，官方地址：https://ruby.taobao.org/ 官方有详细的替换的方法，这里我也按照我的流程过一遍。 安装Ruby首先，我的系统是win7。 在window上安装Ruby，可以通过下载RubyInstall">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.mjpiero.cc/images/QQ截图20160413155659.png">
+<meta property="og:updated_time" content="2018-08-24T09:59:36.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决国内Ruby Gem Install 失败问题">
+<meta name="twitter:description" content="做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。 淘宝团队提供了国内可以快速访问的镜像地址，官方地址：https://ruby.taobao.org/ 官方有详细的替换的方法，这里我也按照我的流程过一遍。 安装Ruby首先，我的系统是win7。 在window上安装Ruby，可以通过下载RubyInstall">
+<meta name="twitter:image" content="http://www.mjpiero.cc/images/QQ截图20160413155659.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">MJPiero</h5>
+          <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/mywork"  >
+                <i class="icon icon-lg icon-folder"></i>
+                MyWork
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MJPiero" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">解决国内Ruby Gem Install 失败问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">解决国内Ruby Gem Install 失败问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-10-21T06:55:48.000Z" itemprop="datePublished" class="page-time">
+  2016-10-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境搭建/">环境搭建</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Ruby"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Ruby</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换成taobao镜像"><span class="post-toc-number">2.</span> <span class="post-toc-text">替换成taobao镜像</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-解决国内Ruby-Gem-Install-失败问题"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">解决国内Ruby Gem Install 失败问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-10-21 14:55:48" datetime="2016-10-21T06:55:48.000Z"  itemprop="datePublished">2016-10-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境搭建/">环境搭建</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>做一个国内的程序员真的是很辛苦很辛苦，各种被墙，科技还怎么进步捏。好在上有政策下有对策，国内大神还是很良心的给我们提供了很多不少解决方案。</p>
+<p>淘宝团队提供了国内可以快速访问的镜像地址，官方地址：<a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a></p>
+<p>官方有详细的替换的方法，这里我也按照我的流程过一遍。</p>
+<h1 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h1><p>首先，我的系统是win7。</p>
+<p>在window上安装Ruby，可以通过下载RubyInstaller工具（ <a href="http://rubyinstaller.org/" target="_blank" rel="noopener">http://rubyinstaller.org/</a> ）快速安装：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/QQ截图20160413155659.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="替换成taobao镜像"><a href="#替换成taobao镜像" class="headerlink" title="替换成taobao镜像"></a>替换成taobao镜像</h1><p>之后 <code>win+R</code> 键打开运行窗口，输入cmd 快速打开命令行程序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line"></span><br><span class="line">https://ruby.taobao.org</span><br><span class="line"># 请确保只有 ruby.taobao.org</span><br><span class="line">$ gem install rails</span><br></pre></td></tr></table></figure></p>
+<p>以上是淘宝官方的方法。很简单，然而现实总是没这么顺利…</p>
+<p>和我一样安装遇到SSL证书错误的请看这里：<a href="http://blog2.pierrothall.com/2016/10/21/%E8%A7%A3%E5%86%B3gem-install-SSL-%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF/" target="_blank" rel="noopener">解决gem install SSL 证书错误</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-24T09:59:36.474Z" itemprop="dateUpdated">2018-08-24 17:59:36</time>
+</span><br>
+
+
+        
+        码字不易，转载请附链接：<a href="/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" target="_blank" rel="external">http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ruby/">ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境搭建/">环境搭建</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&title=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&title=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/10/21/解决gem-install-SSL-证书错误/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">解决gem install SSL 证书错误</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/10/21/开启新世界的大门！-灬ºωº灬/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">开启新世界的大门！(灬ºωº灬)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&title=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&title=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《解决国内Ruby Gem Install 失败问题》 — MJPiero's Blog&url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2016/10/21/解决国内Ruby-Gem-Install-失败问题/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>mac 使用tree命令 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="环境搭建,linux">
+    <meta name="description" content="开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。网上搜了一下，mark一下： 使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令： $ find . -print | sed -e &amp;apos;s;[^/]*/;|____;g;s;____|; |;g&amp;apos; 还可以写一个">
+<meta name="keywords" content="环境搭建,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac 使用tree命令">
+<meta property="og:url" content="http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/index.html">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。网上搜了一下，mark一下： 使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令： $ find . -print | sed -e &amp;apos;s;[^/]*/;|____;g;s;____|; |;g&amp;apos; 还可以写一个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-23T07:44:14.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac 使用tree命令">
+<meta name="twitter:description" content="开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。网上搜了一下，mark一下： 使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令： $ find . -print | sed -e &amp;apos;s;[^/]*/;|____;g;s;____|; |;g&amp;apos; 还可以写一个">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">MJPiero</h5>
+          <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/mywork"  >
+                <i class="icon icon-lg icon-folder"></i>
+                MyWork
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MJPiero" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mac 使用tree命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mac 使用tree命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-23T03:59:10.000Z" itemprop="datePublished" class="page-time">
+  2018-08-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境搭建/">环境搭建</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-mac-使用tree命令"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mac 使用tree命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-23 11:59:10" datetime="2018-08-23T03:59:10.000Z"  itemprop="datePublished">2018-08-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境搭建/">环境搭建</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>开发的时候想要生成树状的目录结构，Linux下有个tree命令可以直接打印出树状的目录结构，可以了解一下，但是mac下默认是木有tree命令的。<br>网上搜了一下，mark一下：</p>
+<p>使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;</span><br></pre></td></tr></table></figure>
+<p>还可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias tree=&quot;find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;&quot;</span><br></pre></td></tr></table></figure>
+<p>也可以使用 homebrew 安装 tree 命令行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ brew install tree</span><br></pre></td></tr></table></figure></p>
+<p>这样就在你的mac上安装了 tree 命令行了。</p>
+<p>tree命令行参数（只实用与安装了tree命令行工具）：</p>
+<ul>
+<li>-a 显示所有文件和目录。</li>
+<li>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。</li>
+<li>-C 在文件和目录清单加上色彩，便于区分各种类型。</li>
+<li>-d 显示目录名称而非内容。</li>
+<li>-D 列出文件或目录的更改时间。</li>
+<li>-f 在每个文件或目录之前，显示完整的相对路径名称。</li>
+<li>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。</li>
+<li>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</li>
+<li>-i 不以阶梯状列出文件或目录名称。</li>
+<li>-I 不显示符合范本样式的文件或目录名称。</li>
+<li>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</li>
+<li>-n 不在文件和目录清单加上色彩。</li>
+<li>-N 直接列出文件和目录名称，包括控制字符。</li>
+<li>-p 列出权限标示。</li>
+<li>-P 只显示符合范本样式的文件或目录名称。</li>
+<li>-q 用”?”号取代控制字符，列出文件和目录名称。</li>
+<li>-s 列出文件或目录大小。</li>
+<li>-t 用文件和目录的更改时间排序。</li>
+<li>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</li>
+<li>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-23T07:44:14.898Z" itemprop="dateUpdated">2018-08-23 15:44:14</time>
+</span><br>
+
+
+        
+        码字不易，转载请附链接：<a href="/2018/08/23/mac-使用tree命令/" target="_blank" rel="external">http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境搭建/">环境搭建</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&title=《mac 使用tree命令》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&title=《mac 使用tree命令》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mac 使用tree命令》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/23/threeJS-学习笔记-材质/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">threeJS 学习笔记 - 材质</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/18/【Web移动端】web移动端软键盘状态/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">【Web移动端】web移动端软键盘状态</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&title=《mac 使用tree命令》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&title=《mac 使用tree命令》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mac 使用tree命令》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2018/08/23/mac-使用tree命令/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
