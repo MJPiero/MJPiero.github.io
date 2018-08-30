@@ -1,5 +1,5 @@
 ---
-title: 兼容多种模块规范
+title: UMD兼容多种模块规范
 date: 2016-12-08 12:13:38
 tags: [javascript]
 categories: [javascript]
