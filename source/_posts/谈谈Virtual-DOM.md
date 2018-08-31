@@ -22,4 +22,4 @@ Virtual DOM 最开始知道这个词是通过React得知的，而vdom的诞生�
 ## Virtual DOM
 在 MV* 模式雷厉风行之时，React出现了，它提出了一种新的思路，不用再去一点点操作dom树下的node，而是回归最早的一次整体渲染，这样渲染时间反而快。vdom的概念，实际上是数据和真实DOM之间的一层缓冲，数据变化了，我们会对vdom进行操作和更新，最后再一次性更新到真实DOM上。
 ![](/images/37341-f3172ab2917534d7.webp)
-和MVVM比较一下，一旦有数据变化，MVVM系框架采用的都是数据绑定，比如说Angular，通过 Directive/Binding 对象，观察数据变化并保留对实际DOM的引用，
+和MVVM比较一下，一旦有数据变化，MVVM系框架采用的都是数据绑定，比如说Angular，通过 Directive/Binding 对象，去监测数据变化并且通过对实际DOM元素的引用去做相应操作。
