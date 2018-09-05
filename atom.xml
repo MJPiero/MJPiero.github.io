@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-08-29T12:14:46.683Z</updated>
+  <updated>2018-09-05T08:08:37.123Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npx 了解一下</title>
+    <link href="http://www.mjpiero.cc/2018/09/05/npx-%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B/"/>
+    <id>http://www.mjpiero.cc/2018/09/05/npx-了解一下/</id>
+    <published>2018-09-05T07:44:54.000Z</published>
+    <updated>2018-09-05T08:08:37.123Z</updated>
+    
+    <content type="html"><![CDATA[<p>在看vue-cli 3的时候才看到有关<a href="https://github.com/zkat/npx" target="_blank" rel="noopener">npx</a>的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。<br>比如说：我们要用一个 <code>create-app-cli</code> 工具包去执行里面的某个指令，使用npm命令的话<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g create-app-cli</span><br><span class="line">create-app-cli my-app</span><br></pre></td></tr></table></figure></p><p>使用npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx create-app-cli my-app</span><br></pre></td></tr></table></figure></p><p>该命令会临时安装 <code>create-app-cli</code> 包，并且执行包内指令，完成后坏删除create-app-cli包，下次再执行需要重新安装。嗯，这个对于强迫症患者有奇效。</p><p>再者，npx 会帮你执行依赖包里的二进制文件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">./node_modules/.bin/webpack -v</span><br><span class="line"># 也可以写成</span><br><span class="line"># `npm bin`/webpack -v   // bash命令写法</span><br></pre></td></tr></table></figure></p><p>npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">npx webpack -v</span><br></pre></td></tr></table></figure></p><p>npx 会自动查找当前依赖包中的可执行文件，如果找不到，就会去 PATH 里找。如果依然找不到，就会帮你安装。</p><p>甚至还支持运行远程仓库的可执行文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx github:piuccio/cowsay hello</span><br></pre></td></tr></table></figure></p><p>最有意思的是 npx http-server 可以一句话帮你开启一个静态服务器，初次运行会稍微慢一些。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx http-server</span><br></pre></td></tr></table></figure></p><p>还可以指定不同的node版本去运行npm script：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx -p node@6 npm run dev</span><br></pre></td></tr></table></figure></p><p>可以省去使用nvm指令了。<br>可以尝试使用看看。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在看vue-cli 3的时候才看到有关&lt;a href=&quot;https://github.com/zkat/npx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;npx&lt;/a&gt;的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供
+      
+    
+    </summary>
+    
+      <category term="nodejs" scheme="http://www.mjpiero.cc/categories/nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="http://www.mjpiero.cc/tags/nodejs/"/>
+    
+      <category term="npm" scheme="http://www.mjpiero.cc/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>js模块化规范总结</title>

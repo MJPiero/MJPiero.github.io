@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>npx 了解一下 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#DCEDC8">
+    
+    
+    <meta name="keywords" content="nodejs,npm">
+    <meta name="description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
+<meta name="keywords" content="nodejs,npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npx 了解一下">
+<meta property="og:url" content="http://www.mjpiero.cc/2018/09/05/npx-了解一下/index.html">
+<meta property="og:site_name" content="MJPiero&#39;s Blog">
+<meta property="og:description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-05T08:08:37.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npx 了解一下">
+<meta name="twitter:description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
+    
+        <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">MJPiero</h5>
+          <a href="mailto:merlu.majing@gmail.com" title="merlu.majing@gmail.com" class="mail">merlu.majing@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/mywork"  >
+                <i class="icon icon-lg icon-folder"></i>
+                MyWork
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MJPiero" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">npx 了解一下</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">npx 了解一下</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-05T07:44:54.000Z" itemprop="datePublished" class="page-time">
+  2018-09-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-npx-了解一下"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">npx 了解一下</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-05 15:44:54" datetime="2018-09-05T07:44:54.000Z"  itemprop="datePublished">2018-09-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>在看vue-cli 3的时候才看到有关<a href="https://github.com/zkat/npx" target="_blank" rel="noopener">npx</a>的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。<br>比如说：我们要用一个 <code>create-app-cli</code> 工具包去执行里面的某个指令，使用npm命令的话<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g create-app-cli</span><br><span class="line">create-app-cli my-app</span><br></pre></td></tr></table></figure></p>
+<p>使用npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx create-app-cli my-app</span><br></pre></td></tr></table></figure></p>
+<p>该命令会临时安装 <code>create-app-cli</code> 包，并且执行包内指令，完成后坏删除create-app-cli包，下次再执行需要重新安装。嗯，这个对于强迫症患者有奇效。</p>
+<p>再者，npx 会帮你执行依赖包里的二进制文件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">./node_modules/.bin/webpack -v</span><br><span class="line"># 也可以写成</span><br><span class="line"># `npm bin`/webpack -v   // bash命令写法</span><br></pre></td></tr></table></figure></p>
+<p>npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">npx webpack -v</span><br></pre></td></tr></table></figure></p>
+<p>npx 会自动查找当前依赖包中的可执行文件，如果找不到，就会去 PATH 里找。如果依然找不到，就会帮你安装。</p>
+<p>甚至还支持运行远程仓库的可执行文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx github:piuccio/cowsay hello</span><br></pre></td></tr></table></figure></p>
+<p>最有意思的是 npx http-server 可以一句话帮你开启一个静态服务器，初次运行会稍微慢一些。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx http-server</span><br></pre></td></tr></table></figure></p>
+<p>还可以指定不同的node版本去运行npm script：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx -p node@6 npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>可以省去使用nvm指令了。<br>可以尝试使用看看。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-09-05T08:08:37.123Z" itemprop="dateUpdated">2018-09-05 16:08:37</time>
+</span><br>
+
+
+        
+        小记事本空间，很多只是自己收集相关资料做的一层整理，可能没什么生肉，随意品尝！本文链接：<a href="/2018/09/05/npx-了解一下/" target="_blank" rel="external">http://www.mjpiero.cc/2018/09/05/npx-了解一下/index.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.mjpiero.cc">
+            <img src="/img/avatar.jpg" alt="MJPiero">
+            MJPiero
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npx 了解一下》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/29/js模块化规范总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">js模块化规范总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'mjpiero',
+            repo: 'https://github.com/MJPiero/MJPiero.github.io.git',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>MJPiero &copy; 2015 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备15010926号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npx 了解一下》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&via=http://www.mjpiero.cc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
