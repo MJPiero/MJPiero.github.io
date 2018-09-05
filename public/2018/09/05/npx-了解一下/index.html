@@ -14,25 +14,25 @@
     
     
     
-    <title>MongoDB如何开启认证权限功能 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
+    <title>npx 了解一下 | MJPiero&#39;s Blog | 一只有节操的前端喵╮(╯_╰)╭。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#DCEDC8">
     
     
-    <meta name="keywords" content="mongodb">
-    <meta name="description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
-<meta name="keywords" content="mongodb">
+    <meta name="keywords" content="nodejs,npm">
+    <meta name="description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
+<meta name="keywords" content="nodejs,npm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB如何开启认证权限功能">
-<meta property="og:url" content="http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/index.html">
+<meta property="og:title" content="npx 了解一下">
+<meta property="og:url" content="http://www.mjpiero.cc/2018/09/05/npx-了解一下/index.html">
 <meta property="og:site_name" content="MJPiero&#39;s Blog">
-<meta property="og:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta property="og:description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2016-12-28T06:24:20.000Z">
+<meta property="og:updated_time" content="2018-09-05T08:08:37.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MongoDB如何开启认证权限功能">
-<meta name="twitter:description" content="MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。 创建新用户在开启MongoDB服务的情况下。执行mongod或则mongod --dbpath &amp;lt;path to data directory&amp;gt; 进入MongoDB服务。进入服务之后，执行：use admindb.">
+<meta name="twitter:title" content="npx 了解一下">
+<meta name="twitter:description" content="在看vue-cli 3的时候才看到有关npx的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。比如说：我们要用一个 create-app-cli 工具包去执行里面的某个指令，使用npm命令的话npm i -g create-app-clicreate-app-cli my-app 使用npx命令：npx create-app-cli my-app 该">
     
         <link rel="alternate" type="application/atom+xml" title="MJPiero&#39;s Blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">MongoDB如何开启认证权限功能</div>
+        <div class="flex-col header-title ellipsis">npx 了解一下</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">MongoDB如何开启认证权限功能</h1>
+        <h1 class="title">npx 了解一下</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-12-28T06:04:52.000Z" itemprop="datePublished" class="page-time">
-  2016-12-28
+                <time datetime="2018-09-05T07:44:54.000Z" itemprop="datePublished" class="page-time">
+  2018-09-05
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/mongodb/">mongodb</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
             
         </h5>
@@ -164,24 +164,17 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建新用户"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建新用户</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进入库"><span class="post-toc-number">2.</span> <span class="post-toc-text">进入库</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-MongoDB如何开启认证权限功能"
+<article id="post-npx-了解一下"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">MongoDB如何开启认证权限功能</h1>
+        <h1 class="post-card-title">npx 了解一下</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016-12-28 14:04:52" datetime="2016-12-28T06:04:52.000Z"  itemprop="datePublished">2016-12-28</time>
+            <time class="post-time" title="2018-09-05 15:44:54" datetime="2018-09-05T07:44:54.000Z"  itemprop="datePublished">2018-09-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/mongodb/">mongodb</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
 
 
@@ -189,10 +182,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>MongoDB预设不会开启认证权限功能（Authentication），所以任何人都可以随意连接到MongoDB的数据库。于是我们要去创建一个管理员的账号，并为其添加权限。</p>
-<h1 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h1><p>在开启MongoDB服务的情况下。执行<code>mongod</code>或则<code>mongod --dbpath &lt;path to data directory&gt;</code> 进入MongoDB服务。<br>进入服务之后，执行：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.addUser(&quot;账户名称&quot;, &quot;密码&quot;)</span><br><span class="line">// 如果希望此账号只有读取的权限，则修改为</span><br><span class="line">// db.addUser(&quot;账户名称&quot;, &quot;密码&quot;, true)</span><br></pre></td></tr></table></figure></p>
-<p>执行完成之后，先停止MongoDB服务，在执行下面指令重新开启MongoDB服务：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongod --auth</span><br></pre></td></tr></table></figure></p>
-<h1 id="进入库"><a href="#进入库" class="headerlink" title="进入库"></a>进入库</h1><p>启动完成之后，在连接上MongoDB Shell，在其中执行以下命令才可进入到admin库中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use admin </span><br><span class="line">db.auth(&quot;账户名称&quot;, &quot;密码&quot;)</span><br></pre></td></tr></table></figure></p>
+            <p>在看vue-cli 3的时候才看到有关<a href="https://github.com/zkat/npx" target="_blank" rel="noopener">npx</a>的指令。npm更新至5.2.0会自动安装的一条指令，主要是为了方面开发者使用包内提供的命令行工具。<br>比如说：我们要用一个 <code>create-app-cli</code> 工具包去执行里面的某个指令，使用npm命令的话<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g create-app-cli</span><br><span class="line">create-app-cli my-app</span><br></pre></td></tr></table></figure></p>
+<p>使用npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx create-app-cli my-app</span><br></pre></td></tr></table></figure></p>
+<p>该命令会临时安装 <code>create-app-cli</code> 包，并且执行包内指令，完成后坏删除create-app-cli包，下次再执行需要重新安装。嗯，这个对于强迫症患者有奇效。</p>
+<p>再者，npx 会帮你执行依赖包里的二进制文件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">./node_modules/.bin/webpack -v</span><br><span class="line"># 也可以写成</span><br><span class="line"># `npm bin`/webpack -v   // bash命令写法</span><br></pre></td></tr></table></figure></p>
+<p>npx命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -D webpack</span><br><span class="line">npx webpack -v</span><br></pre></td></tr></table></figure></p>
+<p>npx 会自动查找当前依赖包中的可执行文件，如果找不到，就会去 PATH 里找。如果依然找不到，就会帮你安装。</p>
+<p>甚至还支持运行远程仓库的可执行文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx github:piuccio/cowsay hello</span><br></pre></td></tr></table></figure></p>
+<p>最有意思的是 npx http-server 可以一句话帮你开启一个静态服务器，初次运行会稍微慢一些。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx http-server</span><br></pre></td></tr></table></figure></p>
+<p>还可以指定不同的node版本去运行npm script：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx -p node@6 npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>可以省去使用nvm指令了。<br>可以尝试使用看看。</p>
 
         </div>
 
@@ -201,12 +200,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2016-12-28T06:24:20.000Z" itemprop="dateUpdated">2016-12-28 14:24:20</time>
+    最后更新时间：<time datetime="2018-09-05T08:08:37.123Z" itemprop="dateUpdated">2018-09-05 16:08:37</time>
 </span><br>
 
 
         
-        小记事本空间，很多只是自己收集相关资料做的一层整理，可能没什么生肉，随意品尝！本文链接：<a href="/2016/12/28/MongoDB如何开启认证权限功能/" target="_blank" rel="external">http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/index.html</a>
+        小记事本空间，很多只是自己收集相关资料做的一层整理，可能没什么生肉，随意品尝！本文链接：<a href="/2018/09/05/npx-了解一下/" target="_blank" rel="external">http://www.mjpiero.cc/2018/09/05/npx-了解一下/index.html</a>
         
     </div>
     
@@ -223,7 +222,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
 
 
             
@@ -233,7 +232,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&title=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -243,22 +242,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&title=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&via=http://www.mjpiero.cc" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npx 了解一下》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -278,21 +277,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/12/29/web移动端调试大法/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">web移动端调试大法</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/12/28/MongoDB添加到window服务，随服务自启动/" id="post-next" class="post-nav-link">
+      <a href="/2018/08/29/js模块化规范总结/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">MongoDB添加到window服务，随系统自启动</h4>
+        <h4 class="title">js模块化规范总结</h4>
       </a>
     </div>
   
@@ -373,7 +365,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&title=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&pic=http://www.mjpiero.cc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -383,22 +375,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&title=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&title=《npx 了解一下》 — MJPiero's Blog&source=MJPiero 个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB如何开启认证权限功能》 — MJPiero's Blog&url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/&via=http://www.mjpiero.cc" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npx 了解一下》 — MJPiero's Blog&url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/&via=http://www.mjpiero.cc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -409,7 +401,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2016/12/28/MongoDB如何开启认证权限功能/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.mjpiero.cc/2018/09/05/npx-了解一下/" alt="微信分享二维码">
 </div>
 
 

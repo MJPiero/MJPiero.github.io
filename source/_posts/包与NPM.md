@@ -1,6 +1,6 @@
 ---
 title: 包与NPM
-tags: [nodejs]
+tags: [nodejs,npm]
 categories: [nodejs]
 date: 2016-12-08 10:39:20
 ---
