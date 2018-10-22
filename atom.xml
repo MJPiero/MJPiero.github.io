@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mjpiero.cc/"/>
-  <updated>2018-10-22T08:37:04.171Z</updated>
+  <updated>2018-09-05T08:08:37.123Z</updated>
   <id>http://www.mjpiero.cc/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://www.mjpiero.cc/2018/10/22/aa/"/>
-    <id>http://www.mjpiero.cc/2018/10/22/aa/</id>
-    <published>2018-10-22T08:36:49.000Z</published>
-    <updated>2018-10-22T08:37:04.171Z</updated>
-    
-    <content type="html"><![CDATA[<p>test</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;test&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>npx 了解一下</title>
